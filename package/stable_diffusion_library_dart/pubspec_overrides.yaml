@@ -1,0 +1,4 @@
+
+dependency_overrides:
+  stable_diffusion_library:
+    path: ../stable_diffusion_library
