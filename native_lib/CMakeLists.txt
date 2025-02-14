@@ -41,7 +41,7 @@ project(
 
 
 
-set(LLAMA_LIBRARY_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/lib/llama.cpp")
+set(LLAMA_LIBRARY_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/lib/stable-diffusion.cpp")
 
 if(ANDROID)
   set(GGML_OPENMP OFF)
