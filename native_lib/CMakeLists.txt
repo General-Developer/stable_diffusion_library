@@ -36,12 +36,12 @@
 cmake_minimum_required(VERSION 3.16)
 
 project(
-  general_developer_llama_shared_library
+  general_developer_stable_diffusion_shared_library
 )
 
 
 
-set(LLAMA_LIBRARY_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/lib/stable-diffusion.cpp")
+set(STABLE_DIFFUSION_LIBRARY_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/lib/stable-diffusion.cpp")
 
 if(ANDROID)
   set(GGML_OPENMP OFF)
@@ -59,6 +59,8 @@ elseif(UNIX)
   set(LIBRARY_OUTPUT_PATH ${CMAKE_CURRENT_SOURCE_DIR}/../package/stable_diffusion_library_flutter/linux)
 endif()
 
+set(SD_BUILD_SHARED_LIBS ON)
+ 
 
-add_subdirectory(${LLAMA_LIBRARY_DIRECTORY} "llama")
+add_subdirectory(${STABLE_DIFFUSION_LIBRARY_DIRECTORY} "stable-diffusion.cpp")
 

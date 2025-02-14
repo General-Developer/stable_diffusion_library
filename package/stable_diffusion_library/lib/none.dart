@@ -97,12 +97,7 @@ class StableDiffusionLibrary extends StableDiffusionLibraryBase {
       {required String eventType,
       required FutureOr Function(dynamic data) onUpdate}) {
     throw UnimplementedError();
-  }
-
-  @override
-  Stream<String> prompt({required List<dynamic> messages}) {
-    throw UnimplementedError();
-  }
+  } 
 
   @override
   void stop() {}

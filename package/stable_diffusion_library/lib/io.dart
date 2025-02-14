@@ -37,8 +37,7 @@ import 'dart:ffi';
 
 import 'package:ffi/ffi.dart';
 import 'package:general_lib/event_emitter/event_emitter.dart';
-import 'package:stable_diffusion_library/raw/lcpp.dart';
-
+ 
 import 'base.dart';
 import 'ffi/bindings.dart';
 

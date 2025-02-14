@@ -30,10 +30,15 @@ ffigen:
   name: 'StableDiffusionLibrarySharedBindingsByGeneralDeveloper'
   description: 'GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer'
   output: 'lib/ffi/bindings.dart'
-  ignore-source-errors: true
+  # ignore-source-errors: true
+  
   headers:
     entry-points:
-      - '../../native_lib/lib/whisper.cpp/include/whisper.h'
+      - '../../native_lib/lib/stable-diffusion.cpp/stable-diffusion.h'
+      - '../../native_lib/lib/stable-diffusion.cpp/thirdparty/stb_image.h'
+      - '../../native_lib/lib/stable-diffusion.cpp/thirdparty/stb_image_write.h'
+      - '../../native_lib/lib/stable-diffusion.cpp/thirdparty/stb_image_resize.h'
+      
 platforms:
   android: null
   ios: null
