@@ -53,7 +53,7 @@ Future<void> pubspecUpdate({
     Map yaml_code_clone = yaml_code.clone();
 
     yaml_code_clone.addAll({
-      "description": "LLaMA Is Library for Inference of Meta's LLaMA model (and others)",
+      "description": "WIP Stable Diffusion Is Library for generated text to Image",
       "version": version_package,
       "repository": "https://github.com/General-Developer/stable_diffusion_library",
       "homepage": "https://www.youtube.com/@general_dev",

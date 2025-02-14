@@ -1,5 +1,5 @@
 name: 'stable_diffusion_library_flutter'
-description: "LLaMA Is Library for Inference of Meta's LLaMA model (and others)"
+description: 'WIP Stable Diffusion Is Library for generated text to Image'
 version: '0.0.0'
 funding:
   - 'https://github.com/sponsors/azkadev'

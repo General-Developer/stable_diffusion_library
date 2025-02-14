@@ -1,6 +1,6 @@
 # Stable Diffusion Library
  
-**Stable Diffusion Library** Is library for inference any model ai LLAMA / LLM On Edge without api or internet quota, but need resources depends model you want run
+**Stable Diffusion Library** Stable Diffusion Is Library for generated text to Image
 
 [![](https://raw.githubusercontent.com/General-Developer/stable_diffusion_library/refs/heads/main/assets/demo_background.png)](https://youtu.be/drlqUwJEOg4)
 
@@ -44,7 +44,7 @@
 1. **Dart**
 
 ```bash
-dart pub add stable_diffusion_library_dart
+dart pub add stable_diffusion_library
 ```
 
 2. **Flutter**
