@@ -249,7 +249,8 @@ class ContextParams {
   /// Returns:
   /// - A `llama_context_params` object with the updated fields.
   llama_context_params toNative({
-    required StableDiffusionLibrarySharedBindingsByGeneralDeveloper generalAiLLamaLibrary,
+    required StableDiffusionLibrarySharedBindingsByGeneralDeveloper
+        generalAiLLamaLibrary,
   }) {
     final llama_context_params contextParams =
         generalAiLLamaLibrary.llama_context_default_params();

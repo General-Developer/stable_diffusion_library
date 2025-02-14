@@ -29,7 +29,8 @@ class MinPArguments {
 class TypicalPArguments {
   final double p;
   final int minKeep;
-  final StableDiffusionLibrarySharedBindingsByGeneralDeveloper generalAiLLamaLibrary;
+  final StableDiffusionLibrarySharedBindingsByGeneralDeveloper
+      generalAiLLamaLibrary;
   const TypicalPArguments({
     required this.p,
     required this.minKeep,
@@ -241,7 +242,8 @@ class SamplingParams {
 
   factory SamplingParams.fromMap({
     required Map<String, dynamic> map,
-    required StableDiffusionLibrarySharedBindingsByGeneralDeveloper generalAiLLamaLibrary,
+    required StableDiffusionLibrarySharedBindingsByGeneralDeveloper
+        generalAiLLamaLibrary,
   }) =>
       SamplingParams(
         greedy: map['greedy'],
@@ -278,7 +280,8 @@ class SamplingParams {
 
   factory SamplingParams.fromJson({
     required String source,
-    required StableDiffusionLibrarySharedBindingsByGeneralDeveloper generalAiLLamaLibrary,
+    required StableDiffusionLibrarySharedBindingsByGeneralDeveloper
+        generalAiLLamaLibrary,
   }) =>
       SamplingParams.fromMap(
           map: jsonDecode(source),
@@ -286,7 +289,8 @@ class SamplingParams {
 
   ffi.Pointer<llama_sampler> toNative({
     required ffi.Pointer<llama_vocab> vocab,
-    required StableDiffusionLibrarySharedBindingsByGeneralDeveloper generalAiLLamaLibrary,
+    required StableDiffusionLibrarySharedBindingsByGeneralDeveloper
+        generalAiLLamaLibrary,
   }) {
     final sampler = generalAiLLamaLibrary.llama_sampler_chain_init(
         generalAiLLamaLibrary.llama_sampler_chain_default_params());

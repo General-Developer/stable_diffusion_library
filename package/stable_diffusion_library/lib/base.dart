@@ -39,7 +39,8 @@ import 'package:general_lib/general_lib.dart' show EventEmitterListener;
 import 'package:stable_diffusion_library/raw/lcpp.dart' show ChatMessage;
 
 /// Check Out: https://www.youtube.com/@GENERAL_DEV
-abstract class StableDiffusionLibraryBaseCore extends GeneralLibraryDynamicLibraryBase {
+abstract class StableDiffusionLibraryBaseCore
+    extends GeneralLibraryDynamicLibraryBase {
   /// Check Out: https://www.youtube.com/@GENERAL_DEV
 
   Future<void> initialized();
@@ -76,7 +77,8 @@ abstract class StableDiffusionLibraryBaseCore extends GeneralLibraryDynamicLibra
 }
 
 /// Check Out: https://www.youtube.com/@GENERAL_DEV
-abstract class StableDiffusionLibraryBase implements StableDiffusionLibraryBaseCore {
+abstract class StableDiffusionLibraryBase
+    implements StableDiffusionLibraryBaseCore {
   ///
   final String sharedLibraryPath;
 

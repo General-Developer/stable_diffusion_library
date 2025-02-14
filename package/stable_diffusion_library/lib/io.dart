@@ -56,7 +56,8 @@ class StableDiffusionLibrary extends StableDiffusionLibraryBase {
         );
 
   ///
-  static late final StableDiffusionLibrarySharedBindingsByGeneralDeveloper _stableDiffusionLibrary;
+  static late final StableDiffusionLibrarySharedBindingsByGeneralDeveloper
+      _stableDiffusionLibrary;
   // ignore: prefer_final_fields
   static Pointer<llama_model> _modelContext = nullptr;
   // ignore: prefer_final_fields
@@ -75,7 +76,8 @@ class StableDiffusionLibrary extends StableDiffusionLibraryBase {
     }
 
     try {
-      _stableDiffusionLibrary = StableDiffusionLibrarySharedBindingsByGeneralDeveloper(
+      _stableDiffusionLibrary =
+          StableDiffusionLibrarySharedBindingsByGeneralDeveloper(
         DynamicLibrary.open(
           sharedLibraryPath,
         ),
@@ -237,7 +239,8 @@ class StableDiffusionLibrary extends StableDiffusionLibraryBase {
 
     _completer = Completer();
 
-    final nCtx = _stableDiffusionLibrary.llama_n_ctx(StableDiffusionLibrary._llamaContext);
+    final nCtx = _stableDiffusionLibrary
+        .llama_n_ctx(StableDiffusionLibrary._llamaContext);
 
     Pointer<Char> formatted = calloc<Char>(nCtx);
 
@@ -252,8 +255,13 @@ class StableDiffusionLibrary extends StableDiffusionLibraryBase {
     if (newContextLength > nCtx) {
       // calloc.free(formatted);
       formatted = calloc<Char>(newContextLength);
-      newContextLength = _stableDiffusionLibrary.llama_chat_apply_template(template,
-          messagesPtr, messagesCopy.length, true, formatted, newContextLength);
+      newContextLength = _stableDiffusionLibrary.llama_chat_apply_template(
+          template,
+          messagesPtr,
+          messagesCopy.length,
+          true,
+          formatted,
+          newContextLength);
     }
 
     // messagesPtr.free(messagesCopy.length);
@@ -266,10 +274,10 @@ class StableDiffusionLibrary extends StableDiffusionLibraryBase {
         formatted.cast<Utf8>().toDartString().substring(_contextLength);
     // calloc.free(formatted);
 
-    final vocab =
-        _stableDiffusionLibrary.llama_model_get_vocab(StableDiffusionLibrary._modelContext);
-    final isFirst = _stableDiffusionLibrary
-            .llama_get_kv_cache_used_cells(StableDiffusionLibrary._llamaContext) ==
+    final vocab = _stableDiffusionLibrary
+        .llama_model_get_vocab(StableDiffusionLibrary._modelContext);
+    final isFirst = _stableDiffusionLibrary.llama_get_kv_cache_used_cells(
+            StableDiffusionLibrary._llamaContext) ==
         0;
 
     final promptPtr = prompt.toNativeUtf8().cast<Char>();
@@ -286,14 +294,15 @@ class StableDiffusionLibrary extends StableDiffusionLibraryBase {
 
     // calloc.free(promptPtr);
 
-    llama_batch batch =
-        _stableDiffusionLibrary.llama_batch_get_one(promptTokens, nPromptTokens);
+    llama_batch batch = _stableDiffusionLibrary.llama_batch_get_one(
+        promptTokens, nPromptTokens);
     Pointer<llama_token> newTokenId = calloc<llama_token>(1);
 
     String response = '';
 
     while (!_completer.isCompleted) {
-      final nCtx = _stableDiffusionLibrary.llama_n_ctx(StableDiffusionLibrary._llamaContext);
+      final nCtx = _stableDiffusionLibrary
+          .llama_n_ctx(StableDiffusionLibrary._llamaContext);
       final nCtxUsed = _stableDiffusionLibrary
           .llama_get_kv_cache_used_cells(StableDiffusionLibrary._llamaContext);
 
@@ -301,12 +310,16 @@ class StableDiffusionLibrary extends StableDiffusionLibraryBase {
         throw Exception('Context size exceeded');
       }
 
-      if (_stableDiffusionLibrary.llama_decode(StableDiffusionLibrary._llamaContext, batch) != 0) {
+      if (_stableDiffusionLibrary.llama_decode(
+              StableDiffusionLibrary._llamaContext, batch) !=
+          0) {
         throw Exception('Failed to decode');
       }
 
       newTokenId.value = _stableDiffusionLibrary.llama_sampler_sample(
-          StableDiffusionLibrary._llamaSampler, StableDiffusionLibrary._llamaContext, -1);
+          StableDiffusionLibrary._llamaSampler,
+          StableDiffusionLibrary._llamaContext,
+          -1);
 
       // is it an end of generation?
       if (_stableDiffusionLibrary.llama_vocab_is_eog(vocab, newTokenId.value)) {

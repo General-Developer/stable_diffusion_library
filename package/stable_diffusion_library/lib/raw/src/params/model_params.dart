@@ -105,7 +105,8 @@ class ModelParams {
   /// Returns:
   ///   A `llama_model_params` instance with the updated values.
   llama_model_params toNative({
-    required StableDiffusionLibrarySharedBindingsByGeneralDeveloper generalAiLLamaLibrary,
+    required StableDiffusionLibrarySharedBindingsByGeneralDeveloper
+        generalAiLLamaLibrary,
   }) {
     final llama_model_params modelParams =
         generalAiLLamaLibrary.llama_model_default_params();
