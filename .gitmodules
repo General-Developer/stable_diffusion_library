@@ -1,0 +1,3 @@
+[submodule "native_lib/lib/stable-diffusion.cpp"]
+	path = native_lib/lib/stable-diffusion.cpp
+	url = https://github.com/leejet/stable-diffusion.cpp
