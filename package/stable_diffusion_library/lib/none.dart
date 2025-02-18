@@ -97,7 +97,7 @@ class StableDiffusionLibrary extends StableDiffusionLibraryBase {
       {required String eventType,
       required FutureOr Function(dynamic data) onUpdate}) {
     throw UnimplementedError();
-  } 
+  }
 
   @override
   void stop() {}

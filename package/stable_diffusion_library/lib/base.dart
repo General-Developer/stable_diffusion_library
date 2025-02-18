@@ -36,7 +36,7 @@ import 'dart:async';
 
 import 'package:general_lib/dynamic_library/core.dart';
 import 'package:general_lib/general_lib.dart' show EventEmitterListener;
- 
+
 /// Check Out: https://www.youtube.com/@GENERAL_DEV
 abstract class StableDiffusionLibraryBaseCore
     extends GeneralLibraryDynamicLibraryBase {
@@ -53,7 +53,7 @@ abstract class StableDiffusionLibraryBaseCore
   /// Check Out: https://www.youtube.com/@GENERAL_DEV
 
   void stop();
- 
+
   /// Check Out: https://www.youtube.com/@GENERAL_DEV
 
   void emit({
