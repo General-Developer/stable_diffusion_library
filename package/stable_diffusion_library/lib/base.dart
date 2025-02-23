@@ -39,6 +39,18 @@ import 'package:general_lib/dynamic_library/core.dart';
 
 /// Check Out: https://www.youtube.com/@GENERAL_DEV
 abstract class StableDiffusionLibraryBaseCore extends GeneralLibraryDynamicLibraryBase {
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  FutureOr<String> invokeRaw({
+    required final List<String> args,
+
+  });
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  FutureOr<String> imageToImage({
+    required final String modelPath,
+    required final String prompt,
+    required final String negativePrompt,
+  });
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   FutureOr<String> textToImage({
     required final String modelPath,
     required final String prompt,

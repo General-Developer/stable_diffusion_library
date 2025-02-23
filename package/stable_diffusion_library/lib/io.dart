@@ -110,4 +110,16 @@ class StableDiffusionLibrary extends StableDiffusionLibraryBase {
     stableDiffusionLibrary;
     throw UnimplementedError();
   }
+  
+  @override
+  FutureOr<String> imageToImage({required String modelPath, required String prompt, required String negativePrompt}) {
+    // TODO: implement imageToImage
+    throw UnimplementedError();
+  }
+  
+  @override
+  FutureOr<String> invokeRaw({required List<String> args}) {
+    // TODO: implement invokeRaw
+    throw UnimplementedError();
+  }
 }
