@@ -40,9 +40,7 @@ import 'package:general_lib/general_lib.dart' show EventEmitterListener;
 /// Check Out: https://www.youtube.com/@GENERAL_DEV
 abstract class StableDiffusionLibraryBaseCore
     extends GeneralLibraryDynamicLibraryBase {
-  /// Check Out: https://www.youtube.com/@GENERAL_DEV
-
-  Future<void> initialized();
+      
 
   /// Check Out: https://www.youtube.com/@GENERAL_DEV
 
@@ -85,3 +83,4 @@ abstract class StableDiffusionLibraryBase
     return "libllama.so";
   }
 }
+ 

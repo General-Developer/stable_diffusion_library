@@ -50,3 +50,4 @@ packagex-build-debug
 packagex-compile-debug
 
 libggml*
+lib*.a

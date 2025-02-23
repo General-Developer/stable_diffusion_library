@@ -59,8 +59,56 @@ elseif(UNIX)
   set(LIBRARY_OUTPUT_PATH ${CMAKE_CURRENT_SOURCE_DIR}/../package/stable_diffusion_library_flutter/linux)
 endif()
 
-set(SD_BUILD_SHARED_LIBS ON)
  
 
+set(SD_BUILD_SHARED_LIBS ON)
+# set(SD_VULKAN ON)
 add_subdirectory(${STABLE_DIFFUSION_LIBRARY_DIRECTORY} "stable-diffusion.cpp")
 
+
+
+# stable_diffusion_library
+# STABLE_DIFFUSION
+ 
+
+include_directories("${STABLE_DIFFUSION_LIBRARY_DIRECTORY}")
+include_directories("${STABLE_DIFFUSION_LIBRARY_DIRECTORY}/ggml/include")
+include_directories("${STABLE_DIFFUSION_LIBRARY_DIRECTORY}/thirdparty")
+
+set(STABLE_DIFFUSION_LIBRARY_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/lib/stable_diffusion_library")
+include_directories("${STABLE_DIFFUSION_LIBRARY_DIRECTORY}/include")
+
+
+add_executable(stable_diffusion_executable "${STABLE_DIFFUSION_LIBRARY_DIRECTORY}/lib/stable_diffusion_library.cpp")
+
+set_target_properties(
+  stable_diffusion_executable PROPERTIES
+  OUTPUT_NAME "stable_diffusion_library"
+  BUILD_WITH_INSTALL_RPATH TRUE
+  INSTALL_RPATH "$ORIGIN"
+)
+
+install(TARGETS stable_diffusion_executable RUNTIME)
+target_link_libraries(stable_diffusion_executable PRIVATE stable-diffusion ${CMAKE_THREAD_LIBS_INIT})
+target_compile_features(stable_diffusion_executable PRIVATE cxx_std_17)
+
+# set(CMAKE_C_FLAGS_RELEASE "${CMAKE_C_FLAGS_RELEASE} -s")
+# set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -s")
+
+add_library(stable_diffusion_shared_library SHARED
+  "${STABLE_DIFFUSION_LIBRARY_DIRECTORY}/lib/stable_diffusion_library.cpp"
+  "${STABLE_DIFFUSION_LIBRARY_DIRECTORY}/include/stable_diffusion_library.h"
+)
+
+set_target_properties(
+  stable_diffusion_shared_library PROPERTIES
+  PUBLIC_HEADER "${STABLE_DIFFUSION_LIBRARY_DIRECTORY}/include/stable_diffusion_library.h"
+  LIBRARY_OUTPUT_NAME "stable_diffusion_library"
+  BUILD_WITH_INSTALL_RPATH TRUE
+  INSTALL_RPATH "$ORIGIN"
+)
+
+install(TARGETS stable_diffusion_shared_library RUNTIME)
+ 
+target_link_libraries(stable_diffusion_shared_library PRIVATE stable-diffusion ${CMAKE_THREAD_LIBS_INIT})
+target_compile_features(stable_diffusion_shared_library PRIVATE cxx_std_17)

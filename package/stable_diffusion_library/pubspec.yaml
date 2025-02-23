@@ -32,10 +32,7 @@ ffigen:
   output: 'lib/ffi/bindings.dart'
   headers:
     entry-points:
-      - '../../native_lib/lib/stable-diffusion.cpp/stable-diffusion.h'
-      - '../../native_lib/lib/stable-diffusion.cpp/thirdparty/stb_image.h'
-      - '../../native_lib/lib/stable-diffusion.cpp/thirdparty/stb_image_write.h'
-      - '../../native_lib/lib/stable-diffusion.cpp/thirdparty/stb_image_resize.h'
+      - '../../native_lib/lib/stable_diffusion_library/include/stable_diffusion_library.h'
 platforms:
   android: null
   ios: null
