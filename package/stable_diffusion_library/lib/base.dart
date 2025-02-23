@@ -32,44 +32,22 @@ Bukan maksud kami menipu itu karena harga yang sudah di kalkulasi + bantuan tiba
 
 
 <!-- END LICENSE --> */
+
 import 'dart:async';
 
 import 'package:general_lib/dynamic_library/core.dart';
-import 'package:general_lib/general_lib.dart' show EventEmitterListener;
 
 /// Check Out: https://www.youtube.com/@GENERAL_DEV
-abstract class StableDiffusionLibraryBaseCore
-    extends GeneralLibraryDynamicLibraryBase {
-      
-
-  /// Check Out: https://www.youtube.com/@GENERAL_DEV
-
-  bool loadModel({
-    required String modelPath,
-  });
-
-  /// Check Out: https://www.youtube.com/@GENERAL_DEV
-
-  void stop();
-
-  /// Check Out: https://www.youtube.com/@GENERAL_DEV
-
-  void emit({
-    required String eventType,
-    required dynamic data,
-  });
-
-  /// Check Out: https://www.youtube.com/@GENERAL_DEV
-
-  EventEmitterListener on({
-    required String eventType,
-    required FutureOr<dynamic> Function(dynamic data) onUpdate,
+abstract class StableDiffusionLibraryBaseCore extends GeneralLibraryDynamicLibraryBase {
+  FutureOr<String> textToImage({
+    required final String modelPath,
+    required final String prompt,
+    required final String negativePrompt,
   });
 }
 
 /// Check Out: https://www.youtube.com/@GENERAL_DEV
-abstract class StableDiffusionLibraryBase
-    implements StableDiffusionLibraryBaseCore {
+abstract class StableDiffusionLibraryBase implements StableDiffusionLibraryBaseCore {
   ///
   final String sharedLibraryPath;
 
@@ -80,7 +58,6 @@ abstract class StableDiffusionLibraryBase
 
   ///
   static String getLibraryWhisperPathDefault() {
-    return "libllama.so";
+    return "libstable_diffusion_library.so";
   }
 }
- 

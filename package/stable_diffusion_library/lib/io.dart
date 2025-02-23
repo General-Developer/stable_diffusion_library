@@ -34,9 +34,7 @@ Bukan maksud kami menipu itu karena harga yang sudah di kalkulasi + bantuan tiba
 <!-- END LICENSE --> */
 import 'dart:async';
 import 'dart:ffi';
-
-import 'package:ffi/ffi.dart';
-import 'package:general_lib/event_emitter/event_emitter.dart';
+import 'dart:isolate';
 
 import 'base.dart';
 import 'ffi/bindings.dart';
@@ -47,26 +45,12 @@ class StableDiffusionLibrary extends StableDiffusionLibraryBase {
   bool _isInIsolate = true;
 
   ///
-  StableDiffusionLibrary({
-    String? sharedLibraryPath,
-  }) : super(
-          sharedLibraryPath: sharedLibraryPath ??
-              StableDiffusionLibraryBase.getLibraryWhisperPathDefault(),
-        );
+  StableDiffusionLibrary({super.sharedLibraryPath});
 
   ///
-  static late final StableDiffusionLibrarySharedBindingsByGeneralDeveloper
-      _stableDiffusionLibrary;
-  // ignore: prefer_final_fields
-  static Pointer<llama_model> _modelContext = nullptr;
-  // ignore: prefer_final_fields
-  static Pointer<llama_context> _llamaContext = nullptr;
-  // ignore: prefer_final_fields
-  static Pointer<llama_sampler> _llamaSampler = nullptr;
+  static late final StableDiffusionLibrarySharedBindingsByGeneralDeveloper _stableDiffusionLibrary;
 
   static bool _isEnsureInitialized = false;
-
-  static String _modelPath = "";
 
   @override
   Future<void> ensureInitialized() async {
@@ -75,8 +59,7 @@ class StableDiffusionLibrary extends StableDiffusionLibraryBase {
     }
 
     try {
-      _stableDiffusionLibrary =
-          StableDiffusionLibrarySharedBindingsByGeneralDeveloper(
+      _stableDiffusionLibrary = StableDiffusionLibrarySharedBindingsByGeneralDeveloper(
         DynamicLibrary.open(
           sharedLibraryPath,
         ),
@@ -105,254 +88,26 @@ class StableDiffusionLibrary extends StableDiffusionLibraryBase {
   }
 
   @override
-  bool loadModel({
-    required String modelPath,
-  }) {
-    if (_isInIsolate) {}
-    {
-      StableDiffusionLibrary._modelPath = modelPath;
-    }
-    if (_isInIsolate == false) {
-      return true;
-    }
-
-    if (isDeviceSupport() == false || isCrash()) {
-      return false;
-    }
-    _stableDiffusionLibrary.ggml_backend_load_all();
-    _stableDiffusionLibrary.llama_backend_init();
-
-    {
-      final modelContext = StableDiffusionLibrary._modelContext;
-      if (modelContext != nullptr) {
-        /// release memory
-        _stableDiffusionLibrary.llama_free_model(modelContext);
-      }
-    }
-    final modelParams = ModelParams(path: StableDiffusionLibrary._modelPath);
-    final nativeModelParams = modelParams.toNative(
-      generalAiLLamaLibrary: StableDiffusionLibrary._stableDiffusionLibrary,
-    );
-    final nativeModelPath = modelParams.path.toNativeUtf8().cast<Char>();
-
-    final modelContext = _stableDiffusionLibrary.llama_load_model_from_file(
-        nativeModelPath, nativeModelParams);
-    StableDiffusionLibrary._modelContext = modelContext;
-
-    if (modelContext.address == 0) {
-      _stableDiffusionLibrary.llama_free_model(modelContext);
-      return false;
-    }
-
-    /// init context
-    {
-      final contextParams = const ContextParams(
-        nCtx: 2048,
-        nBatch: 2048,
-        // nCtx: 64,
-        // nBatch: 64,
-
-        nThreads: 4,
-      );
-
-      final nativeContextParams = contextParams.toNative(
-        generalAiLLamaLibrary: StableDiffusionLibrary._stableDiffusionLibrary,
-      );
-      {
-        final llamaContext = StableDiffusionLibrary._llamaContext;
-        if (llamaContext != nullptr) {
-          /// release memory
-          _stableDiffusionLibrary.llama_free(llamaContext);
-        }
-      }
-      final llamaContext = _stableDiffusionLibrary.llama_init_from_model(
-          modelContext, nativeContextParams);
-      StableDiffusionLibrary._llamaContext = llamaContext;
-    }
-
-    {
-      final samplingParams = const SamplingParams(
-        greedy: true,
-      );
-
-      {
-        final llamaSampler = StableDiffusionLibrary._llamaSampler;
-        if (llamaSampler != nullptr) {
-          _stableDiffusionLibrary.llama_sampler_free(llamaSampler);
-        }
-      }
-
-      final vocab = _stableDiffusionLibrary.llama_model_get_vocab(modelContext);
-      final llamaSampler = samplingParams.toNative(
-        vocab: vocab,
-        generalAiLLamaLibrary: StableDiffusionLibrary._stableDiffusionLibrary,
-      );
-      StableDiffusionLibrary._llamaSampler = llamaSampler;
-    }
-
-    return true;
-  }
-
-  @override
   Future<void> initialized() async {
     // Isolate isolate = await Isolate.spawn(entryPoint, message);
   }
 
   @override
-  FutureOr<void> close() async {
+  FutureOr<void> dispose() {}
+
+  @override
+  FutureOr<String> textToImage({
+    required String modelPath,
+    required String prompt,
+    required String negativePrompt,
+  }) async {
     if (_isInIsolate == false) {
-      return;
+      return Isolate.run(() {
+        return "";
+      });
     }
-
-    if (_modelContext != nullptr) {
-      _stableDiffusionLibrary.llama_free_model(_modelContext);
-    }
-    if (_llamaSampler != nullptr) {
-      _stableDiffusionLibrary.llama_sampler_free(_llamaSampler);
-    }
-    if (_llamaContext != nullptr) {
-      _stableDiffusionLibrary.llama_free(_llamaContext);
-    }
-    return;
-  }
-
-  @override
-  void stop() {}
-
-  @override
-  void emit({required String eventType, required data}) {}
-
-  @override
-  EventEmitterListener on(
-      {required String eventType,
-      required FutureOr Function(dynamic data) onUpdate}) {
+    final stableDiffusionLibrary = StableDiffusionLibrary._stableDiffusionLibrary;
+    stableDiffusionLibrary;
     throw UnimplementedError();
   }
-
-  Completer _completer = Completer();
-
-  int _contextLength = 0;
-  @override
-  Stream<String> prompt({required List<ChatMessage> messages}) async* {
-    final messagesCopy = messages.copy();
-
-    _completer = Completer();
-
-    final nCtx = _stableDiffusionLibrary
-        .llama_n_ctx(StableDiffusionLibrary._llamaContext);
-
-    Pointer<Char> formatted = calloc<Char>(nCtx);
-
-    final template = _stableDiffusionLibrary.llama_model_chat_template(
-        StableDiffusionLibrary._modelContext, nullptr);
-
-    Pointer<llama_chat_message> messagesPtr = messagesCopy.toNative();
-
-    int newContextLength = _stableDiffusionLibrary.llama_chat_apply_template(
-        template, messagesPtr, messagesCopy.length, true, formatted, nCtx);
-
-    if (newContextLength > nCtx) {
-      // calloc.free(formatted);
-      formatted = calloc<Char>(newContextLength);
-      newContextLength = _stableDiffusionLibrary.llama_chat_apply_template(
-          template,
-          messagesPtr,
-          messagesCopy.length,
-          true,
-          formatted,
-          newContextLength);
-    }
-
-    // messagesPtr.free(messagesCopy.length);
-
-    if (newContextLength < 0) {
-      throw Exception('Failed to apply template');
-    }
-
-    final prompt =
-        formatted.cast<Utf8>().toDartString().substring(_contextLength);
-    // calloc.free(formatted);
-
-    final vocab = _stableDiffusionLibrary
-        .llama_model_get_vocab(StableDiffusionLibrary._modelContext);
-    final isFirst = _stableDiffusionLibrary.llama_get_kv_cache_used_cells(
-            StableDiffusionLibrary._llamaContext) ==
-        0;
-
-    final promptPtr = prompt.toNativeUtf8().cast<Char>();
-
-    final nPromptTokens = -_stableDiffusionLibrary.llama_tokenize(
-        vocab, promptPtr, prompt.length, nullptr, 0, isFirst, true);
-    Pointer<llama_token> promptTokens = calloc<llama_token>(nPromptTokens);
-
-    if (_stableDiffusionLibrary.llama_tokenize(vocab, promptPtr, prompt.length,
-            promptTokens, nPromptTokens, isFirst, true) <
-        0) {
-      throw Exception('Failed to tokenize');
-    }
-
-    // calloc.free(promptPtr);
-
-    llama_batch batch = _stableDiffusionLibrary.llama_batch_get_one(
-        promptTokens, nPromptTokens);
-    Pointer<llama_token> newTokenId = calloc<llama_token>(1);
-
-    String response = '';
-
-    while (!_completer.isCompleted) {
-      final nCtx = _stableDiffusionLibrary
-          .llama_n_ctx(StableDiffusionLibrary._llamaContext);
-      final nCtxUsed = _stableDiffusionLibrary
-          .llama_get_kv_cache_used_cells(StableDiffusionLibrary._llamaContext);
-
-      if (nCtxUsed + batch.n_tokens > nCtx) {
-        throw Exception('Context size exceeded');
-      }
-
-      if (_stableDiffusionLibrary.llama_decode(
-              StableDiffusionLibrary._llamaContext, batch) !=
-          0) {
-        throw Exception('Failed to decode');
-      }
-
-      newTokenId.value = _stableDiffusionLibrary.llama_sampler_sample(
-          StableDiffusionLibrary._llamaSampler,
-          StableDiffusionLibrary._llamaContext,
-          -1);
-
-      // is it an end of generation?
-      if (_stableDiffusionLibrary.llama_vocab_is_eog(vocab, newTokenId.value)) {
-        break;
-      }
-
-      final buffer = calloc<Char>(256);
-      final n = _stableDiffusionLibrary.llama_token_to_piece(
-          vocab, newTokenId.value, buffer, 256, 0, true);
-      if (n < 0) {
-        throw Exception('Failed to convert token to piece');
-      }
-
-      final piece = buffer.cast<Utf8>().toDartString();
-      // calloc.free(buffer);
-      response += piece;
-      yield piece;
-
-      batch = _stableDiffusionLibrary.llama_batch_get_one(newTokenId, 1);
-    }
-
-    messagesCopy.add(ChatMessage(role: 'assistant', content: response));
-
-    messagesPtr = messagesCopy.toNative();
-
-    _contextLength = _stableDiffusionLibrary.llama_chat_apply_template(
-        template, messagesPtr, messagesCopy.length, false, nullptr, 0);
-
-    // messagesPtr.free(messagesCopy.length);
-
-    // calloc.free(promptTokens);
-    // _stableDiffusionLibrary.llama_batch_free(batch);
-  }
-
-  @override
-  FutureOr<void> dispose() async {}
 }

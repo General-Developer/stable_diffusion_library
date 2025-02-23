@@ -7,128 +7,24 @@ import 'dart:ffi' as ffi;
 /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
 class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
   /// Holds the symbol lookup function.
-  final ffi.Pointer<T> Function<T extends ffi.NativeType>(String symbolName)
-      _lookup;
+  final ffi.Pointer<T> Function<T extends ffi.NativeType>(String symbolName) _lookup;
 
   /// The symbols are looked up in [dynamicLibrary].
-  StableDiffusionLibrarySharedBindingsByGeneralDeveloper(
-      ffi.DynamicLibrary dynamicLibrary)
-      : _lookup = dynamicLibrary.lookup;
+  StableDiffusionLibrarySharedBindingsByGeneralDeveloper(ffi.DynamicLibrary dynamicLibrary) : _lookup = dynamicLibrary.lookup;
 
   /// The symbols are looked up with [lookup].
-  StableDiffusionLibrarySharedBindingsByGeneralDeveloper.fromLookup(
-      ffi.Pointer<T> Function<T extends ffi.NativeType>(String symbolName)
-          lookup)
-      : _lookup = lookup;
+  StableDiffusionLibrarySharedBindingsByGeneralDeveloper.fromLookup(ffi.Pointer<T> Function<T extends ffi.NativeType>(String symbolName) lookup) : _lookup = lookup;
 
-  int stable_diffusion_inference(
-    StableDiffusionParameters parameters,
+  int stable_diffusion_start(
+    int argc,
+    ffi.Pointer<ffi.Pointer<ffi.Char>> argv,
   ) {
-    return _stable_diffusion_inference(
-      parameters,
+    return _stable_diffusion_start(
+      argc,
+      argv,
     );
   }
 
-  late final _stable_diffusion_inferencePtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(StableDiffusionParameters)>>(
-          'stable_diffusion_inference');
-  late final _stable_diffusion_inference = _stable_diffusion_inferencePtr
-      .asFunction<int Function(StableDiffusionParameters)>();
-}
-
-enum StableDiffusionModeType {
-  TEXT_TO_IMAGE(0),
-  IMAGE_TO_IMAGE(1),
-  IMAGE_TO_VIDEO(2),
-  CONVERT(3),
-  MODE_COUNT(4);
-
-  final int value;
-  const StableDiffusionModeType(this.value);
-
-  static StableDiffusionModeType fromValue(int value) => switch (value) {
-        0 => TEXT_TO_IMAGE,
-        1 => IMAGE_TO_IMAGE,
-        2 => IMAGE_TO_VIDEO,
-        3 => CONVERT,
-        4 => MODE_COUNT,
-        _ => throw ArgumentError(
-            "Unknown value for StableDiffusionModeType: $value"),
-      };
-}
-
-final class StableDiffusionParameters extends ffi.Struct {
-  @ffi.UnsignedInt()
-  external int stableDiffusionModeTypeAsInt;
-
-  StableDiffusionModeType get stableDiffusionModeType =>
-      StableDiffusionModeType.fromValue(stableDiffusionModeTypeAsInt);
-
-  @ffi.Int()
-  external int n_threads;
-
-  @ffi.Int()
-  external int width;
-
-  @ffi.Int()
-  external int height;
-
-  external ffi.Pointer<ffi.Char> text_prompt;
-
-  external ffi.Pointer<ffi.Char> text_negative_prompt;
-
-  external ffi.Pointer<ffi.Char> input_path;
-
-  external ffi.Pointer<ffi.Char> output_path;
-
-  external ffi.Pointer<ffi.Char> model_vocoder_path;
-
-  external ffi.Pointer<ffi.Char> model_path;
-
-  external ffi.Pointer<ffi.Char> clip_l_path;
-
-  external ffi.Pointer<ffi.Char> clip_g_path;
-
-  external ffi.Pointer<ffi.Char> t5xxl_path;
-
-  external ffi.Pointer<ffi.Char> diffusion_model_path;
-
-  external ffi.Pointer<ffi.Char> vae_path;
-
-  external ffi.Pointer<ffi.Char> taesd_path;
-
-  external ffi.Pointer<ffi.Char> esrgan_path;
-
-  external ffi.Pointer<ffi.Char> controlnet_path;
-
-  external ffi.Pointer<ffi.Char> embeddings_path;
-
-  external ffi.Pointer<ffi.Char> stacked_id_embeddings_path;
-
-  external ffi.Pointer<ffi.Char> input_id_images_path;
-
-  external ffi.Pointer<ffi.Char> lora_model_dir;
-
-  external ffi.Pointer<ffi.Char> control_image_path;
-
-  @ffi.Int()
-  external int use_canny_preprocess;
-
-  @ffi.Int()
-  external int use_verbose;
-
-  @ffi.Int()
-  external int use_vae_tiling;
-
-  @ffi.Int()
-  external int use_control_net_cpu;
-
-  @ffi.Int()
-  external int use_normalize_input;
-
-  @ffi.Int()
-  external int use_clip_on_cpu;
-
-  @ffi.Int()
-  external int use_vae_on_cpu;
+  late final _stable_diffusion_startPtr = _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int, ffi.Pointer<ffi.Pointer<ffi.Char>>)>>('stable_diffusion_start');
+  late final _stable_diffusion_start = _stable_diffusion_startPtr.asFunction<int Function(int, ffi.Pointer<ffi.Pointer<ffi.Char>>)>();
 }

@@ -34,18 +34,12 @@ Bukan maksud kami menipu itu karena harga yang sudah di kalkulasi + bantuan tiba
 <!-- END LICENSE --> */
 import 'dart:async';
 
-import 'package:general_lib/event_emitter/event_emitter.dart';
-
 import 'base.dart';
 
 /// Check Out: https://www.youtube.com/@GENERAL_DEV
 class StableDiffusionLibrary extends StableDiffusionLibraryBase {
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   StableDiffusionLibrary({super.sharedLibraryPath});
-
-  /// Check Out: https://www.youtube.com/@GENERAL_DEV
-  @override
-  void close() {}
 
   /// Check Out: https://www.youtube.com/@GENERAL_DEV
   final bool _isCrash = false;
@@ -75,9 +69,6 @@ class StableDiffusionLibrary extends StableDiffusionLibraryBase {
   }
 
   @override
-  void emit({required String eventType, required data}) {}
-
-  @override
   Future<void> ensureInitialized() {
     throw UnimplementedError();
   }
@@ -88,17 +79,8 @@ class StableDiffusionLibrary extends StableDiffusionLibraryBase {
   }
 
   @override
-  bool loadModel({required String modelPath}) {
+  FutureOr<String> textToImage({required String modelPath, required String prompt, required String negativePrompt}) {
+    // textToImage
     throw UnimplementedError();
   }
-
-  @override
-  EventEmitterListener on(
-      {required String eventType,
-      required FutureOr Function(dynamic data) onUpdate}) {
-    throw UnimplementedError();
-  }
-
-  @override
-  void stop() {}
 }

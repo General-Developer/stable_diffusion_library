@@ -59,6 +59,8 @@ elseif(UNIX)
   set(LIBRARY_OUTPUT_PATH ${CMAKE_CURRENT_SOURCE_DIR}/../package/stable_diffusion_library_flutter/linux)
 endif()
 
+# set(CMAKE_BINARY_DIR "bin")
+
  
 
 set(SD_BUILD_SHARED_LIBS ON)
@@ -84,6 +86,7 @@ add_executable(stable_diffusion_executable "${STABLE_DIFFUSION_LIBRARY_DIRECTORY
 set_target_properties(
   stable_diffusion_executable PROPERTIES
   OUTPUT_NAME "stable_diffusion_library"
+  RUNTIME_OUTPUT_DIRECTORY "bin"
   BUILD_WITH_INSTALL_RPATH TRUE
   INSTALL_RPATH "$ORIGIN"
 )
@@ -92,8 +95,10 @@ install(TARGETS stable_diffusion_executable RUNTIME)
 target_link_libraries(stable_diffusion_executable PRIVATE stable-diffusion ${CMAKE_THREAD_LIBS_INIT})
 target_compile_features(stable_diffusion_executable PRIVATE cxx_std_17)
 
-# set(CMAKE_C_FLAGS_RELEASE "${CMAKE_C_FLAGS_RELEASE} -s")
-# set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -s")
+set(CMAKE_C_FLAGS_RELEASE "${CMAKE_C_FLAGS_RELEASE} -s")
+set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -s")
+
+# message("info: ${CMAKE_C_FLAGS_RELEASE} - ${CMAKE_CXX_FLAGS_RELEASE}")
 
 add_library(stable_diffusion_shared_library SHARED
   "${STABLE_DIFFUSION_LIBRARY_DIRECTORY}/lib/stable_diffusion_library.cpp"

@@ -50,7 +50,7 @@ dart pub add stable_diffusion_library
 2. **Flutter**
 
 ```bash
-flutter pub add stable_diffusion_library_flutter ggml_library_flutter
+flutter pub add stable_diffusion_library_flutter
 ```
 
 ## 🚀️ Quick Start
@@ -58,44 +58,31 @@ flutter pub add stable_diffusion_library_flutter ggml_library_flutter
 Example Quickstart script minimal for insight you or make you use this library because very simple
 
 ```dart
-
 import 'dart:io';
-import 'package:stable_diffusion_library/stable_diffusion_library.dart';
-import 'package:stable_diffusion_library/raw/lcpp.dart';
+import 'package:stable_diffusion_library/stable_diffusion_library.dart'; 
 
 void main(List<String> args) async {
   print("start");
 
-  File modelFile = File("../../../../../big-data/llama/Meta-Llama-3.1-8B-Instruct.Q8_0.gguf");
+  File modelFile = File(
+    "../../../../../big-data/stable-diffusion/model.ckpt",
+  );
 
   final StableDiffusionLibrary stableDiffusionLibrary = StableDiffusionLibrary(
-    sharedLibraryPath: "../stable_diffusion_library_flutter/linux/libllama.so",
+    sharedLibraryPath: "../stable_diffusion_library_flutter/linux/libstable_diffusion_library.so",
   );
   await stableDiffusionLibrary.ensureInitialized();
-  stableDiffusionLibrary.loadModel(modelPath: modelFile.path);
-
-  /// call this if you want use llama if in main page / or not in page llama
-  /// dont call if on low end specs device
-  /// if device can't handle
-  /// this program will auto exit because llama need reseources depends model
-  /// and fast with modern cpu
   await stableDiffusionLibrary.initialized();
 
-  await for (final result in stableDiffusionLibrary.prompt(messages: [
-    ChatMessage(
-      role: "user",
-      content: "What is Linux?",
-    )
-  ])) {
-    print(result);
-  }
+  await stableDiffusionLibrary.textToImage(
+    modelPath: modelFile.path,
+    prompt: "Cat",
+    negativePrompt: "",
+  );
 
   await stableDiffusionLibrary.dispose();
-  stableDiffusionLibrary.stop();
-  stableDiffusionLibrary.close();
   exit(0);
 }
-
 ```
 
 ## Reference
