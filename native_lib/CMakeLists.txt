@@ -40,6 +40,10 @@ project(
 )
 
 
+set(CMAKE_C_FLAGS_RELEASE "${CMAKE_C_FLAGS_RELEASE} -s")
+set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -s")
+
+
 
 set(STABLE_DIFFUSION_LIBRARY_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/lib/stable-diffusion.cpp")
 
@@ -64,6 +68,7 @@ endif()
  
 
 set(SD_BUILD_SHARED_LIBS ON)
+
 # set(SD_VULKAN ON)
 add_subdirectory(${STABLE_DIFFUSION_LIBRARY_DIRECTORY} "stable-diffusion.cpp")
 
@@ -94,9 +99,6 @@ set_target_properties(
 install(TARGETS stable_diffusion_executable RUNTIME)
 target_link_libraries(stable_diffusion_executable PRIVATE stable-diffusion ${CMAKE_THREAD_LIBS_INIT})
 target_compile_features(stable_diffusion_executable PRIVATE cxx_std_17)
-
-set(CMAKE_C_FLAGS_RELEASE "${CMAKE_C_FLAGS_RELEASE} -s")
-set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -s")
 
 # message("info: ${CMAKE_C_FLAGS_RELEASE} - ${CMAKE_CXX_FLAGS_RELEASE}")
 

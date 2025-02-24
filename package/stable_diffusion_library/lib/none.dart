@@ -91,7 +91,7 @@ class StableDiffusionLibrary extends StableDiffusionLibraryBase {
   }
   
   @override
-  FutureOr<String> invokeRaw({required List<String> args}) {
+  FutureOr<bool> invokeRaw({required List<String> arguments}) {
     // TODO: implement invokeRaw
     throw UnimplementedError();
   }

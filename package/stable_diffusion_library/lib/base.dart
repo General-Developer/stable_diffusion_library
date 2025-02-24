@@ -40,8 +40,8 @@ import 'package:general_lib/dynamic_library/core.dart';
 /// Check Out: https://www.youtube.com/@GENERAL_DEV
 abstract class StableDiffusionLibraryBaseCore extends GeneralLibraryDynamicLibraryBase {
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
-  FutureOr<String> invokeRaw({
-    required final List<String> args,
+  FutureOr<bool> invokeRaw({
+    required final List<String> arguments,
 
   });
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer

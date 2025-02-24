@@ -34,7 +34,11 @@ Bukan maksud kami menipu itu karena harga yang sudah di kalkulasi + bantuan tiba
 <!-- END LICENSE --> */
 import 'dart:async';
 import 'dart:ffi';
+import 'dart:io';
 import 'dart:isolate';
+
+import 'package:ffi/ffi.dart';
+import 'package:ffi_universe/extension/extensions.dart';
 
 import 'base.dart';
 import 'ffi/bindings.dart';
@@ -96,30 +100,41 @@ class StableDiffusionLibrary extends StableDiffusionLibraryBase {
   FutureOr<void> dispose() {}
 
   @override
+  FutureOr<bool> invokeRaw({
+    required List<String> arguments,
+  }) async{
+    if (_isInIsolate == false) {
+      return await  Isolate.run(() async {
+        final StableDiffusionLibrary stableDiffusionLibrary = StableDiffusionLibrary();
+        stableDiffusionLibrary._isInIsolate = true;
+        await stableDiffusionLibrary.ensureInitialized();
+        await stableDiffusionLibrary.initialized();
+        final result = await stableDiffusionLibrary.invokeRaw(
+          arguments: arguments,
+        );
+        await stableDiffusionLibrary.dispose();
+        return result;
+      });
+    }
+    final stableDiffusionLibrary = StableDiffusionLibrary._stableDiffusionLibrary;
+    
+    final Pointer<Pointer<Char>> argv = arguments.toNativeVectorChar();
+    return  stableDiffusionLibrary.stable_diffusion_start(arguments.length, argv) == 0;
+  }
+
+  @override
   FutureOr<String> textToImage({
     required String modelPath,
     required String prompt,
     required String negativePrompt,
-  }) async {
-    if (_isInIsolate == false) {
-      return Isolate.run(() {
-        return "";
-      });
-    }
-    final stableDiffusionLibrary = StableDiffusionLibrary._stableDiffusionLibrary;
-    stableDiffusionLibrary;
-    throw UnimplementedError();
-  }
-  
-  @override
-  FutureOr<String> imageToImage({required String modelPath, required String prompt, required String negativePrompt}) {
+  }) async { 
     // TODO: implement imageToImage
     throw UnimplementedError();
   }
-  
+
   @override
-  FutureOr<String> invokeRaw({required List<String> args}) {
-    // TODO: implement invokeRaw
+  FutureOr<String> imageToImage({required String modelPath, required String prompt, required String negativePrompt}) {
+    // TODO: implement imageToImage
     throw UnimplementedError();
   }
 }
