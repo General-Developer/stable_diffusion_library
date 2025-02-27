@@ -1,6 +1,6 @@
 # Stable Diffusion Library
  
-**Stable Diffusion Library** Is library for inference any model ai LLAMA / LLM On Edge without api or internet quota, but need resources depends model you want run
+**Stable Diffusion Library** Stable Diffusion Is Library for generated text to Image
 
 [![](https://raw.githubusercontent.com/General-Developer/stable_diffusion_library/refs/heads/main/assets/demo_background.png)](https://youtu.be/drlqUwJEOg4)
 
@@ -44,13 +44,13 @@
 1. **Dart**
 
 ```bash
-dart pub add stable_diffusion_library_dart
+dart pub add stable_diffusion_library
 ```
 
 2. **Flutter**
 
 ```bash
-flutter pub add stable_diffusion_library_flutter ggml_library_flutter
+flutter pub add stable_diffusion_library_flutter
 ```
 
 ## 🚀️ Quick Start
@@ -58,62 +58,45 @@ flutter pub add stable_diffusion_library_flutter ggml_library_flutter
 Example Quickstart script minimal for insight you or make you use this library because very simple
 
 ```dart
-
 import 'dart:io';
-import 'package:stable_diffusion_library/stable_diffusion_library.dart';
-import 'package:stable_diffusion_library/raw/lcpp.dart';
+import 'package:stable_diffusion_library/stable_diffusion_library.dart'; 
 
 void main(List<String> args) async {
   print("start");
 
-  File modelFile = File("../../../../../big-data/llama/Meta-Llama-3.1-8B-Instruct.Q8_0.gguf");
+  File modelFile = File(
+    "../../../../../big-data/stable-diffusion/model.ckpt",
+  );
 
   final StableDiffusionLibrary stableDiffusionLibrary = StableDiffusionLibrary(
-    sharedLibraryPath: "../stable_diffusion_library_flutter/linux/libllama.so",
+    sharedLibraryPath: "../stable_diffusion_library_flutter/linux/libstable_diffusion_library.so",
   );
   await stableDiffusionLibrary.ensureInitialized();
-  stableDiffusionLibrary.loadModel(modelPath: modelFile.path);
-
-  /// call this if you want use llama if in main page / or not in page llama
-  /// dont call if on low end specs device
-  /// if device can't handle
-  /// this program will auto exit because llama need reseources depends model
-  /// and fast with modern cpu
   await stableDiffusionLibrary.initialized();
 
-  await for (final result in stableDiffusionLibrary.prompt(messages: [
-    ChatMessage(
-      role: "user",
-      content: "What is Linux?",
-    )
-  ])) {
-    print(result);
-  }
+  await stableDiffusionLibrary.textToImage(
+    modelPath: modelFile.path,
+    prompt: "Cat",
+    negativePrompt: "",
+  );
 
   await stableDiffusionLibrary.dispose();
-  stableDiffusionLibrary.stop();
-  stableDiffusionLibrary.close();
   exit(0);
 }
-
 ```
 
 ## Reference
  
-1. [Ggerganov-stable-diffusion.cpp](https://github.com/leejet/stable-diffusion.cpp)
+1. [stable-diffusion.cpp](https://github.com/leejet/stable-diffusion.cpp)
   ffi bridge main script so that this program can run
 
 
 **Copyright (c) 2024 GLOBAL CORPORATION - GENERAL DEVELOPER**
 
-
-## Example Project Use This Library
-
-
-1. [AZKA GRAM](https://github.com/azkadev/azkagram) / [Global GRAM](https://github.com/globalcorporation/global_gram_app)
-    
- **Telegram Application** with **redesign** with new some features userbot and other **features which is not officially provided on Telegram** First this project open source but we closed it to **close source** because our program is easy to read and allows other people to edit the source code and then use it for criminal acts
  
-|                                                 CHAT PAGE                                                  |                                                SIGN UP PAGE                                                |                                                                                                  HOME PAGE |                                          GUIDE PAGE                                           |
-|:----------------------------------------------------------------------------------------------------------:|:----------------------------------------------------------------------------------------------------------:|-----------------------------------------------------------------------------------------------------------:|:---------------------------------------------------------------------------------------------:|
-| ![](https://user-images.githubusercontent.com/82513502/205481759-b6815e2f-bd5d-4d72-9570-becd3829dd36.png) | ![](https://user-images.githubusercontent.com/82513502/173319331-9e96fbe7-3e66-44b2-8577-f6685d86a368.png) | ![](https://user-images.githubusercontent.com/82513502/173319541-19a60407-f410-4e95-8ac0-d0da2eaf2457.png) | ![](https://raw.githubusercontent.com/GLXCORP/glx_bot_app/main/screenshots/home_telegram.png) |
+- [Stable Diffusion](https://github.com/General-Developer/stable_diffusion_library/tree/main/examples/stable_diffusion_app)
+    
+Minimal simple application example of Stable Diffusion [Youtube Video](https://youtu.be/U-5EDMk0UgE) 
+| Mobile                                                                                                                                  | Desktop |
+|-----------------------------------------------------------------------------------------------------------------------------------------|---------|
+| [![](https://raw.githubusercontent.com/General-Developer/stable_diffusion_library/refs/heads/main/assets/examples/stable_diffusion_app/mobile.png)](https://youtu.be/U-5EDMk0UgE) | [![](https://raw.githubusercontent.com/General-Developer/stable_diffusion_library/refs/heads/main/assets/examples/stable_diffusion_app/desktop.png)](https://youtu.be/U-5EDMk0UgE)        |
