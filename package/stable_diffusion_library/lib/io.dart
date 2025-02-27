@@ -49,7 +49,8 @@ class StableDiffusionLibrary extends StableDiffusionLibraryBase {
   StableDiffusionLibrary({super.sharedLibraryPath});
 
   ///
-  static late final StableDiffusionLibrarySharedBindingsByGeneralDeveloper _stableDiffusionLibrary;
+  static late final StableDiffusionLibrarySharedBindingsByGeneralDeveloper
+      _stableDiffusionLibrary;
 
   static bool _isEnsureInitialized = false;
 
@@ -60,7 +61,8 @@ class StableDiffusionLibrary extends StableDiffusionLibraryBase {
     }
 
     try {
-      _stableDiffusionLibrary = StableDiffusionLibrarySharedBindingsByGeneralDeveloper(
+      _stableDiffusionLibrary =
+          StableDiffusionLibrarySharedBindingsByGeneralDeveloper(
         DynamicLibrary.open(
           sharedLibraryPath,
         ),
@@ -102,7 +104,8 @@ class StableDiffusionLibrary extends StableDiffusionLibraryBase {
   }) async {
     if (_isInIsolate == false) {
       return await Isolate.run(() async {
-        final StableDiffusionLibrary stableDiffusionLibrary = StableDiffusionLibrary();
+        final StableDiffusionLibrary stableDiffusionLibrary =
+            StableDiffusionLibrary();
         stableDiffusionLibrary._isInIsolate = true;
         await stableDiffusionLibrary.ensureInitialized();
         await stableDiffusionLibrary.initialized();
@@ -113,10 +116,13 @@ class StableDiffusionLibrary extends StableDiffusionLibraryBase {
         return result;
       });
     }
-    final stableDiffusionLibrary = StableDiffusionLibrary._stableDiffusionLibrary;
+    final stableDiffusionLibrary =
+        StableDiffusionLibrary._stableDiffusionLibrary;
 
     final Pointer<Pointer<Char>> argv = arguments.toNativeVectorChar();
-    return stableDiffusionLibrary.stable_diffusion_start(arguments.length, argv) == 0;
+    return stableDiffusionLibrary.stable_diffusion_start(
+            arguments.length, argv) ==
+        0;
   }
 
   @override

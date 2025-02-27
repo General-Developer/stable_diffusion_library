@@ -38,19 +38,21 @@ import 'dart:async';
 import 'package:general_lib/dynamic_library/core.dart';
 
 /// Check Out: https://www.youtube.com/@GENERAL_DEV
-abstract class StableDiffusionLibraryBaseCore extends GeneralLibraryDynamicLibraryBase {
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+abstract class StableDiffusionLibraryBaseCore
+    extends GeneralLibraryDynamicLibraryBase {
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   FutureOr<bool> invokeRaw({
     required final List<String> arguments,
-
   });
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   FutureOr<String> imageToImage({
     required final String modelPath,
     required final String prompt,
     required final String negativePrompt,
   });
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   FutureOr<String> textToImage({
     required final String modelPath,
     required final String prompt,
@@ -59,7 +61,8 @@ abstract class StableDiffusionLibraryBaseCore extends GeneralLibraryDynamicLibra
 }
 
 /// Check Out: https://www.youtube.com/@GENERAL_DEV
-abstract class StableDiffusionLibraryBase implements StableDiffusionLibraryBaseCore {
+abstract class StableDiffusionLibraryBase
+    implements StableDiffusionLibraryBaseCore {
   ///
   final String sharedLibraryPath;
 
