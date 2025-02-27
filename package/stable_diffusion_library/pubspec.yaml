@@ -1,6 +1,6 @@
 name: 'stable_diffusion_library'
-description: 'Stable Diffusion Is Library for generated text to Image'
-version: '0.0.1'
+description: 'Stable Diffusion Is Library for generated Text To Image on Edge Device Without api key or internet quota'
+version: '0.0.2'
 environment:
   sdk: '>=3.6.0 <4.0.0'
 dependencies:

@@ -54,7 +54,8 @@ Future<void> pubspecUpdate({
     Map yaml_code_clone = yaml_code.clone();
 
     yaml_code_clone.addAll({
-      "description": " Stable Diffusion Is Library for generated text to Image",
+      "description":
+          "Stable Diffusion Is Library for generated Text To Image on Edge Device Without api key or internet quota",
       "version": version_package,
       "repository":
           "https://github.com/General-Developer/stable_diffusion_library",

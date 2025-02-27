@@ -1171,14 +1171,14 @@ packages:
       path: "../../package/stable_diffusion_library"
       relative: true
     source: path
-    version: "0.0.1"
+    version: "0.0.2"
   stable_diffusion_library_flutter:
     dependency: "direct main"
     description:
       path: "../../package/stable_diffusion_library_flutter"
       relative: true
     source: path
-    version: "0.0.1"
+    version: "0.0.2"
   stack_trace:
     dependency: transitive
     description:

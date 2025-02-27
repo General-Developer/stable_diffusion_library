@@ -25,8 +25,8 @@ dependencies:
   markdown_flutter: '^0.0.12'
   path: '^1.9.0'
   general_system_device: '^0.0.51'
-  stable_diffusion_library: '^0.0.1'
-  stable_diffusion_library_flutter: '^0.0.1'
+  stable_diffusion_library: '^0.0.2'
+  stable_diffusion_library_flutter: '^0.0.2'
   file_picker: '^8.3.5'
 dev_dependencies:
   flutter_test:

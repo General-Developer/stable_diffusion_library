@@ -399,7 +399,7 @@ packages:
       path: "../stable_diffusion_library"
       relative: true
     source: path
-    version: "0.0.1"
+    version: "0.0.2"
   stack_trace:
     dependency: transitive
     description:
