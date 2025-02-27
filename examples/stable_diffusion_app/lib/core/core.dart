@@ -49,7 +49,7 @@ import 'package:general_lib/database/database_core.dart';
 import 'package:general_lib_flutter/general_lib_flutter.dart';
 import 'package:general_system_device/general_system_device_flutter.dart';
 import "package:path/path.dart" as path;
-import 'package:stable_diffusion_library/none.dart';
+import 'package:stable_diffusion_library/stable_diffusion_library.dart';
 
 class StableDiffusionAppClientFlutter {
   static GeneralLibFlutterApp generalLibFlutterApp = GeneralLibFlutterApp();
@@ -60,9 +60,7 @@ class StableDiffusionAppClientFlutter {
   static final DatabaseGeneralLib databaseGeneralLib = DatabaseGeneralLib();
   static late final DatabaseMiniGeneralLibrary coreDatabaseMiniLibrary;
   static Future<void> ensureInitialized() async {
-    WidgetsFlutterBinding.ensureInitialized();
-    generalFlutter.media_player.ensureInitialized();
-    await generalFlutter.system_audio.ensureInitialized();
+    WidgetsFlutterBinding.ensureInitialized(); 
     await whisperLibrary.ensureInitialized();
     await whisperLibrary.initialized();
   }

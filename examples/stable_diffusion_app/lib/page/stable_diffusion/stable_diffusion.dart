@@ -128,7 +128,7 @@ class _SpeechToTextPageState extends State<StableDiffusionPage> with GeneralLibF
       appBar: AppBar(
         key: appBarGlobalKey,
         title: Text(
-          "Whisper Library - General Developer",
+          "Stable Diffusion Library - General Developer",
           style: context.theme.textTheme.titleLarge,
         ),
       ),
@@ -185,12 +185,12 @@ class _SpeechToTextPageState extends State<StableDiffusionPage> with GeneralLibF
                             handleFunction(
                               onFunction: (context, statefulWidget) async {
                                 final file = await StableDiffusionAppClientFlutter.pickFile(
-                                  dialogTitle: "Whisper Model",
+                                  dialogTitle: "Stable Diffusion Model",
                                 );
                                 if (file == null) {
                                   context.showAlertGeneralFramework(
                                     alertGeneralFrameworkOptions: AlertGeneralFrameworkOptions(
-                                      title: "Failed Load Model Whisper",
+                                      title: "Failed Load Model Stable Diffusion",
                                       builder: (context, alertGeneralFrameworkOptions) {
                                         return "Coba lagi";
                                       },
