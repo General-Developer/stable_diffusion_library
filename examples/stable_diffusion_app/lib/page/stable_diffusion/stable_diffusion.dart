@@ -140,7 +140,10 @@ class _SpeechToTextPageState extends State<StableDiffusionPage> with GeneralLibF
         onRefresh: refresh,
         child: SingleChildScrollView(
           child: ConstrainedBox(
-            constraints: BoxConstraints(minHeight: context.height, minWidth: context.width),
+            constraints: BoxConstraints(
+              minHeight: context.height,
+              minWidth: context.width,
+            ),
             child: Column(
               children: [
                 MenuContainerResponsiveGeneralFrameworkWidget(
