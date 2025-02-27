@@ -35,6 +35,7 @@ dev_dependencies:
   msix: '^3.16.8'
 flutter:
   uses-material-design: true
+  
 project:
   type: ''
 dependency_overrides:
@@ -44,6 +45,10 @@ dependency_overrides:
     path: '../../package/stable_diffusion_library'
   stable_diffusion_library_flutter:
     path: '../../package/stable_diffusion_library_flutter'
+  archive:
+    path: '/home/galaxeus/.pub-cache/hosted/pub.dev/archive-4.0.2'
+  http:
+    path: '/home/galaxeus/.pub-cache/hosted/pub.dev/http-1.2.2'
 packagex:
   name: 'stable_diffusion_app'
   is_without_platform_name: true

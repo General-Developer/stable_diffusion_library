@@ -262,7 +262,7 @@ class _SpeechToTextPageState extends State<StableDiffusionPage> with GeneralLibF
                     image: ImageGeneralUiGeneralFramework.decorationImageOrNull(
                       pathImage: fileStableDiffusionGenerated,
                       imageGeneralUiOptions: ImageGeneralUiGeneralFrameworkOptions(
-                        fit: BoxFit.cover,
+                        fit: BoxFit.contain,
                       ),
                     ),
                   ),
