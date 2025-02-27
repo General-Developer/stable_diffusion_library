@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+ln --force -s /opt/stable-diffusion-app/stable_diffusion_app /usr/bin/stable-diffusion-app-app
+chmod +x /usr/bin/stable-diffusion-app-app
+
+exit 0

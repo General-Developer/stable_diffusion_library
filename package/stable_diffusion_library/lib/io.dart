@@ -49,7 +49,8 @@ class StableDiffusionLibrary extends StableDiffusionLibraryBase {
   StableDiffusionLibrary({super.sharedLibraryPath});
 
   ///
-  static late final StableDiffusionLibrarySharedBindingsByGeneralDeveloper _stableDiffusionLibrary;
+  static late final StableDiffusionLibrarySharedBindingsByGeneralDeveloper
+      _stableDiffusionLibrary;
 
   static bool _isEnsureInitialized = false;
 
@@ -60,7 +61,8 @@ class StableDiffusionLibrary extends StableDiffusionLibraryBase {
     }
 
     try {
-      _stableDiffusionLibrary = StableDiffusionLibrarySharedBindingsByGeneralDeveloper(
+      _stableDiffusionLibrary =
+          StableDiffusionLibrarySharedBindingsByGeneralDeveloper(
         DynamicLibrary.open(
           sharedLibraryPath,
         ),
@@ -99,10 +101,11 @@ class StableDiffusionLibrary extends StableDiffusionLibraryBase {
   @override
   FutureOr<bool> invokeRaw({
     required List<String> arguments,
-  }) async{
+  }) async {
     if (_isInIsolate == false) {
-      return await  Isolate.run(() async {
-        final StableDiffusionLibrary stableDiffusionLibrary = StableDiffusionLibrary();
+      return await Isolate.run(() async {
+        final StableDiffusionLibrary stableDiffusionLibrary =
+            StableDiffusionLibrary();
         stableDiffusionLibrary._isInIsolate = true;
         await stableDiffusionLibrary.ensureInitialized();
         await stableDiffusionLibrary.initialized();
@@ -113,10 +116,13 @@ class StableDiffusionLibrary extends StableDiffusionLibraryBase {
         return result;
       });
     }
-    final stableDiffusionLibrary = StableDiffusionLibrary._stableDiffusionLibrary;
-    
+    final stableDiffusionLibrary =
+        StableDiffusionLibrary._stableDiffusionLibrary;
+
     final Pointer<Pointer<Char>> argv = arguments.toNativeVectorChar();
-    return  stableDiffusionLibrary.stable_diffusion_start(arguments.length, argv) == 0;
+    return stableDiffusionLibrary.stable_diffusion_start(
+            arguments.length, argv) ==
+        0;
   }
 
   @override
@@ -124,14 +130,39 @@ class StableDiffusionLibrary extends StableDiffusionLibraryBase {
     required String modelPath,
     required String prompt,
     required String negativePrompt,
-  }) async { 
-    // TODO: implement imageToImage
-    throw UnimplementedError();
+  }) async {
+    final result = await invokeRaw(
+      arguments: [
+        "--model",
+        modelPath,
+        "--prompt",
+        prompt,
+      ],
+    );
+    if (result != true) {
+      return "";
+    }
+    return modelPath;
   }
 
   @override
-  FutureOr<String> imageToImage({required String modelPath, required String prompt, required String negativePrompt}) {
-    // TODO: implement imageToImage
-    throw UnimplementedError();
+  FutureOr<String> imageToImage({
+    required String modelPath,
+    required String prompt,
+    required String negativePrompt,
+  }) async {
+    final result = await invokeRaw(
+      arguments: [
+        "--model",
+        modelPath,
+        "--prompt",
+        prompt,
+        "",
+      ],
+    );
+    if (result != true) {
+      return "";
+    }
+    return modelPath;
   }
 }

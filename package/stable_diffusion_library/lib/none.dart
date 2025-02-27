@@ -79,17 +79,23 @@ class StableDiffusionLibrary extends StableDiffusionLibraryBase {
   }
 
   @override
-  FutureOr<String> textToImage({required String modelPath, required String prompt, required String negativePrompt}) {
+  FutureOr<String> textToImage(
+      {required String modelPath,
+      required String prompt,
+      required String negativePrompt}) {
     // textToImage
     throw UnimplementedError();
   }
-  
+
   @override
-  FutureOr<String> imageToImage({required String modelPath, required String prompt, required String negativePrompt}) {
+  FutureOr<String> imageToImage(
+      {required String modelPath,
+      required String prompt,
+      required String negativePrompt}) {
     // TODO: implement imageToImage
     throw UnimplementedError();
   }
-  
+
   @override
   FutureOr<bool> invokeRaw({required List<String> arguments}) {
     // TODO: implement invokeRaw
