@@ -2,7 +2,7 @@
  
 **Stable Diffusion Library** Stable Diffusion Is Library for generated text to Image
 
-<!-- [![](https://raw.githubusercontent.com/General-Developer/stable_diffusion_library/refs/heads/main/assets/demo_background.png)](https://youtu.be/drlqUwJEOg4) -->
+[![](https://raw.githubusercontent.com/General-Developer/stable_diffusion_library/refs/heads/main/assets/demo_background.png)](https://youtu.be/drlqUwJEOg4)
 
 [![](https://raw.githubusercontent.com/globalcorporation/.github/main/.github/logo/powered.png)](https://www.youtube.com/@Global_Corporation)
 
@@ -94,3 +94,9 @@ void main(List<String> args) async {
 **Copyright (c) 2024 GLOBAL CORPORATION - GENERAL DEVELOPER**
 
  
+- [Stable Diffusion](https://github.com/General-Developer/stable_diffusion_library/tree/main/examples/stable_diffusion_app)
+    
+Minimal simple application example of Stable Diffusion [Youtube Video](https://youtu.be/U-5EDMk0UgE) 
+| Mobile                                                                                                                                  | Desktop |
+|-----------------------------------------------------------------------------------------------------------------------------------------|---------|
+| [![](https://raw.githubusercontent.com/General-Developer/stable_diffusion_library/refs/heads/main/assets/examples/stable_diffusion_app/mobile.png)](https://youtu.be/U-5EDMk0UgE) | [![](https://raw.githubusercontent.com/General-Developer/stable_diffusion_library/refs/heads/main/assets/examples/stable_diffusion_app/desktop.png)](https://youtu.be/U-5EDMk0UgE)        |
