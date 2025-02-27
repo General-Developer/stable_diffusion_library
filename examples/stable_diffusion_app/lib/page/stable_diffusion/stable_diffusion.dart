@@ -163,7 +163,7 @@ class _SpeechToTextPageState extends State<StableDiffusionPage> with GeneralLibF
                         contentPadding: EdgeInsets.all(5),
                         title: "Support",
                         trailing: Icon(
-                          (StableDiffusionAppClientFlutter.whisperLibrary.isDeviceSupport() == true) ? Icons.verified : Icons.close,
+                          (StableDiffusionAppClientFlutter.stableDiffusionLibrary.isDeviceSupport() == true) ? Icons.verified : Icons.close,
                         ),
                       ),
                       MenuContainerGeneralFrameworkWidget.lisTile(
@@ -243,9 +243,7 @@ class _SpeechToTextPageState extends State<StableDiffusionPage> with GeneralLibF
                   },
                   onPressed: () {
                     handleFunction(
-                      onFunction: (context, statefulWidget) async{
-                        
-                      },
+                      onFunction: (context, statefulWidget) async {},
                     );
                   },
                   builder: (context) {

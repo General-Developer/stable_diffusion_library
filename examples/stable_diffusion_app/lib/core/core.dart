@@ -39,7 +39,7 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:stable_diffusion_app/scheme/scheme/application_stable_diffusion_library_database.dart';
- import 'package:file_picker/file_picker.dart';
+import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:general_framework/flutter/client/general_framework_client_flutter_app_directory.dart';
 import 'package:general_lib/crypto/crypto.dart';
@@ -55,14 +55,14 @@ class StableDiffusionAppClientFlutter {
   static GeneralLibFlutterApp generalLibFlutterApp = GeneralLibFlutterApp();
   static final GeneralSystemDeviceFlutter generalFlutter = GeneralSystemDeviceFlutter();
   static final GeneralFrameworkClientFlutterAppDirectory generalFrameworkClientFlutterAppDirectory = GeneralFrameworkClientFlutterAppDirectory();
-  static final StableDiffusionLibrary whisperLibrary = StableDiffusionLibrary();
+  static final StableDiffusionLibrary stableDiffusionLibrary = StableDiffusionLibrary();
 
   static final DatabaseGeneralLib databaseGeneralLib = DatabaseGeneralLib();
   static late final DatabaseMiniGeneralLibrary coreDatabaseMiniLibrary;
   static Future<void> ensureInitialized() async {
-    WidgetsFlutterBinding.ensureInitialized(); 
-    await whisperLibrary.ensureInitialized();
-    await whisperLibrary.initialized();
+    WidgetsFlutterBinding.ensureInitialized();
+    await stableDiffusionLibrary.ensureInitialized();
+    await stableDiffusionLibrary.initialized();
   }
 
   static final Crypto _crypto = Crypto(

@@ -2,21 +2,19 @@
 import "package:general_lib/general_lib.dart";
 // import "dart:convert";
 
-
-/// Generated 
+/// Generated
 class ApplicationStableDiffusionLibraryDatabase extends JsonScheme {
-
   /// Generated
   ApplicationStableDiffusionLibraryDatabase(super.rawData);
-  
+
   /// return default data
-  /// 
+  ///
   static Map get defaultData {
-    return {"@type":"applicationStableDiffusionLibraryDatabase","stable_diffusion_model_path":""};
+    return {"@type": "applicationStableDiffusionLibraryDatabase", "stable_diffusion_model_path": ""};
   }
 
-  /// check data 
-  /// if raw data 
+  /// check data
+  /// if raw data
   /// - rawData["@type"] == applicationStableDiffusionLibraryDatabase
   /// if same return true
   bool json_scheme_utils_checkDataIsSameBySpecialType() {
@@ -30,20 +28,16 @@ class ApplicationStableDiffusionLibraryDatabase extends JsonScheme {
     return onResult(rawData["@type"], defaultData["@type"]);
   }
 
-  
-
   /// create [ApplicationStableDiffusionLibraryDatabase]
-  /// Empty  
+  /// Empty
   static ApplicationStableDiffusionLibraryDatabase empty() {
     return ApplicationStableDiffusionLibraryDatabase({});
   }
 
-  
-
   /// Generated
   String? get special_type {
     try {
-      if (rawData["@type"] is String == false){
+      if (rawData["@type"] is String == false) {
         return null;
       }
       return rawData["@type"] as String;
@@ -57,11 +51,10 @@ class ApplicationStableDiffusionLibraryDatabase extends JsonScheme {
     rawData["@type"] = value;
   }
 
-
   /// Generated
   String? get stable_diffusion_model_path {
     try {
-      if (rawData["stable_diffusion_model_path"] is String == false){
+      if (rawData["stable_diffusion_model_path"] is String == false) {
         return null;
       }
       return rawData["stable_diffusion_model_path"] as String;
@@ -75,25 +68,19 @@ class ApplicationStableDiffusionLibraryDatabase extends JsonScheme {
     rawData["stable_diffusion_model_path"] = value;
   }
 
-
   /// Generated
   static ApplicationStableDiffusionLibraryDatabase create({
-              bool schemeUtilsIsSetDefaultData = false,
-
+    bool schemeUtilsIsSetDefaultData = false,
     String special_type = "applicationStableDiffusionLibraryDatabase",
     String? stable_diffusion_model_path,
-})  {
+  }) {
     // ApplicationStableDiffusionLibraryDatabase applicationStableDiffusionLibraryDatabase = ApplicationStableDiffusionLibraryDatabase({
-final Map applicationStableDiffusionLibraryDatabase_data_create_json = {
-  
+    final Map applicationStableDiffusionLibraryDatabase_data_create_json = {
       "@type": special_type,
       "stable_diffusion_model_path": stable_diffusion_model_path,
+    };
 
-
-};
-
-
-          applicationStableDiffusionLibraryDatabase_data_create_json.removeWhere((key, value) => value == null);
+    applicationStableDiffusionLibraryDatabase_data_create_json.removeWhere((key, value) => value == null);
 
     if (schemeUtilsIsSetDefaultData) {
       defaultData.forEach((key, value) {
@@ -102,8 +89,6 @@ final Map applicationStableDiffusionLibraryDatabase_data_create_json = {
         }
       });
     }
-return ApplicationStableDiffusionLibraryDatabase(applicationStableDiffusionLibraryDatabase_data_create_json);
-
-
-      }
+    return ApplicationStableDiffusionLibraryDatabase(applicationStableDiffusionLibraryDatabase_data_create_json);
+  }
 }
