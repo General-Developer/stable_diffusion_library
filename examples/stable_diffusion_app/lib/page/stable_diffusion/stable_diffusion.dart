@@ -37,6 +37,7 @@ Bukan maksud kami menipu itu karena harga yang sudah di kalkulasi + bantuan tiba
 
 import 'dart:io';
 
+import 'package:general_framework/flutter/image/image_core.dart';
 import 'package:stable_diffusion_app/core/core.dart';
 import 'package:stable_diffusion_app/scheme/scheme/application_stable_diffusion_library_database.dart';
 
@@ -57,6 +58,9 @@ class StableDiffusionPage extends StatefulWidget {
 }
 
 class _SpeechToTextPageState extends State<StableDiffusionPage> with GeneralLibFlutterStatefulWidget {
+  final TextEditingController textEditingController = TextEditingController(
+    text: "Cat With Blue eye",
+  );
   @override
   void initState() {
     //  initState
@@ -165,14 +169,6 @@ class _SpeechToTextPageState extends State<StableDiffusionPage> with GeneralLibF
                       MenuContainerGeneralFrameworkWidget.lisTile(
                         context: context,
                         contentPadding: EdgeInsets.all(5),
-                        title: "Record Audio",
-                        trailing: Icon(
-                          (StableDiffusionAppClientFlutter.generalFlutter.system_audio.isSupport() == true) ? Icons.verified : Icons.close,
-                        ),
-                      ),
-                      MenuContainerGeneralFrameworkWidget.lisTile(
-                        context: context,
-                        contentPadding: EdgeInsets.all(5),
                         title: "Model",
                         subtitle: [
                           "- Model Name: ${modelName}",
@@ -214,6 +210,64 @@ class _SpeechToTextPageState extends State<StableDiffusionPage> with GeneralLibF
                       ),
                     ];
                   },
+                ),
+                Padding(
+                  padding: EdgeInsets.all(5),
+                  child: TextFormFieldGeneralFrameworkWidget(
+                    controller: textEditingController,
+                    minLines: 1,
+                    maxLines: 10,
+                    inputDecorationBuilder: (context, inputDecoration) {
+                      return InputDecoration(
+                        labelText: "Prompt",
+                        border: inputDecoration.border,
+                        errorBorder: inputDecoration.errorBorder,
+                        enabledBorder: inputDecoration.enabledBorder,
+                        focusedBorder: inputDecoration.focusedBorder,
+                        disabledBorder: inputDecoration.disabledBorder,
+                        focusedErrorBorder: inputDecoration.focusedErrorBorder,
+                      );
+                    },
+                    onChanged: (value) {},
+                  ),
+                ),
+                ButtonContainerMaterialGeneralFrameworkWidget(
+                  width: context.width,
+                  margin: EdgeInsets.all(5),
+                  decorationBuilder: (context, decoration) {
+                    return decoration.copyWith(
+                      borderRadius: BorderRadius.circular(10),
+                      border: context.extensionGeneralLibFlutterBorderAll(),
+                      boxShadow: context.extensionGeneralLibFlutterBoxShadows(),
+                    );
+                  },
+                  onPressed: () {
+                    handleFunction(
+                      onFunction: (context, statefulWidget) async{
+                        
+                      },
+                    );
+                  },
+                  builder: (context) {
+                    return Text(
+                      "Generate",
+                      style: context.theme.textTheme.bodyMedium,
+                    );
+                  },
+                ),
+                Container(
+                  margin: EdgeInsets.all(5),
+                  width: context.width,
+                  height: 512,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    image: ImageGeneralUiGeneralFramework.decorationImageOrNull(
+                      pathImage: fileStableDiffusionGenerated,
+                      imageGeneralUiOptions: ImageGeneralUiGeneralFrameworkOptions(
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                  ),
                 ),
                 SizedBox(
                   height: context.mediaQueryData.padding.bottom,
