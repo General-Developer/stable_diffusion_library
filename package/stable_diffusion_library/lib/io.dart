@@ -99,9 +99,9 @@ class StableDiffusionLibrary extends StableDiffusionLibraryBase {
   @override
   FutureOr<bool> invokeRaw({
     required List<String> arguments,
-  }) async{
+  }) async {
     if (_isInIsolate == false) {
-      return await  Isolate.run(() async {
+      return await Isolate.run(() async {
         final StableDiffusionLibrary stableDiffusionLibrary = StableDiffusionLibrary();
         stableDiffusionLibrary._isInIsolate = true;
         await stableDiffusionLibrary.ensureInitialized();
@@ -114,9 +114,9 @@ class StableDiffusionLibrary extends StableDiffusionLibraryBase {
       });
     }
     final stableDiffusionLibrary = StableDiffusionLibrary._stableDiffusionLibrary;
-    
+
     final Pointer<Pointer<Char>> argv = arguments.toNativeVectorChar();
-    return  stableDiffusionLibrary.stable_diffusion_start(arguments.length, argv) == 0;
+    return stableDiffusionLibrary.stable_diffusion_start(arguments.length, argv) == 0;
   }
 
   @override
@@ -124,13 +124,17 @@ class StableDiffusionLibrary extends StableDiffusionLibraryBase {
     required String modelPath,
     required String prompt,
     required String negativePrompt,
-  }) async { 
+  }) async {
     // TODO: implement imageToImage
     throw UnimplementedError();
   }
 
   @override
-  FutureOr<String> imageToImage({required String modelPath, required String prompt, required String negativePrompt}) {
+  FutureOr<String> imageToImage({
+    required String modelPath,
+    required String prompt,
+    required String negativePrompt,
+  }) {
     // TODO: implement imageToImage
     throw UnimplementedError();
   }

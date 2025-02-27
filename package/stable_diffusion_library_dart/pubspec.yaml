@@ -2,7 +2,7 @@ name: 'stable_diffusion_library_dart'
 description: 'WIP Stable Diffusion Is Library for generated text to Image'
 version: '0.0.0'
 environment:
-  sdk: '>=3.7.0 <4.0.0'
+  sdk: '>=3.6.0 <4.0.0'
 dependencies:
   stable_diffusion_library: '^0.0.0'
 dev_dependencies:
