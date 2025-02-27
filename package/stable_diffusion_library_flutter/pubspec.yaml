@@ -1,6 +1,6 @@
 name: 'stable_diffusion_library_flutter'
 description: 'Stable Diffusion Is Library for generated text to Image'
-version: '0.0.0'
+version: '0.0.1'
 funding:
   - 'https://github.com/sponsors/azkadev'
   - 'https://github.com/sponsors/generalfoss'
