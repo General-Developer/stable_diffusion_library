@@ -125,8 +125,18 @@ class StableDiffusionLibrary extends StableDiffusionLibraryBase {
     required String prompt,
     required String negativePrompt,
   }) async {
-    // TODO: implement imageToImage
-    throw UnimplementedError();
+    final result = await invokeRaw(
+      arguments: [
+        "--model",
+        modelPath,
+        "--prompt",
+        prompt,
+      ],
+    );
+    if (result != true) {
+      return "";
+    }
+    return modelPath;
   }
 
   @override
@@ -134,8 +144,19 @@ class StableDiffusionLibrary extends StableDiffusionLibraryBase {
     required String modelPath,
     required String prompt,
     required String negativePrompt,
-  }) {
-    // TODO: implement imageToImage
-    throw UnimplementedError();
+  }) async {
+    final result = await invokeRaw(
+      arguments: [
+        "--model",
+        modelPath,
+        "--prompt",
+        prompt,
+        "",
+      ],
+    );
+    if (result != true) {
+      return "";
+    }
+    return modelPath;
   }
 }
