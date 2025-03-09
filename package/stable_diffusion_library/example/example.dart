@@ -60,5 +60,6 @@ void main(List<String> args) async {
   );
 
   await stableDiffusionLibrary.dispose();
+  print("done");
   exit(0);
 }

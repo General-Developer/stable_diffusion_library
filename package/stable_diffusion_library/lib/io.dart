@@ -117,7 +117,8 @@ class StableDiffusionLibrary extends StableDiffusionLibraryBase {
     final stableDiffusionLibrary = StableDiffusionLibrary._stableDiffusionLibrary;
 
     final Pointer<Pointer<Char>> argv = arguments.toNativeVectorChar();
-    return stableDiffusionLibrary.stable_diffusion_start(arguments.length, argv) == 0;
+    // return stableDiffusionLibrary.stable_diffusion_start(arguments.length, argv) == 0;
+    return false;
   }
 
   @override
@@ -129,12 +130,12 @@ class StableDiffusionLibrary extends StableDiffusionLibraryBase {
     final result = await invokeRaw(
       arguments: [
         Platform.executable,
-        "--mode",
-        "txt2img",
-        "--threads",
-        "1",
-        "--batch-count",
-        "1",
+        // "--mode",
+        // "txt2img",
+        // "--threads",
+        // "1",
+        // "--batch-count",
+        // "1",
         "--model",
         modelPath,
         "--height",

@@ -31,7 +31,7 @@ ffigen:
   output: 'lib/ffi/bindings.dart'
   headers:
     entry-points:
-      - '../../native_lib/lib/stable_diffusion_library/include/stable_diffusion_library.h'
+      - '../../native_lib/lib/stable-diffusion.cpp/stable-diffusion.h'
 platforms:
   android: null
   ios: null
