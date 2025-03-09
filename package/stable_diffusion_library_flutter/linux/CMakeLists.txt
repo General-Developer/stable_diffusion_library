@@ -12,8 +12,7 @@ project(${PROJECT_NAME} LANGUAGES CXX)
 # external build triggered from this build file.
 set(stable_diffusion_library_flutter_bundled_libraries
   # Defined in ../src/CMakeLists.txt.
-  # This can be changed to accommodate different builds. 
-  "${CMAKE_CURRENT_SOURCE_DIR}/libstable_diffusion_library.so" 
+  # This can be changed to accommodate different builds.  
   "${CMAKE_CURRENT_SOURCE_DIR}/libstable-diffusion.so" 
   PARENT_SCOPE
 )

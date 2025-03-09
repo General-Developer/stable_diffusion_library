@@ -34,7 +34,7 @@ Bukan maksud kami menipu itu karena harga yang sudah di kalkulasi + bantuan tiba
 <!-- END LICENSE --> */
 
 import 'dart:async';
- 
+
 import 'package:general_lib/dynamic_library/core.dart';
 import "dart:ffi" as ffi;
 // import "package:ffi/ffi.dart" as ffi;
@@ -97,6 +97,7 @@ abstract class StableDiffusionLibraryBase implements StableDiffusionLibraryBaseC
     sd_progress_cb_t cb,
     ffi.Pointer<ffi.Void> data,
   );
+
   ffi.Pointer<sd_image_t> txt2img(
     ffi.Pointer<sd_ctx_t> sd_ctx,
     ffi.Pointer<ffi.Char> prompt,
@@ -104,6 +105,7 @@ abstract class StableDiffusionLibraryBase implements StableDiffusionLibraryBaseC
     int clip_skip,
     double cfg_scale,
     double guidance,
+    double eta,
     int width,
     int height,
     sample_method_t sample_method,
@@ -121,6 +123,7 @@ abstract class StableDiffusionLibraryBase implements StableDiffusionLibraryBaseC
     double skip_layer_start,
     double skip_layer_end,
   );
+
   ffi.Pointer<sd_ctx_t> newSdCtx(
     ffi.Pointer<ffi.Char> model_path,
     ffi.Pointer<ffi.Char> clip_l_path,

@@ -199,10 +199,33 @@ class StableDiffusionLibrary extends StableDiffusionLibraryBase {
     return StableDiffusionLibrary._stableDiffusionLibrary.sd_set_progress_callback(cb, data);
   }
 
-  @override
-  Pointer<sd_image_t> txt2img(Pointer<sd_ctx_t> sd_ctx, Pointer<Char> prompt, Pointer<Char> negative_prompt, int clip_skip, double cfg_scale, double guidance, int width, int height, sample_method_t sample_method, int sample_steps, int seed, int batch_count, Pointer<sd_image_t> control_cond, double control_strength, double style_strength, bool normalize_input, Pointer<Char> input_id_images_path, Pointer<Int> skip_layers, int skip_layers_count, double slg_scale, double skip_layer_start, double skip_layer_end) {
-    return StableDiffusionLibrary._stableDiffusionLibrary.txt2img(sd_ctx, prompt, negative_prompt, clip_skip, cfg_scale, guidance, width, height, sample_method, sample_steps, seed, batch_count, control_cond, control_strength, style_strength, normalize_input, input_id_images_path, skip_layers, skip_layers_count, slg_scale, skip_layer_start, skip_layer_end);
-  }
+  // @override
+  // Pointer<sd_image_t> txt2img(Pointer<sd_ctx_t> sd_ctx, Pointer<Char> prompt, Pointer<Char> negative_prompt, int clip_skip, double cfg_scale, double guidance, int width, int height, sample_method_t sample_method, int sample_steps, int seed, int batch_count, Pointer<sd_image_t> control_cond, double control_strength, double style_strength, bool normalize_input, Pointer<Char> input_id_images_path, Pointer<Int> skip_layers, int skip_layers_count, double slg_scale, double skip_layer_start, double skip_layer_end) {
+  //   return StableDiffusionLibrary._stableDiffusionLibrary.txt2img(
+  //     sd_ctx,
+  //     prompt,
+  //     negative_prompt,
+  //     clip_skip,
+  //     cfg_scale,
+  //     guidance,
+  //     width,
+  //     height,
+  //     sample_method,
+  //     sample_steps,
+  //     seed,
+  //     batch_count,
+  //     control_cond,
+  //     control_strength,
+  //     style_strength,
+  //     normalize_input,
+  //     input_id_images_path,
+  //     skip_layers,
+  //     skip_layers_count,
+  //     slg_scale,
+  //     skip_layer_start,
+  //     skip_layer_end,
+  //   );
+  // }
 
   @override
   Pointer<sd_ctx_t> newSdCtx(Pointer<Char> model_path, Pointer<Char> clip_l_path, Pointer<Char> clip_g_path, Pointer<Char> t5xxl_path, Pointer<Char> diffusion_model_path, Pointer<Char> vae_path, Pointer<Char> taesd_path, Pointer<Char> control_net_path_c_str, Pointer<Char> lora_model_dir, Pointer<Char> embed_dir_c_str, Pointer<Char> stacked_id_embed_dir_c_str, bool vae_decode_only, bool vae_tiling, bool free_params_immediately, int n_threads, sd_type_t wtype, rng_type_t rng_type, schedule_t s, bool keep_clip_on_cpu, bool keep_control_net_cpu, bool keep_vae_on_cpu, bool diffusion_flash_attn) {
@@ -212,5 +235,10 @@ class StableDiffusionLibrary extends StableDiffusionLibraryBase {
   @override
   void freeSdCtx(Pointer<sd_ctx_t> sd_ctx) {
     return StableDiffusionLibrary._stableDiffusionLibrary.free_sd_ctx(sd_ctx);
+  }
+
+  @override
+  Pointer<sd_image_t> txt2img(Pointer<sd_ctx_t> sd_ctx, Pointer<Char> prompt, Pointer<Char> negative_prompt, int clip_skip, double cfg_scale, double guidance, double eta, int width, int height, sample_method_t sample_method, int sample_steps, int seed, int batch_count, Pointer<sd_image_t> control_cond, double control_strength, double style_strength, bool normalize_input, Pointer<Char> input_id_images_path, Pointer<Int> skip_layers, int skip_layers_count, double slg_scale, double skip_layer_start, double skip_layer_end) {
+    return StableDiffusionLibrary._stableDiffusionLibrary.txt2img(sd_ctx, prompt, negative_prompt, clip_skip, cfg_scale, guidance, eta, width, height, sample_method, sample_steps, seed, batch_count, control_cond, control_strength, style_strength, normalize_input, input_id_images_path, skip_layers, skip_layers_count, slg_scale, skip_layer_start, skip_layer_end);
   }
 }
