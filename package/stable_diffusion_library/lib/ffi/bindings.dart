@@ -7,19 +7,13 @@ import 'dart:ffi' as ffi;
 /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
 class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
   /// Holds the symbol lookup function.
-  final ffi.Pointer<T> Function<T extends ffi.NativeType>(String symbolName)
-      _lookup;
+  final ffi.Pointer<T> Function<T extends ffi.NativeType>(String symbolName) _lookup;
 
   /// The symbols are looked up in [dynamicLibrary].
-  StableDiffusionLibrarySharedBindingsByGeneralDeveloper(
-      ffi.DynamicLibrary dynamicLibrary)
-      : _lookup = dynamicLibrary.lookup;
+  StableDiffusionLibrarySharedBindingsByGeneralDeveloper(ffi.DynamicLibrary dynamicLibrary) : _lookup = dynamicLibrary.lookup;
 
   /// The symbols are looked up with [lookup].
-  StableDiffusionLibrarySharedBindingsByGeneralDeveloper.fromLookup(
-      ffi.Pointer<T> Function<T extends ffi.NativeType>(String symbolName)
-          lookup)
-      : _lookup = lookup;
+  StableDiffusionLibrarySharedBindingsByGeneralDeveloper.fromLookup(ffi.Pointer<T> Function<T extends ffi.NativeType>(String symbolName) lookup) : _lookup = lookup;
 
   ffi.Pointer<ffi.Void> memcpy(
     ffi.Pointer<ffi.Void> __dest,
@@ -33,13 +27,8 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _memcpyPtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>,
-              ffi.Pointer<ffi.Void>, ffi.Size)>>('memcpy');
-  late final _memcpy = _memcpyPtr.asFunction<
-      ffi.Pointer<ffi.Void> Function(
-          ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>, int)>();
+  late final _memcpyPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>, ffi.Size)>>('memcpy');
+  late final _memcpy = _memcpyPtr.asFunction<ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>, int)>();
 
   ffi.Pointer<ffi.Void> memmove(
     ffi.Pointer<ffi.Void> __dest,
@@ -53,13 +42,8 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _memmovePtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>,
-              ffi.Pointer<ffi.Void>, ffi.Size)>>('memmove');
-  late final _memmove = _memmovePtr.asFunction<
-      ffi.Pointer<ffi.Void> Function(
-          ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>, int)>();
+  late final _memmovePtr = _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>, ffi.Size)>>('memmove');
+  late final _memmove = _memmovePtr.asFunction<ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>, int)>();
 
   ffi.Pointer<ffi.Void> memccpy(
     ffi.Pointer<ffi.Void> __dest,
@@ -75,13 +59,8 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _memccpyPtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>,
-              ffi.Pointer<ffi.Void>, ffi.Int, ffi.Size)>>('memccpy');
-  late final _memccpy = _memccpyPtr.asFunction<
-      ffi.Pointer<ffi.Void> Function(
-          ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>, int, int)>();
+  late final _memccpyPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>, ffi.Int, ffi.Size)>>('memccpy');
+  late final _memccpy = _memccpyPtr.asFunction<ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>, int, int)>();
 
   ffi.Pointer<ffi.Void> memset(
     ffi.Pointer<ffi.Void> __s,
@@ -95,12 +74,8 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _memsetPtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Pointer<ffi.Void> Function(
-              ffi.Pointer<ffi.Void>, ffi.Int, ffi.Size)>>('memset');
-  late final _memset = _memsetPtr.asFunction<
-      ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>, int, int)>();
+  late final _memsetPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>, ffi.Int, ffi.Size)>>('memset');
+  late final _memset = _memsetPtr.asFunction<ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>, int, int)>();
 
   int memcmp(
     ffi.Pointer<ffi.Void> __s1,
@@ -114,12 +89,8 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _memcmpPtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Int Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>,
-              ffi.Size)>>('memcmp');
-  late final _memcmp = _memcmpPtr.asFunction<
-      int Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>, int)>();
+  late final _memcmpPtr = _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>, ffi.Size)>>('memcmp');
+  late final _memcmp = _memcmpPtr.asFunction<int Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>, int)>();
 
   int __memcmpeq(
     ffi.Pointer<ffi.Void> __s1,
@@ -133,12 +104,8 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final ___memcmpeqPtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Int Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>,
-              ffi.Size)>>('__memcmpeq');
-  late final ___memcmpeq = ___memcmpeqPtr.asFunction<
-      int Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>, int)>();
+  late final ___memcmpeqPtr = _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>, ffi.Size)>>('__memcmpeq');
+  late final ___memcmpeq = ___memcmpeqPtr.asFunction<int Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>, int)>();
 
   ffi.Pointer<ffi.Void> memchr(
     ffi.Pointer<ffi.Void> __s,
@@ -152,12 +119,8 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _memchrPtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Pointer<ffi.Void> Function(
-              ffi.Pointer<ffi.Void>, ffi.Int, ffi.Size)>>('memchr');
-  late final _memchr = _memchrPtr.asFunction<
-      ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>, int, int)>();
+  late final _memchrPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>, ffi.Int, ffi.Size)>>('memchr');
+  late final _memchr = _memchrPtr.asFunction<ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>, int, int)>();
 
   ffi.Pointer<ffi.Char> strcpy(
     ffi.Pointer<ffi.Char> __dest,
@@ -169,13 +132,8 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _strcpyPtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Pointer<ffi.Char> Function(
-              ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>>('strcpy');
-  late final _strcpy = _strcpyPtr.asFunction<
-      ffi.Pointer<ffi.Char> Function(
-          ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>();
+  late final _strcpyPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>>('strcpy');
+  late final _strcpy = _strcpyPtr.asFunction<ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>();
 
   ffi.Pointer<ffi.Char> strncpy(
     ffi.Pointer<ffi.Char> __dest,
@@ -189,13 +147,8 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _strncpyPtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>,
-              ffi.Pointer<ffi.Char>, ffi.Size)>>('strncpy');
-  late final _strncpy = _strncpyPtr.asFunction<
-      ffi.Pointer<ffi.Char> Function(
-          ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, int)>();
+  late final _strncpyPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, ffi.Size)>>('strncpy');
+  late final _strncpy = _strncpyPtr.asFunction<ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, int)>();
 
   ffi.Pointer<ffi.Char> strcat(
     ffi.Pointer<ffi.Char> __dest,
@@ -207,13 +160,8 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _strcatPtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Pointer<ffi.Char> Function(
-              ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>>('strcat');
-  late final _strcat = _strcatPtr.asFunction<
-      ffi.Pointer<ffi.Char> Function(
-          ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>();
+  late final _strcatPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>>('strcat');
+  late final _strcat = _strcatPtr.asFunction<ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>();
 
   ffi.Pointer<ffi.Char> strncat(
     ffi.Pointer<ffi.Char> __dest,
@@ -227,13 +175,8 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _strncatPtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>,
-              ffi.Pointer<ffi.Char>, ffi.Size)>>('strncat');
-  late final _strncat = _strncatPtr.asFunction<
-      ffi.Pointer<ffi.Char> Function(
-          ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, int)>();
+  late final _strncatPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, ffi.Size)>>('strncat');
+  late final _strncat = _strncatPtr.asFunction<ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, int)>();
 
   int strcmp(
     ffi.Pointer<ffi.Char> __s1,
@@ -245,12 +188,8 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _strcmpPtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Int Function(
-              ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>>('strcmp');
-  late final _strcmp = _strcmpPtr
-      .asFunction<int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>();
+  late final _strcmpPtr = _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>>('strcmp');
+  late final _strcmp = _strcmpPtr.asFunction<int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>();
 
   int strncmp(
     ffi.Pointer<ffi.Char> __s1,
@@ -264,12 +203,8 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _strncmpPtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>,
-              ffi.Size)>>('strncmp');
-  late final _strncmp = _strncmpPtr.asFunction<
-      int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, int)>();
+  late final _strncmpPtr = _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, ffi.Size)>>('strncmp');
+  late final _strncmp = _strncmpPtr.asFunction<int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, int)>();
 
   int strcoll(
     ffi.Pointer<ffi.Char> __s1,
@@ -281,12 +216,8 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _strcollPtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Int Function(
-              ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>>('strcoll');
-  late final _strcoll = _strcollPtr
-      .asFunction<int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>();
+  late final _strcollPtr = _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>>('strcoll');
+  late final _strcoll = _strcollPtr.asFunction<int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>();
 
   int strxfrm(
     ffi.Pointer<ffi.Char> __dest,
@@ -300,12 +231,8 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _strxfrmPtr = _lookup<
-      ffi.NativeFunction<
-          ffi.UnsignedLong Function(ffi.Pointer<ffi.Char>,
-              ffi.Pointer<ffi.Char>, ffi.Size)>>('strxfrm');
-  late final _strxfrm = _strxfrmPtr.asFunction<
-      int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, int)>();
+  late final _strxfrmPtr = _lookup<ffi.NativeFunction<ffi.UnsignedLong Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, ffi.Size)>>('strxfrm');
+  late final _strxfrm = _strxfrmPtr.asFunction<int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, int)>();
 
   int strcoll_l(
     ffi.Pointer<ffi.Char> __s1,
@@ -319,12 +246,8 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _strcoll_lPtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>,
-              locale_t)>>('strcoll_l');
-  late final _strcoll_l = _strcoll_lPtr.asFunction<
-      int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, locale_t)>();
+  late final _strcoll_lPtr = _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, locale_t)>>('strcoll_l');
+  late final _strcoll_l = _strcoll_lPtr.asFunction<int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, locale_t)>();
 
   int strxfrm_l(
     ffi.Pointer<ffi.Char> __dest,
@@ -340,13 +263,8 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _strxfrm_lPtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Size Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>,
-              ffi.Size, locale_t)>>('strxfrm_l');
-  late final _strxfrm_l = _strxfrm_lPtr.asFunction<
-      int Function(
-          ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, int, locale_t)>();
+  late final _strxfrm_lPtr = _lookup<ffi.NativeFunction<ffi.Size Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, ffi.Size, locale_t)>>('strxfrm_l');
+  late final _strxfrm_l = _strxfrm_lPtr.asFunction<int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, int, locale_t)>();
 
   ffi.Pointer<ffi.Char> strdup(
     ffi.Pointer<ffi.Char> __s,
@@ -356,11 +274,8 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _strdupPtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>)>>('strdup');
-  late final _strdup = _strdupPtr
-      .asFunction<ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>)>();
+  late final _strdupPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>)>>('strdup');
+  late final _strdup = _strdupPtr.asFunction<ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>)>();
 
   ffi.Pointer<ffi.Char> strndup(
     ffi.Pointer<ffi.Char> __string,
@@ -372,12 +287,8 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _strndupPtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Pointer<ffi.Char> Function(
-              ffi.Pointer<ffi.Char>, ffi.Size)>>('strndup');
-  late final _strndup = _strndupPtr
-      .asFunction<ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>, int)>();
+  late final _strndupPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>, ffi.Size)>>('strndup');
+  late final _strndup = _strndupPtr.asFunction<ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>, int)>();
 
   ffi.Pointer<ffi.Char> strchr(
     ffi.Pointer<ffi.Char> __s,
@@ -389,12 +300,8 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _strchrPtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Pointer<ffi.Char> Function(
-              ffi.Pointer<ffi.Char>, ffi.Int)>>('strchr');
-  late final _strchr = _strchrPtr
-      .asFunction<ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>, int)>();
+  late final _strchrPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>, ffi.Int)>>('strchr');
+  late final _strchr = _strchrPtr.asFunction<ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>, int)>();
 
   ffi.Pointer<ffi.Char> strrchr(
     ffi.Pointer<ffi.Char> __s,
@@ -406,12 +313,8 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _strrchrPtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Pointer<ffi.Char> Function(
-              ffi.Pointer<ffi.Char>, ffi.Int)>>('strrchr');
-  late final _strrchr = _strrchrPtr
-      .asFunction<ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>, int)>();
+  late final _strrchrPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>, ffi.Int)>>('strrchr');
+  late final _strrchr = _strrchrPtr.asFunction<ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>, int)>();
 
   ffi.Pointer<ffi.Char> strchrnul(
     ffi.Pointer<ffi.Char> __s,
@@ -423,12 +326,8 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _strchrnulPtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Pointer<ffi.Char> Function(
-              ffi.Pointer<ffi.Char>, ffi.Int)>>('strchrnul');
-  late final _strchrnul = _strchrnulPtr
-      .asFunction<ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>, int)>();
+  late final _strchrnulPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>, ffi.Int)>>('strchrnul');
+  late final _strchrnul = _strchrnulPtr.asFunction<ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>, int)>();
 
   int strcspn(
     ffi.Pointer<ffi.Char> __s,
@@ -440,12 +339,8 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _strcspnPtr = _lookup<
-      ffi.NativeFunction<
-          ffi.UnsignedLong Function(
-              ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>>('strcspn');
-  late final _strcspn = _strcspnPtr
-      .asFunction<int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>();
+  late final _strcspnPtr = _lookup<ffi.NativeFunction<ffi.UnsignedLong Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>>('strcspn');
+  late final _strcspn = _strcspnPtr.asFunction<int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>();
 
   int strspn(
     ffi.Pointer<ffi.Char> __s,
@@ -457,12 +352,8 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _strspnPtr = _lookup<
-      ffi.NativeFunction<
-          ffi.UnsignedLong Function(
-              ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>>('strspn');
-  late final _strspn = _strspnPtr
-      .asFunction<int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>();
+  late final _strspnPtr = _lookup<ffi.NativeFunction<ffi.UnsignedLong Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>>('strspn');
+  late final _strspn = _strspnPtr.asFunction<int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>();
 
   ffi.Pointer<ffi.Char> strpbrk(
     ffi.Pointer<ffi.Char> __s,
@@ -474,13 +365,8 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _strpbrkPtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Pointer<ffi.Char> Function(
-              ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>>('strpbrk');
-  late final _strpbrk = _strpbrkPtr.asFunction<
-      ffi.Pointer<ffi.Char> Function(
-          ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>();
+  late final _strpbrkPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>>('strpbrk');
+  late final _strpbrk = _strpbrkPtr.asFunction<ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>();
 
   ffi.Pointer<ffi.Char> strstr(
     ffi.Pointer<ffi.Char> __haystack,
@@ -492,13 +378,8 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _strstrPtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Pointer<ffi.Char> Function(
-              ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>>('strstr');
-  late final _strstr = _strstrPtr.asFunction<
-      ffi.Pointer<ffi.Char> Function(
-          ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>();
+  late final _strstrPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>>('strstr');
+  late final _strstr = _strstrPtr.asFunction<ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>();
 
   ffi.Pointer<ffi.Char> strtok(
     ffi.Pointer<ffi.Char> __s,
@@ -510,13 +391,8 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _strtokPtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Pointer<ffi.Char> Function(
-              ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>>('strtok');
-  late final _strtok = _strtokPtr.asFunction<
-      ffi.Pointer<ffi.Char> Function(
-          ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>();
+  late final _strtokPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>>('strtok');
+  late final _strtok = _strtokPtr.asFunction<ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>();
 
   ffi.Pointer<ffi.Char> __strtok_r(
     ffi.Pointer<ffi.Char> __s,
@@ -530,15 +406,8 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final ___strtok_rPtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Pointer<ffi.Char> Function(
-              ffi.Pointer<ffi.Char>,
-              ffi.Pointer<ffi.Char>,
-              ffi.Pointer<ffi.Pointer<ffi.Char>>)>>('__strtok_r');
-  late final ___strtok_r = ___strtok_rPtr.asFunction<
-      ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>,
-          ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Pointer<ffi.Char>>)>();
+  late final ___strtok_rPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Pointer<ffi.Char>>)>>('__strtok_r');
+  late final ___strtok_r = ___strtok_rPtr.asFunction<ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Pointer<ffi.Char>>)>();
 
   ffi.Pointer<ffi.Char> strtok_r(
     ffi.Pointer<ffi.Char> __s,
@@ -552,15 +421,8 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _strtok_rPtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Pointer<ffi.Char> Function(
-              ffi.Pointer<ffi.Char>,
-              ffi.Pointer<ffi.Char>,
-              ffi.Pointer<ffi.Pointer<ffi.Char>>)>>('strtok_r');
-  late final _strtok_r = _strtok_rPtr.asFunction<
-      ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>,
-          ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Pointer<ffi.Char>>)>();
+  late final _strtok_rPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Pointer<ffi.Char>>)>>('strtok_r');
+  late final _strtok_r = _strtok_rPtr.asFunction<ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Pointer<ffi.Char>>)>();
 
   ffi.Pointer<ffi.Char> strcasestr(
     ffi.Pointer<ffi.Char> __haystack,
@@ -572,13 +434,8 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _strcasestrPtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Pointer<ffi.Char> Function(
-              ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>>('strcasestr');
-  late final _strcasestr = _strcasestrPtr.asFunction<
-      ffi.Pointer<ffi.Char> Function(
-          ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>();
+  late final _strcasestrPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>>('strcasestr');
+  late final _strcasestr = _strcasestrPtr.asFunction<ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>();
 
   ffi.Pointer<ffi.Void> memmem(
     ffi.Pointer<ffi.Void> __haystack,
@@ -594,13 +451,8 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _memmemPtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>, ffi.Size,
-              ffi.Pointer<ffi.Void>, ffi.Size)>>('memmem');
-  late final _memmem = _memmemPtr.asFunction<
-      ffi.Pointer<ffi.Void> Function(
-          ffi.Pointer<ffi.Void>, int, ffi.Pointer<ffi.Void>, int)>();
+  late final _memmemPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>, ffi.Size, ffi.Pointer<ffi.Void>, ffi.Size)>>('memmem');
+  late final _memmem = _memmemPtr.asFunction<ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>, int, ffi.Pointer<ffi.Void>, int)>();
 
   ffi.Pointer<ffi.Void> __mempcpy(
     ffi.Pointer<ffi.Void> __dest,
@@ -614,13 +466,8 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final ___mempcpyPtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>,
-              ffi.Pointer<ffi.Void>, ffi.Size)>>('__mempcpy');
-  late final ___mempcpy = ___mempcpyPtr.asFunction<
-      ffi.Pointer<ffi.Void> Function(
-          ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>, int)>();
+  late final ___mempcpyPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>, ffi.Size)>>('__mempcpy');
+  late final ___mempcpy = ___mempcpyPtr.asFunction<ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>, int)>();
 
   ffi.Pointer<ffi.Void> mempcpy(
     ffi.Pointer<ffi.Void> __dest,
@@ -634,13 +481,8 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _mempcpyPtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>,
-              ffi.Pointer<ffi.Void>, ffi.Size)>>('mempcpy');
-  late final _mempcpy = _mempcpyPtr.asFunction<
-      ffi.Pointer<ffi.Void> Function(
-          ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>, int)>();
+  late final _mempcpyPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>, ffi.Size)>>('mempcpy');
+  late final _mempcpy = _mempcpyPtr.asFunction<ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>, int)>();
 
   int strlen(
     ffi.Pointer<ffi.Char> __s,
@@ -650,11 +492,8 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _strlenPtr = _lookup<
-          ffi.NativeFunction<ffi.UnsignedLong Function(ffi.Pointer<ffi.Char>)>>(
-      'strlen');
-  late final _strlen =
-      _strlenPtr.asFunction<int Function(ffi.Pointer<ffi.Char>)>();
+  late final _strlenPtr = _lookup<ffi.NativeFunction<ffi.UnsignedLong Function(ffi.Pointer<ffi.Char>)>>('strlen');
+  late final _strlen = _strlenPtr.asFunction<int Function(ffi.Pointer<ffi.Char>)>();
 
   int strnlen(
     ffi.Pointer<ffi.Char> __string,
@@ -666,11 +505,8 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _strnlenPtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Size Function(ffi.Pointer<ffi.Char>, ffi.Size)>>('strnlen');
-  late final _strnlen =
-      _strnlenPtr.asFunction<int Function(ffi.Pointer<ffi.Char>, int)>();
+  late final _strnlenPtr = _lookup<ffi.NativeFunction<ffi.Size Function(ffi.Pointer<ffi.Char>, ffi.Size)>>('strnlen');
+  late final _strnlen = _strnlenPtr.asFunction<int Function(ffi.Pointer<ffi.Char>, int)>();
 
   ffi.Pointer<ffi.Char> strerror(
     int __errnum,
@@ -680,11 +516,8 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _strerrorPtr =
-      _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Char> Function(ffi.Int)>>(
-          'strerror');
-  late final _strerror =
-      _strerrorPtr.asFunction<ffi.Pointer<ffi.Char> Function(int)>();
+  late final _strerrorPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Char> Function(ffi.Int)>>('strerror');
+  late final _strerror = _strerrorPtr.asFunction<ffi.Pointer<ffi.Char> Function(int)>();
 
   int strerror_r(
     int __errnum,
@@ -698,12 +531,8 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _strerror_rPtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Int Function(
-              ffi.Int, ffi.Pointer<ffi.Char>, ffi.Size)>>('strerror_r');
-  late final _strerror_r = _strerror_rPtr
-      .asFunction<int Function(int, ffi.Pointer<ffi.Char>, int)>();
+  late final _strerror_rPtr = _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int, ffi.Pointer<ffi.Char>, ffi.Size)>>('strerror_r');
+  late final _strerror_r = _strerror_rPtr.asFunction<int Function(int, ffi.Pointer<ffi.Char>, int)>();
 
   ffi.Pointer<ffi.Char> strerror_l(
     int __errnum,
@@ -715,11 +544,8 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _strerror_lPtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Pointer<ffi.Char> Function(ffi.Int, locale_t)>>('strerror_l');
-  late final _strerror_l = _strerror_lPtr
-      .asFunction<ffi.Pointer<ffi.Char> Function(int, locale_t)>();
+  late final _strerror_lPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Char> Function(ffi.Int, locale_t)>>('strerror_l');
+  late final _strerror_l = _strerror_lPtr.asFunction<ffi.Pointer<ffi.Char> Function(int, locale_t)>();
 
   int bcmp(
     ffi.Pointer<ffi.Void> __s1,
@@ -733,12 +559,8 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _bcmpPtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Int Function(
-              ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>, ffi.Size)>>('bcmp');
-  late final _bcmp = _bcmpPtr.asFunction<
-      int Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>, int)>();
+  late final _bcmpPtr = _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>, ffi.Size)>>('bcmp');
+  late final _bcmp = _bcmpPtr.asFunction<int Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>, int)>();
 
   void bcopy(
     ffi.Pointer<ffi.Void> __src,
@@ -752,12 +574,8 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _bcopyPtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>,
-              ffi.Size)>>('bcopy');
-  late final _bcopy = _bcopyPtr.asFunction<
-      void Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>, int)>();
+  late final _bcopyPtr = _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>, ffi.Size)>>('bcopy');
+  late final _bcopy = _bcopyPtr.asFunction<void Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>, int)>();
 
   void bzero(
     ffi.Pointer<ffi.Void> __s,
@@ -769,11 +587,8 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _bzeroPtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Size)>>('bzero');
-  late final _bzero =
-      _bzeroPtr.asFunction<void Function(ffi.Pointer<ffi.Void>, int)>();
+  late final _bzeroPtr = _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Size)>>('bzero');
+  late final _bzero = _bzeroPtr.asFunction<void Function(ffi.Pointer<ffi.Void>, int)>();
 
   ffi.Pointer<ffi.Char> index(
     ffi.Pointer<ffi.Char> __s,
@@ -785,12 +600,8 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _indexPtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Pointer<ffi.Char> Function(
-              ffi.Pointer<ffi.Char>, ffi.Int)>>('index');
-  late final _index = _indexPtr
-      .asFunction<ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>, int)>();
+  late final _indexPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>, ffi.Int)>>('index');
+  late final _index = _indexPtr.asFunction<ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>, int)>();
 
   ffi.Pointer<ffi.Char> rindex(
     ffi.Pointer<ffi.Char> __s,
@@ -802,12 +613,8 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _rindexPtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Pointer<ffi.Char> Function(
-              ffi.Pointer<ffi.Char>, ffi.Int)>>('rindex');
-  late final _rindex = _rindexPtr
-      .asFunction<ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>, int)>();
+  late final _rindexPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>, ffi.Int)>>('rindex');
+  late final _rindex = _rindexPtr.asFunction<ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>, int)>();
 
   int ffs(
     int __i,
@@ -817,8 +624,7 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ffsPtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>('ffs');
+  late final _ffsPtr = _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>('ffs');
   late final _ffs = _ffsPtr.asFunction<int Function(int)>();
 
   int ffsl(
@@ -829,8 +635,7 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ffslPtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Long)>>('ffsl');
+  late final _ffslPtr = _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Long)>>('ffsl');
   late final _ffsl = _ffslPtr.asFunction<int Function(int)>();
 
   int ffsll(
@@ -841,8 +646,7 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ffsllPtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.LongLong)>>('ffsll');
+  late final _ffsllPtr = _lookup<ffi.NativeFunction<ffi.Int Function(ffi.LongLong)>>('ffsll');
   late final _ffsll = _ffsllPtr.asFunction<int Function(int)>();
 
   int strcasecmp(
@@ -855,12 +659,8 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _strcasecmpPtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Int Function(
-              ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>>('strcasecmp');
-  late final _strcasecmp = _strcasecmpPtr
-      .asFunction<int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>();
+  late final _strcasecmpPtr = _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>>('strcasecmp');
+  late final _strcasecmp = _strcasecmpPtr.asFunction<int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>();
 
   int strncasecmp(
     ffi.Pointer<ffi.Char> __s1,
@@ -874,12 +674,8 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _strncasecmpPtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>,
-              ffi.Size)>>('strncasecmp');
-  late final _strncasecmp = _strncasecmpPtr.asFunction<
-      int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, int)>();
+  late final _strncasecmpPtr = _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, ffi.Size)>>('strncasecmp');
+  late final _strncasecmp = _strncasecmpPtr.asFunction<int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, int)>();
 
   int strcasecmp_l(
     ffi.Pointer<ffi.Char> __s1,
@@ -893,12 +689,8 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _strcasecmp_lPtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>,
-              locale_t)>>('strcasecmp_l');
-  late final _strcasecmp_l = _strcasecmp_lPtr.asFunction<
-      int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, locale_t)>();
+  late final _strcasecmp_lPtr = _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, locale_t)>>('strcasecmp_l');
+  late final _strcasecmp_l = _strcasecmp_lPtr.asFunction<int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, locale_t)>();
 
   int strncasecmp_l(
     ffi.Pointer<ffi.Char> __s1,
@@ -914,13 +706,8 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _strncasecmp_lPtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>,
-              ffi.Size, locale_t)>>('strncasecmp_l');
-  late final _strncasecmp_l = _strncasecmp_lPtr.asFunction<
-      int Function(
-          ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, int, locale_t)>();
+  late final _strncasecmp_lPtr = _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, ffi.Size, locale_t)>>('strncasecmp_l');
+  late final _strncasecmp_l = _strncasecmp_lPtr.asFunction<int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, int, locale_t)>();
 
   void explicit_bzero(
     ffi.Pointer<ffi.Void> __s,
@@ -932,12 +719,8 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _explicit_bzeroPtr = _lookup<
-          ffi
-          .NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Size)>>(
-      'explicit_bzero');
-  late final _explicit_bzero = _explicit_bzeroPtr
-      .asFunction<void Function(ffi.Pointer<ffi.Void>, int)>();
+  late final _explicit_bzeroPtr = _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Size)>>('explicit_bzero');
+  late final _explicit_bzero = _explicit_bzeroPtr.asFunction<void Function(ffi.Pointer<ffi.Void>, int)>();
 
   ffi.Pointer<ffi.Char> strsep(
     ffi.Pointer<ffi.Pointer<ffi.Char>> __stringp,
@@ -949,13 +732,8 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _strsepPtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Pointer<ffi.Char>>,
-              ffi.Pointer<ffi.Char>)>>('strsep');
-  late final _strsep = _strsepPtr.asFunction<
-      ffi.Pointer<ffi.Char> Function(
-          ffi.Pointer<ffi.Pointer<ffi.Char>>, ffi.Pointer<ffi.Char>)>();
+  late final _strsepPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Pointer<ffi.Char>>, ffi.Pointer<ffi.Char>)>>('strsep');
+  late final _strsep = _strsepPtr.asFunction<ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Pointer<ffi.Char>>, ffi.Pointer<ffi.Char>)>();
 
   ffi.Pointer<ffi.Char> strsignal(
     int __sig,
@@ -965,11 +743,8 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _strsignalPtr =
-      _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Char> Function(ffi.Int)>>(
-          'strsignal');
-  late final _strsignal =
-      _strsignalPtr.asFunction<ffi.Pointer<ffi.Char> Function(int)>();
+  late final _strsignalPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Char> Function(ffi.Int)>>('strsignal');
+  late final _strsignal = _strsignalPtr.asFunction<ffi.Pointer<ffi.Char> Function(int)>();
 
   ffi.Pointer<ffi.Char> __stpcpy(
     ffi.Pointer<ffi.Char> __dest,
@@ -981,13 +756,8 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final ___stpcpyPtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Pointer<ffi.Char> Function(
-              ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>>('__stpcpy');
-  late final ___stpcpy = ___stpcpyPtr.asFunction<
-      ffi.Pointer<ffi.Char> Function(
-          ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>();
+  late final ___stpcpyPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>>('__stpcpy');
+  late final ___stpcpy = ___stpcpyPtr.asFunction<ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>();
 
   ffi.Pointer<ffi.Char> stpcpy(
     ffi.Pointer<ffi.Char> __dest,
@@ -999,13 +769,8 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _stpcpyPtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Pointer<ffi.Char> Function(
-              ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>>('stpcpy');
-  late final _stpcpy = _stpcpyPtr.asFunction<
-      ffi.Pointer<ffi.Char> Function(
-          ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>();
+  late final _stpcpyPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>>('stpcpy');
+  late final _stpcpy = _stpcpyPtr.asFunction<ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>();
 
   ffi.Pointer<ffi.Char> __stpncpy(
     ffi.Pointer<ffi.Char> __dest,
@@ -1019,13 +784,8 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final ___stpncpyPtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>,
-              ffi.Pointer<ffi.Char>, ffi.Size)>>('__stpncpy');
-  late final ___stpncpy = ___stpncpyPtr.asFunction<
-      ffi.Pointer<ffi.Char> Function(
-          ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, int)>();
+  late final ___stpncpyPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, ffi.Size)>>('__stpncpy');
+  late final ___stpncpy = ___stpncpyPtr.asFunction<ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, int)>();
 
   ffi.Pointer<ffi.Char> stpncpy(
     ffi.Pointer<ffi.Char> __dest,
@@ -1039,13 +799,8 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _stpncpyPtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>,
-              ffi.Pointer<ffi.Char>, ffi.Size)>>('stpncpy');
-  late final _stpncpy = _stpncpyPtr.asFunction<
-      ffi.Pointer<ffi.Char> Function(
-          ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, int)>();
+  late final _stpncpyPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, ffi.Size)>>('stpncpy');
+  late final _stpncpy = _stpncpyPtr.asFunction<ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, int)>();
 
   int strlcpy(
     ffi.Pointer<ffi.Char> __dest,
@@ -1059,12 +814,8 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _strlcpyPtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Size Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>,
-              ffi.Size)>>('strlcpy');
-  late final _strlcpy = _strlcpyPtr.asFunction<
-      int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, int)>();
+  late final _strlcpyPtr = _lookup<ffi.NativeFunction<ffi.Size Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, ffi.Size)>>('strlcpy');
+  late final _strlcpy = _strlcpyPtr.asFunction<int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, int)>();
 
   int strlcat(
     ffi.Pointer<ffi.Char> __dest,
@@ -1078,12 +829,8 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _strlcatPtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Size Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>,
-              ffi.Size)>>('strlcat');
-  late final _strlcat = _strlcatPtr.asFunction<
-      int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, int)>();
+  late final _strlcatPtr = _lookup<ffi.NativeFunction<ffi.Size Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, ffi.Size)>>('strlcat');
+  late final _strlcat = _strlcatPtr.asFunction<int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, int)>();
 
   ffi.Pointer<ffi.Char> sd_type_name(
     sd_type_t type,
@@ -1093,11 +840,8 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _sd_type_namePtr = _lookup<
-          ffi.NativeFunction<ffi.Pointer<ffi.Char> Function(ffi.UnsignedInt)>>(
-      'sd_type_name');
-  late final _sd_type_name =
-      _sd_type_namePtr.asFunction<ffi.Pointer<ffi.Char> Function(int)>();
+  late final _sd_type_namePtr = _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Char> Function(ffi.UnsignedInt)>>('sd_type_name');
+  late final _sd_type_name = _sd_type_namePtr.asFunction<ffi.Pointer<ffi.Char> Function(int)>();
 
   void sd_set_log_callback(
     sd_log_cb_t sd_log_cb,
@@ -1109,12 +853,8 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _sd_set_log_callbackPtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Void Function(
-              sd_log_cb_t, ffi.Pointer<ffi.Void>)>>('sd_set_log_callback');
-  late final _sd_set_log_callback = _sd_set_log_callbackPtr
-      .asFunction<void Function(sd_log_cb_t, ffi.Pointer<ffi.Void>)>();
+  late final _sd_set_log_callbackPtr = _lookup<ffi.NativeFunction<ffi.Void Function(sd_log_cb_t, ffi.Pointer<ffi.Void>)>>('sd_set_log_callback');
+  late final _sd_set_log_callback = _sd_set_log_callbackPtr.asFunction<void Function(sd_log_cb_t, ffi.Pointer<ffi.Void>)>();
 
   void sd_set_progress_callback(
     sd_progress_cb_t cb,
@@ -1126,32 +866,22 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _sd_set_progress_callbackPtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Void Function(sd_progress_cb_t,
-              ffi.Pointer<ffi.Void>)>>('sd_set_progress_callback');
-  late final _sd_set_progress_callback = _sd_set_progress_callbackPtr
-      .asFunction<void Function(sd_progress_cb_t, ffi.Pointer<ffi.Void>)>();
+  late final _sd_set_progress_callbackPtr = _lookup<ffi.NativeFunction<ffi.Void Function(sd_progress_cb_t, ffi.Pointer<ffi.Void>)>>('sd_set_progress_callback');
+  late final _sd_set_progress_callback = _sd_set_progress_callbackPtr.asFunction<void Function(sd_progress_cb_t, ffi.Pointer<ffi.Void>)>();
 
   int get_num_physical_cores() {
     return _get_num_physical_cores();
   }
 
-  late final _get_num_physical_coresPtr =
-      _lookup<ffi.NativeFunction<ffi.Int32 Function()>>(
-          'get_num_physical_cores');
-  late final _get_num_physical_cores =
-      _get_num_physical_coresPtr.asFunction<int Function()>();
+  late final _get_num_physical_coresPtr = _lookup<ffi.NativeFunction<ffi.Int32 Function()>>('get_num_physical_cores');
+  late final _get_num_physical_cores = _get_num_physical_coresPtr.asFunction<int Function()>();
 
   ffi.Pointer<ffi.Char> sd_get_system_info() {
     return _sd_get_system_info();
   }
 
-  late final _sd_get_system_infoPtr =
-      _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Char> Function()>>(
-          'sd_get_system_info');
-  late final _sd_get_system_info =
-      _sd_get_system_infoPtr.asFunction<ffi.Pointer<ffi.Char> Function()>();
+  late final _sd_get_system_infoPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Char> Function()>>('sd_get_system_info');
+  late final _sd_get_system_info = _sd_get_system_infoPtr.asFunction<ffi.Pointer<ffi.Char> Function()>();
 
   ffi.Pointer<sd_ctx_t> new_sd_ctx(
     ffi.Pointer<ffi.Char> model_path,
@@ -1203,55 +933,8 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _new_sd_ctxPtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Pointer<sd_ctx_t> Function(
-              ffi.Pointer<ffi.Char>,
-              ffi.Pointer<ffi.Char>,
-              ffi.Pointer<ffi.Char>,
-              ffi.Pointer<ffi.Char>,
-              ffi.Pointer<ffi.Char>,
-              ffi.Pointer<ffi.Char>,
-              ffi.Pointer<ffi.Char>,
-              ffi.Pointer<ffi.Char>,
-              ffi.Pointer<ffi.Char>,
-              ffi.Pointer<ffi.Char>,
-              ffi.Pointer<ffi.Char>,
-              ffi.Bool,
-              ffi.Bool,
-              ffi.Bool,
-              ffi.Int,
-              ffi.UnsignedInt,
-              ffi.UnsignedInt,
-              ffi.UnsignedInt,
-              ffi.Bool,
-              ffi.Bool,
-              ffi.Bool,
-              ffi.Bool)>>('new_sd_ctx');
-  late final _new_sd_ctx = _new_sd_ctxPtr.asFunction<
-      ffi.Pointer<sd_ctx_t> Function(
-          ffi.Pointer<ffi.Char>,
-          ffi.Pointer<ffi.Char>,
-          ffi.Pointer<ffi.Char>,
-          ffi.Pointer<ffi.Char>,
-          ffi.Pointer<ffi.Char>,
-          ffi.Pointer<ffi.Char>,
-          ffi.Pointer<ffi.Char>,
-          ffi.Pointer<ffi.Char>,
-          ffi.Pointer<ffi.Char>,
-          ffi.Pointer<ffi.Char>,
-          ffi.Pointer<ffi.Char>,
-          bool,
-          bool,
-          bool,
-          int,
-          int,
-          int,
-          int,
-          bool,
-          bool,
-          bool,
-          bool)>();
+  late final _new_sd_ctxPtr = _lookup<ffi.NativeFunction<ffi.Pointer<sd_ctx_t> Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, ffi.Bool, ffi.Bool, ffi.Bool, ffi.Int, ffi.UnsignedInt, ffi.UnsignedInt, ffi.UnsignedInt, ffi.Bool, ffi.Bool, ffi.Bool, ffi.Bool)>>('new_sd_ctx');
+  late final _new_sd_ctx = _new_sd_ctxPtr.asFunction<ffi.Pointer<sd_ctx_t> Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, bool, bool, bool, int, int, int, int, bool, bool, bool, bool)>();
 
   void free_sd_ctx(
     ffi.Pointer<sd_ctx_t> sd_ctx,
@@ -1261,11 +944,8 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _free_sd_ctxPtr =
-      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<sd_ctx_t>)>>(
-          'free_sd_ctx');
-  late final _free_sd_ctx =
-      _free_sd_ctxPtr.asFunction<void Function(ffi.Pointer<sd_ctx_t>)>();
+  late final _free_sd_ctxPtr = _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<sd_ctx_t>)>>('free_sd_ctx');
+  late final _free_sd_ctx = _free_sd_ctxPtr.asFunction<void Function(ffi.Pointer<sd_ctx_t>)>();
 
   ffi.Pointer<sd_image_t> txt2img(
     ffi.Pointer<sd_ctx_t> sd_ctx,
@@ -1317,55 +997,8 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _txt2imgPtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Pointer<sd_image_t> Function(
-              ffi.Pointer<sd_ctx_t>,
-              ffi.Pointer<ffi.Char>,
-              ffi.Pointer<ffi.Char>,
-              ffi.Int,
-              ffi.Float,
-              ffi.Float,
-              ffi.Int,
-              ffi.Int,
-              ffi.UnsignedInt,
-              ffi.Int,
-              ffi.Int64,
-              ffi.Int,
-              ffi.Pointer<sd_image_t>,
-              ffi.Float,
-              ffi.Float,
-              ffi.Bool,
-              ffi.Pointer<ffi.Char>,
-              ffi.Pointer<ffi.Int>,
-              ffi.Size,
-              ffi.Float,
-              ffi.Float,
-              ffi.Float)>>('txt2img');
-  late final _txt2img = _txt2imgPtr.asFunction<
-      ffi.Pointer<sd_image_t> Function(
-          ffi.Pointer<sd_ctx_t>,
-          ffi.Pointer<ffi.Char>,
-          ffi.Pointer<ffi.Char>,
-          int,
-          double,
-          double,
-          int,
-          int,
-          int,
-          int,
-          int,
-          int,
-          ffi.Pointer<sd_image_t>,
-          double,
-          double,
-          bool,
-          ffi.Pointer<ffi.Char>,
-          ffi.Pointer<ffi.Int>,
-          int,
-          double,
-          double,
-          double)>();
+  late final _txt2imgPtr = _lookup<ffi.NativeFunction<ffi.Pointer<sd_image_t> Function(ffi.Pointer<sd_ctx_t>, ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, ffi.Int, ffi.Float, ffi.Float, ffi.Int, ffi.Int, ffi.UnsignedInt, ffi.Int, ffi.Int64, ffi.Int, ffi.Pointer<sd_image_t>, ffi.Float, ffi.Float, ffi.Bool, ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Int>, ffi.Size, ffi.Float, ffi.Float, ffi.Float)>>('txt2img');
+  late final _txt2img = _txt2imgPtr.asFunction<ffi.Pointer<sd_image_t> Function(ffi.Pointer<sd_ctx_t>, ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, int, double, double, int, int, int, int, int, int, ffi.Pointer<sd_image_t>, double, double, bool, ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Int>, int, double, double, double)>();
 
   ffi.Pointer<sd_image_t> img2img(
     ffi.Pointer<sd_ctx_t> sd_ctx,
@@ -1423,61 +1056,8 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _img2imgPtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Pointer<sd_image_t> Function(
-              ffi.Pointer<sd_ctx_t>,
-              sd_image_t,
-              sd_image_t,
-              ffi.Pointer<ffi.Char>,
-              ffi.Pointer<ffi.Char>,
-              ffi.Int,
-              ffi.Float,
-              ffi.Float,
-              ffi.Int,
-              ffi.Int,
-              ffi.UnsignedInt,
-              ffi.Int,
-              ffi.Float,
-              ffi.Int64,
-              ffi.Int,
-              ffi.Pointer<sd_image_t>,
-              ffi.Float,
-              ffi.Float,
-              ffi.Bool,
-              ffi.Pointer<ffi.Char>,
-              ffi.Pointer<ffi.Int>,
-              ffi.Size,
-              ffi.Float,
-              ffi.Float,
-              ffi.Float)>>('img2img');
-  late final _img2img = _img2imgPtr.asFunction<
-      ffi.Pointer<sd_image_t> Function(
-          ffi.Pointer<sd_ctx_t>,
-          sd_image_t,
-          sd_image_t,
-          ffi.Pointer<ffi.Char>,
-          ffi.Pointer<ffi.Char>,
-          int,
-          double,
-          double,
-          int,
-          int,
-          int,
-          int,
-          double,
-          int,
-          int,
-          ffi.Pointer<sd_image_t>,
-          double,
-          double,
-          bool,
-          ffi.Pointer<ffi.Char>,
-          ffi.Pointer<ffi.Int>,
-          int,
-          double,
-          double,
-          double)>();
+  late final _img2imgPtr = _lookup<ffi.NativeFunction<ffi.Pointer<sd_image_t> Function(ffi.Pointer<sd_ctx_t>, sd_image_t, sd_image_t, ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, ffi.Int, ffi.Float, ffi.Float, ffi.Int, ffi.Int, ffi.UnsignedInt, ffi.Int, ffi.Float, ffi.Int64, ffi.Int, ffi.Pointer<sd_image_t>, ffi.Float, ffi.Float, ffi.Bool, ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Int>, ffi.Size, ffi.Float, ffi.Float, ffi.Float)>>('img2img');
+  late final _img2img = _img2imgPtr.asFunction<ffi.Pointer<sd_image_t> Function(ffi.Pointer<sd_ctx_t>, sd_image_t, sd_image_t, ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, int, double, double, int, int, int, int, double, int, int, ffi.Pointer<sd_image_t>, double, double, bool, ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Int>, int, double, double, double)>();
 
   ffi.Pointer<sd_image_t> img2vid(
     ffi.Pointer<sd_ctx_t> sd_ctx,
@@ -1513,26 +1093,8 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _img2vidPtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Pointer<sd_image_t> Function(
-              ffi.Pointer<sd_ctx_t>,
-              sd_image_t,
-              ffi.Int,
-              ffi.Int,
-              ffi.Int,
-              ffi.Int,
-              ffi.Int,
-              ffi.Float,
-              ffi.Float,
-              ffi.Float,
-              ffi.UnsignedInt,
-              ffi.Int,
-              ffi.Float,
-              ffi.Int64)>>('img2vid');
-  late final _img2vid = _img2vidPtr.asFunction<
-      ffi.Pointer<sd_image_t> Function(ffi.Pointer<sd_ctx_t>, sd_image_t, int,
-          int, int, int, int, double, double, double, int, int, double, int)>();
+  late final _img2vidPtr = _lookup<ffi.NativeFunction<ffi.Pointer<sd_image_t> Function(ffi.Pointer<sd_ctx_t>, sd_image_t, ffi.Int, ffi.Int, ffi.Int, ffi.Int, ffi.Int, ffi.Float, ffi.Float, ffi.Float, ffi.UnsignedInt, ffi.Int, ffi.Float, ffi.Int64)>>('img2vid');
+  late final _img2vid = _img2vidPtr.asFunction<ffi.Pointer<sd_image_t> Function(ffi.Pointer<sd_ctx_t>, sd_image_t, int, int, int, int, int, double, double, double, int, int, double, int)>();
 
   ffi.Pointer<upscaler_ctx_t> new_upscaler_ctx(
     ffi.Pointer<ffi.Char> esrgan_path,
@@ -1544,12 +1106,8 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _new_upscaler_ctxPtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Pointer<upscaler_ctx_t> Function(
-              ffi.Pointer<ffi.Char>, ffi.Int)>>('new_upscaler_ctx');
-  late final _new_upscaler_ctx = _new_upscaler_ctxPtr.asFunction<
-      ffi.Pointer<upscaler_ctx_t> Function(ffi.Pointer<ffi.Char>, int)>();
+  late final _new_upscaler_ctxPtr = _lookup<ffi.NativeFunction<ffi.Pointer<upscaler_ctx_t> Function(ffi.Pointer<ffi.Char>, ffi.Int)>>('new_upscaler_ctx');
+  late final _new_upscaler_ctx = _new_upscaler_ctxPtr.asFunction<ffi.Pointer<upscaler_ctx_t> Function(ffi.Pointer<ffi.Char>, int)>();
 
   void free_upscaler_ctx(
     ffi.Pointer<upscaler_ctx_t> upscaler_ctx,
@@ -1559,11 +1117,8 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _free_upscaler_ctxPtr = _lookup<
-          ffi.NativeFunction<ffi.Void Function(ffi.Pointer<upscaler_ctx_t>)>>(
-      'free_upscaler_ctx');
-  late final _free_upscaler_ctx = _free_upscaler_ctxPtr
-      .asFunction<void Function(ffi.Pointer<upscaler_ctx_t>)>();
+  late final _free_upscaler_ctxPtr = _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<upscaler_ctx_t>)>>('free_upscaler_ctx');
+  late final _free_upscaler_ctx = _free_upscaler_ctxPtr.asFunction<void Function(ffi.Pointer<upscaler_ctx_t>)>();
 
   sd_image_t upscale(
     ffi.Pointer<upscaler_ctx_t> upscaler_ctx,
@@ -1577,12 +1132,8 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _upscalePtr = _lookup<
-      ffi.NativeFunction<
-          sd_image_t Function(
-              ffi.Pointer<upscaler_ctx_t>, sd_image_t, ffi.Uint32)>>('upscale');
-  late final _upscale = _upscalePtr.asFunction<
-      sd_image_t Function(ffi.Pointer<upscaler_ctx_t>, sd_image_t, int)>();
+  late final _upscalePtr = _lookup<ffi.NativeFunction<sd_image_t Function(ffi.Pointer<upscaler_ctx_t>, sd_image_t, ffi.Uint32)>>('upscale');
+  late final _upscale = _upscalePtr.asFunction<sd_image_t Function(ffi.Pointer<upscaler_ctx_t>, sd_image_t, int)>();
 
   bool convert(
     ffi.Pointer<ffi.Char> input_path,
@@ -1598,13 +1149,8 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _convertPtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Bool Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>,
-              ffi.Pointer<ffi.Char>, ffi.UnsignedInt)>>('convert');
-  late final _convert = _convertPtr.asFunction<
-      bool Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>,
-          ffi.Pointer<ffi.Char>, int)>();
+  late final _convertPtr = _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, ffi.UnsignedInt)>>('convert');
+  late final _convert = _convertPtr.asFunction<bool Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, int)>();
 
   ffi.Pointer<ffi.Uint8> preprocess_canny(
     ffi.Pointer<ffi.Uint8> img,
@@ -1628,20 +1174,8 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _preprocess_cannyPtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Pointer<ffi.Uint8> Function(
-              ffi.Pointer<ffi.Uint8>,
-              ffi.Int,
-              ffi.Int,
-              ffi.Float,
-              ffi.Float,
-              ffi.Float,
-              ffi.Float,
-              ffi.Bool)>>('preprocess_canny');
-  late final _preprocess_canny = _preprocess_cannyPtr.asFunction<
-      ffi.Pointer<ffi.Uint8> Function(ffi.Pointer<ffi.Uint8>, int, int, double,
-          double, double, double, bool)>();
+  late final _preprocess_cannyPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Uint8> Function(ffi.Pointer<ffi.Uint8>, ffi.Int, ffi.Int, ffi.Float, ffi.Float, ffi.Float, ffi.Float, ffi.Bool)>>('preprocess_canny');
+  late final _preprocess_canny = _preprocess_cannyPtr.asFunction<ffi.Pointer<ffi.Uint8> Function(ffi.Pointer<ffi.Uint8>, int, int, double, double, double, double, bool)>();
 }
 
 typedef ptrdiff_t = ffi.Long;
@@ -1982,17 +1516,16 @@ enum sd_log_level_t {
       };
 }
 
-typedef sd_log_cb_tFunction = ffi.Void Function(ffi.UnsignedInt level,
-    ffi.Pointer<ffi.Char> text, ffi.Pointer<ffi.Void> data);
-typedef Dartsd_log_cb_tFunction = void Function(sd_log_level_t level,
-    ffi.Pointer<ffi.Char> text, ffi.Pointer<ffi.Void> data);
+typedef sd_log_cb_tFunction = ffi.Void Function(ffi.UnsignedInt level, ffi.Pointer<ffi.Char> text, ffi.Pointer<ffi.Void> data);
+
+typedef Dartsd_log_cb_tFunction = void Function(sd_log_level_t level, ffi.Pointer<ffi.Char> text, ffi.Pointer<ffi.Void> data);
+
 typedef sd_log_cb_t = ffi.Pointer<ffi.NativeFunction<sd_log_cb_tFunction>>;
-typedef sd_progress_cb_tFunction = ffi.Void Function(
-    ffi.Int step, ffi.Int steps, ffi.Float time, ffi.Pointer<ffi.Void> data);
-typedef Dartsd_progress_cb_tFunction = void Function(
-    int step, int steps, double time, ffi.Pointer<ffi.Void> data);
-typedef sd_progress_cb_t
-    = ffi.Pointer<ffi.NativeFunction<sd_progress_cb_tFunction>>;
+
+typedef sd_progress_cb_tFunction = ffi.Void Function(ffi.Int step, ffi.Int steps, ffi.Float time, ffi.Pointer<ffi.Void> data);
+
+typedef Dartsd_progress_cb_tFunction = void Function(int step, int steps, double time, ffi.Pointer<ffi.Void> data);
+typedef sd_progress_cb_t = ffi.Pointer<ffi.NativeFunction<sd_progress_cb_tFunction>>;
 
 final class sd_image_t extends ffi.Struct {
   @ffi.Uint32()

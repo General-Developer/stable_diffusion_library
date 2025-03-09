@@ -777,7 +777,7 @@ extern "C" {
 
 
     int stable_diffusion_start(int argc, const char* argv[]) {
-        SDParams params;
+         SDParams params;
 
         parse_args(argc, argv, params);
 
