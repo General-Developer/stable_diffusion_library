@@ -40,19 +40,22 @@ void main(List<String> args) async {
   print("start");
 
   File modelFile = File(
-    "../../../../../big-data/stable-diffusion/model.ckpt",
+    "../../../../../big-data/stable-diffusion/sd-v1-4.ckpt",
   );
+  if (modelFile.existsSync() == false) {
+    print("model not found");
+    exit(1);
+  }
 
   final StableDiffusionLibrary stableDiffusionLibrary = StableDiffusionLibrary(
-    sharedLibraryPath:
-        "../stable_diffusion_library_flutter/linux/libstable_diffusion_library.so",
+    sharedLibraryPath: "libstable_diffusion_library.so",
   );
   await stableDiffusionLibrary.ensureInitialized();
   await stableDiffusionLibrary.initialized();
 
   await stableDiffusionLibrary.textToImage(
     modelPath: modelFile.path,
-    prompt: "Cat",
+    prompt: "cat with cute eye",
     negativePrompt: "",
   );
 

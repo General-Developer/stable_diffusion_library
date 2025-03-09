@@ -39,6 +39,7 @@ project(
   general_developer_stable_diffusion_shared_library
 )
 
+set(CMAKE_CXX_STANDARD 17)   # Gunakan C++17 atau versi lain sesuai kebutuhan
 
 set(CMAKE_C_FLAGS_RELEASE "${CMAKE_C_FLAGS_RELEASE} -s")
 set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -s")

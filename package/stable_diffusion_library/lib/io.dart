@@ -33,6 +33,7 @@ Bukan maksud kami menipu itu karena harga yang sudah di kalkulasi + bantuan tiba
 
 <!-- END LICENSE --> */
 import 'dart:async';
+import 'dart:io';
 import 'dart:isolate';
 
 import 'package:ffi_universe/ffi_universe.dart';
@@ -49,8 +50,7 @@ class StableDiffusionLibrary extends StableDiffusionLibraryBase {
   StableDiffusionLibrary({super.sharedLibraryPath});
 
   ///
-  static late final StableDiffusionLibrarySharedBindingsByGeneralDeveloper
-      _stableDiffusionLibrary;
+  static late final StableDiffusionLibrarySharedBindingsByGeneralDeveloper _stableDiffusionLibrary;
 
   static bool _isEnsureInitialized = false;
 
@@ -61,8 +61,7 @@ class StableDiffusionLibrary extends StableDiffusionLibraryBase {
     }
 
     try {
-      _stableDiffusionLibrary =
-          StableDiffusionLibrarySharedBindingsByGeneralDeveloper(
+      _stableDiffusionLibrary = StableDiffusionLibrarySharedBindingsByGeneralDeveloper(
         DynamicLibrary.open(
           sharedLibraryPath,
         ),
@@ -104,8 +103,7 @@ class StableDiffusionLibrary extends StableDiffusionLibraryBase {
   }) async {
     if (_isInIsolate == false) {
       return await Isolate.run(() async {
-        final StableDiffusionLibrary stableDiffusionLibrary =
-            StableDiffusionLibrary();
+        final StableDiffusionLibrary stableDiffusionLibrary = StableDiffusionLibrary();
         stableDiffusionLibrary._isInIsolate = true;
         await stableDiffusionLibrary.ensureInitialized();
         await stableDiffusionLibrary.initialized();
@@ -116,13 +114,10 @@ class StableDiffusionLibrary extends StableDiffusionLibraryBase {
         return result;
       });
     }
-    final stableDiffusionLibrary =
-        StableDiffusionLibrary._stableDiffusionLibrary;
+    final stableDiffusionLibrary = StableDiffusionLibrary._stableDiffusionLibrary;
 
     final Pointer<Pointer<Char>> argv = arguments.toNativeVectorChar();
-    return stableDiffusionLibrary.stable_diffusion_start(
-            arguments.length, argv) ==
-        0;
+    return stableDiffusionLibrary.stable_diffusion_start(arguments.length, argv) == 0;
   }
 
   @override
@@ -133,8 +128,19 @@ class StableDiffusionLibrary extends StableDiffusionLibraryBase {
   }) async {
     final result = await invokeRaw(
       arguments: [
+        Platform.executable,
+        "--mode",
+        "txt2img",
+        "--threads",
+        "1",
+        "--batch-count",
+        "1",
         "--model",
         modelPath,
+        "--height",
+        "512",
+        "--width",
+        "512",
         "--prompt",
         prompt,
       ],

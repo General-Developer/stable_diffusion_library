@@ -44,8 +44,7 @@ void main(List<String> args) async {
   );
 
   final StableDiffusionLibrary stableDiffusionLibrary = StableDiffusionLibrary(
-    sharedLibraryPath:
-        "../stable_diffusion_library_flutter/linux/libstable_diffusion_library.so",
+    sharedLibraryPath: "/home/galaxeus/Documents/github/general-developer/stable_diffusion_library/package/stable_diffusion_library_flutter/linux/libstable_diffusion_library.so",
   );
   await stableDiffusionLibrary.ensureInitialized();
   await stableDiffusionLibrary.initialized();
