@@ -82,46 +82,46 @@ set(STABLE_DIFFUSION_LIBRARY_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/lib/stable_d
 include_directories("${STABLE_DIFFUSION_LIBRARY_DIRECTORY}/include")
 
 
-set(stable_diffusion_library_build_exe ON)
-set(stable_diffusion_library_build_shared ON)
+# set(stable_diffusion_library_build_exe ON)
+# set(stable_diffusion_library_build_shared ON)
 
-if(stable_diffusion_library_build_exe)
-  message("Build Exe")
-  add_executable(stable_diffusion_executable "${STABLE_DIFFUSION_LIBRARY_DIRECTORY}/lib/stable_diffusion_library.cpp")
+# if(stable_diffusion_library_build_exe)
+#   message("Build Exe")
+#   add_executable(stable_diffusion_executable "${STABLE_DIFFUSION_LIBRARY_DIRECTORY}/lib/stable_diffusion_library.cpp")
 
-  set_target_properties(
-    stable_diffusion_executable PROPERTIES
-    OUTPUT_NAME "stable_diffusion_library"
-    RUNTIME_OUTPUT_DIRECTORY "bin"
-    BUILD_WITH_INSTALL_RPATH TRUE
-    INSTALL_RPATH "$ORIGIN"
-  )
+#   set_target_properties(
+#     stable_diffusion_executable PROPERTIES
+#     OUTPUT_NAME "stable_diffusion_library"
+#     RUNTIME_OUTPUT_DIRECTORY "bin"
+#     BUILD_WITH_INSTALL_RPATH TRUE
+#     INSTALL_RPATH "$ORIGIN"
+#   )
 
-  install(TARGETS stable_diffusion_executable RUNTIME)
-  target_link_libraries(stable_diffusion_executable PRIVATE stable-diffusion ${CMAKE_THREAD_LIBS_INIT})
-  target_compile_features(stable_diffusion_executable PRIVATE cxx_std_17)
-endif()
-# message("info: ${CMAKE_C_FLAGS_RELEASE} - ${CMAKE_CXX_FLAGS_RELEASE}")
+#   install(TARGETS stable_diffusion_executable RUNTIME)
+#   target_link_libraries(stable_diffusion_executable PRIVATE stable-diffusion ${CMAKE_THREAD_LIBS_INIT})
+#   target_compile_features(stable_diffusion_executable PRIVATE cxx_std_17)
+# endif()
+# # message("info: ${CMAKE_C_FLAGS_RELEASE} - ${CMAKE_CXX_FLAGS_RELEASE}")
 
-if(stable_diffusion_library_build_shared)
-  message("Build Shared")
+# if(stable_diffusion_library_build_shared)
+#   message("Build Shared")
 
-  add_library(stable_diffusion_shared_library SHARED
-    "${STABLE_DIFFUSION_LIBRARY_DIRECTORY}/lib/stable_diffusion_library.cpp"
-    "${STABLE_DIFFUSION_LIBRARY_DIRECTORY}/include/stable_diffusion_library.h"
-  )
+#   add_library(stable_diffusion_shared_library SHARED
+#     "${STABLE_DIFFUSION_LIBRARY_DIRECTORY}/lib/stable_diffusion_library.cpp"
+#     "${STABLE_DIFFUSION_LIBRARY_DIRECTORY}/include/stable_diffusion_library.h"
+#   )
 
-  set_target_properties(
-    stable_diffusion_shared_library PROPERTIES
-    PUBLIC_HEADER "${STABLE_DIFFUSION_LIBRARY_DIRECTORY}/include/stable_diffusion_library.h"
-    LIBRARY_OUTPUT_NAME "stable_diffusion_library"
-    BUILD_WITH_INSTALL_RPATH TRUE
-    INSTALL_RPATH "$ORIGIN"
-  )
+#   set_target_properties(
+#     stable_diffusion_shared_library PROPERTIES
+#     PUBLIC_HEADER "${STABLE_DIFFUSION_LIBRARY_DIRECTORY}/include/stable_diffusion_library.h"
+#     LIBRARY_OUTPUT_NAME "stable_diffusion_library"
+#     BUILD_WITH_INSTALL_RPATH TRUE
+#     INSTALL_RPATH "$ORIGIN"
+#   )
 
-  install(TARGETS stable_diffusion_shared_library RUNTIME)
+#   install(TARGETS stable_diffusion_shared_library RUNTIME)
 
-  target_link_libraries(stable_diffusion_shared_library PRIVATE stable-diffusion ${CMAKE_THREAD_LIBS_INIT})
-  target_compile_features(stable_diffusion_shared_library PRIVATE cxx_std_17)
+#   target_link_libraries(stable_diffusion_shared_library PRIVATE stable-diffusion ${CMAKE_THREAD_LIBS_INIT})
+#   target_compile_features(stable_diffusion_shared_library PRIVATE cxx_std_17)
 
-endif()
+# endif()
