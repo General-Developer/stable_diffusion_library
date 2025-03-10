@@ -39,9 +39,6 @@ import 'dart:async';
 
 import 'package:general_lib/general_lib.dart';
 import 'package:general_schema/base/core.dart';
-import "dart:ffi" as ffi;
-// import "package:ffi/ffi.dart" as ffi;
-import 'package:stable_diffusion_library/core/ffi/bindings.dart' show StableDiffusionLibrarySharedBindingsByGeneralDeveloper, rng_type_t, sample_method_t, schedule_t, sd_ctx_t, sd_image_t, sd_log_cb_t, sd_progress_cb_t, sd_type_t;
 
 class StableDiffusionLibraryEnsureInitialized {}
 
@@ -200,8 +197,7 @@ abstract class StableDiffusionLibraryBase extends GeneralSchemaBaseCore<StableDi
     required FutureOr<dynamic> Function(UpdateStableDiffusionLibraryData updateStableDiffusionLibrary) onUpdate,
   });
 
-  StableDiffusionLibrarySharedBindingsByGeneralDeveloper get bindings; 
-}
+ }
 
 enum SDType {
   NONE, // No quantization

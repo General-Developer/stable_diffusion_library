@@ -103,7 +103,7 @@ extension TextToImageStableDiffusionModelFromFileStableDiffusionLibraryExtension
             'message': 'Failed Generate Image',
           });
         }
-      } catch (e, stack) {
+      } catch (e) {
         // print("Error generating image: ${e} ${stack}");
         return UpdateStableDiffusionGeneratedImageStableDiffusionLibrary({
           '@type': 'error',

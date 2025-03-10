@@ -33,5 +33,5 @@ Bukan maksud kami menipu itu karena harga yang sudah di kalkulasi + bantuan tiba
 
 <!-- END LICENSE --> */
 export "base.dart"; 
-export "core/io/io.dart";
+export "core/core.dart";
 export "utils/utils.dart";
