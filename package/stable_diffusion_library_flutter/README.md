@@ -37,7 +37,7 @@
 
 ## Resources
 
-1. [MODEL](https://huggingface.co/ggml-org/Meta-Llama-3.1-8B-Instruct-Q4_0-GGUF)
+1. [MODEL](https://huggingface.co/CompVis/stable-diffusion-v-1-4-original)
 
 ### 📥️ Install Library
 
@@ -58,29 +58,51 @@ flutter pub add stable_diffusion_library_flutter
 Example Quickstart script minimal for insight you or make you use this library because very simple
 
 ```dart
+
 import 'dart:io';
-import 'package:stable_diffusion_library/stable_diffusion_library.dart'; 
+import 'package:stable_diffusion_library/scheme/scheme/api/api.dart';
+import 'package:stable_diffusion_library/stable_diffusion_library.dart';
 
 void main(List<String> args) async {
   print("start");
 
   File modelFile = File(
-    "../../../../../big-data/stable-diffusion/model.ckpt",
+    "../../../../../big-data/stable-diffusion/sd-v1-4.ckpt",
   );
+  if (modelFile.existsSync() == false) {
+    print("model not found");
+    exit(1);
+  }
 
   final StableDiffusionLibrary stableDiffusionLibrary = StableDiffusionLibrary(
-    sharedLibraryPath: "../stable_diffusion_library_flutter/linux/libstable_diffusion_library.so",
+    sharedLibraryPath: "libstable_diffusion_library.so",
+    defaultInvokeOptions: StableDiffusionLibraryInvokeOptions(
+        invokeTimeOut: Duration(hours: 1),
+        isThrowOnError: false,
+        isVoid: false),
   );
-  await stableDiffusionLibrary.ensureInitialized();
-  await stableDiffusionLibrary.initialized();
 
-  await stableDiffusionLibrary.textToImage(
-    modelPath: modelFile.path,
-    prompt: "Cat",
-    negativePrompt: "",
+  await stableDiffusionLibrary.ensureInitialized(
+      generalSchemaEnsureInitialized:
+          StableDiffusionLibraryEnsureInitialized());
+  await stableDiffusionLibrary.initialized();
+  await stableDiffusionLibrary.invoke(
+    invokeParameters:
+        LoadStableDiffusionModelFromFileStableDiffusionLibrary.create(
+      model_file_path: modelFile.path,
+    ),
+    invokeOptions: null,
+  );
+  await stableDiffusionLibrary.invoke(
+    invokeParameters:
+        TextToImageStableDiffusionModelFromFileStableDiffusionLibrary.create(
+      prompt: "Cat with cute eye",
+    ),
+    invokeOptions: null,
   );
 
   await stableDiffusionLibrary.dispose();
+  print("done");
   exit(0);
 }
 ```
