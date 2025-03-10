@@ -7,6 +7,14 @@ import 'package:stable_diffusion_library/base.dart';
 
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 class StableDiffusionLibrary extends StableDiffusionLibraryBase {
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  StableDiffusionLibrary({
+    super.defaultInvokeOptions,
+    super.eventEmitter,
+    super.eventInvoke,
+    super.eventUpdate,
+    super.sharedLibraryPath,
+  });
   @override
   FutureOr<void> dispose() {
     // TODO: implement dispose

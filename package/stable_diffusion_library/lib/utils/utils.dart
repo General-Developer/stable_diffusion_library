@@ -2,7 +2,7 @@ import 'dart:math' show Random;
 
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 class StableDiffusionLibraryUtils {
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static String generateRandomSequence(int length) {
     const chars = 'abcdefghijklmnopqrstuvwxyz0123456789';
     final random = Random();
@@ -14,7 +14,7 @@ class StableDiffusionLibraryUtils {
     );
   }
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static String sanitizePrompt(String prompt) {
     return prompt
         .replaceAll(RegExp(r'[^\w\s-]'), '')

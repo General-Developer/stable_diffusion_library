@@ -34,27 +34,49 @@ Bukan maksud kami menipu itu karena harga yang sudah di kalkulasi + bantuan tiba
 <!-- END LICENSE --> */
 
 import 'dart:io';
+import 'package:stable_diffusion_library/scheme/scheme/api/api.dart';
 import 'package:stable_diffusion_library_dart/stable_diffusion_library_dart.dart';
 
 void main(List<String> args) async {
   print("start");
 
   File modelFile = File(
-    "../../../../../big-data/stable-diffusion/model.ckpt",
+    "../../../../../big-data/stable-diffusion/sd-v1-4.ckpt",
+  );
+  if (modelFile.existsSync() == false) {
+    print("model not found");
+    exit(1);
+  }
+
+  final StableDiffusionLibraryDart stableDiffusionLibrary =
+      StableDiffusionLibraryDart(
+    sharedLibraryPath: "libstable_diffusion_library.so",
+    defaultInvokeOptions: StableDiffusionLibraryInvokeOptions(
+        invokeTimeOut: Duration(hours: 1),
+        isThrowOnError: false,
+        isVoid: false),
   );
 
-  final StableDiffusionLibrary stableDiffusionLibrary = StableDiffusionLibrary(
-    sharedLibraryPath: "/home/galaxeus/Documents/github/general-developer/stable_diffusion_library/package/stable_diffusion_library_flutter/linux/libstable_diffusion_library.so",
-  );
-  await stableDiffusionLibrary.ensureInitialized();
+  await stableDiffusionLibrary.ensureInitialized(
+      generalSchemaEnsureInitialized:
+          StableDiffusionLibraryEnsureInitialized());
   await stableDiffusionLibrary.initialized();
-
-  await stableDiffusionLibrary.textToImage(
-    modelPath: modelFile.path,
-    prompt: "Cat",
-    negativePrompt: "",
+  await stableDiffusionLibrary.invoke(
+    invokeParameters:
+        LoadStableDiffusionModelFromFileStableDiffusionLibrary.create(
+      model_file_path: modelFile.path,
+    ),
+    invokeOptions: null,
+  );
+  await stableDiffusionLibrary.invoke(
+    invokeParameters:
+        TextToImageStableDiffusionModelFromFileStableDiffusionLibrary.create(
+      prompt: "Cat with cute eye",
+    ),
+    invokeOptions: null,
   );
 
   await stableDiffusionLibrary.dispose();
+  print("done");
   exit(0);
 }

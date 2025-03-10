@@ -7,5 +7,9 @@ class StableDiffusionLibraryDart extends StableDiffusionLibrary {
   /// Check Out: https://www.youtube.com/@GENERAL_DEV
   StableDiffusionLibraryDart({
     super.sharedLibraryPath,
+    super.defaultInvokeOptions,
+    super.eventEmitter,
+    super.eventInvoke,
+    super.eventUpdate,
   });
 }

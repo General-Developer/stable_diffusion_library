@@ -19,7 +19,7 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
           lookup)
       : _lookup = lookup;
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ffi.Void> memcpy(
     ffi.Pointer<ffi.Void> __dest,
     ffi.Pointer<ffi.Void> __src,
@@ -40,7 +40,7 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ffi.Void> Function(
           ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>, int)>();
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ffi.Void> memmove(
     ffi.Pointer<ffi.Void> __dest,
     ffi.Pointer<ffi.Void> __src,
@@ -61,7 +61,7 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ffi.Void> Function(
           ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>, int)>();
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ffi.Void> memccpy(
     ffi.Pointer<ffi.Void> __dest,
     ffi.Pointer<ffi.Void> __src,
@@ -84,7 +84,7 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ffi.Void> Function(
           ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>, int, int)>();
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ffi.Void> memset(
     ffi.Pointer<ffi.Void> __s,
     int __c,
@@ -104,7 +104,7 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
   late final _memset = _memsetPtr.asFunction<
       ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>, int, int)>();
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int memcmp(
     ffi.Pointer<ffi.Void> __s1,
     ffi.Pointer<ffi.Void> __s2,
@@ -143,7 +143,7 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
   late final ___memcmpeq = ___memcmpeqPtr.asFunction<
       int Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>, int)>();
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ffi.Void> memchr(
     ffi.Pointer<ffi.Void> __s,
     int __c,
@@ -163,7 +163,7 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
   late final _memchr = _memchrPtr.asFunction<
       ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>, int, int)>();
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ffi.Char> strcpy(
     ffi.Pointer<ffi.Char> __dest,
     ffi.Pointer<ffi.Char> __src,
@@ -182,7 +182,7 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ffi.Char> Function(
           ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>();
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ffi.Char> strncpy(
     ffi.Pointer<ffi.Char> __dest,
     ffi.Pointer<ffi.Char> __src,
@@ -203,7 +203,7 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ffi.Char> Function(
           ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, int)>();
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ffi.Char> strcat(
     ffi.Pointer<ffi.Char> __dest,
     ffi.Pointer<ffi.Char> __src,
@@ -222,7 +222,7 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ffi.Char> Function(
           ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>();
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ffi.Char> strncat(
     ffi.Pointer<ffi.Char> __dest,
     ffi.Pointer<ffi.Char> __src,
@@ -243,7 +243,7 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ffi.Char> Function(
           ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, int)>();
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int strcmp(
     ffi.Pointer<ffi.Char> __s1,
     ffi.Pointer<ffi.Char> __s2,
@@ -261,7 +261,7 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
   late final _strcmp = _strcmpPtr
       .asFunction<int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>();
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int strncmp(
     ffi.Pointer<ffi.Char> __s1,
     ffi.Pointer<ffi.Char> __s2,
@@ -281,7 +281,7 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
   late final _strncmp = _strncmpPtr.asFunction<
       int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, int)>();
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int strcoll(
     ffi.Pointer<ffi.Char> __s1,
     ffi.Pointer<ffi.Char> __s2,
@@ -299,7 +299,7 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
   late final _strcoll = _strcollPtr
       .asFunction<int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>();
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int strxfrm(
     ffi.Pointer<ffi.Char> __dest,
     ffi.Pointer<ffi.Char> __src,
@@ -319,7 +319,7 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
   late final _strxfrm = _strxfrmPtr.asFunction<
       int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, int)>();
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int strcoll_l(
     ffi.Pointer<ffi.Char> __s1,
     ffi.Pointer<ffi.Char> __s2,
@@ -339,7 +339,7 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
   late final _strcoll_l = _strcoll_lPtr.asFunction<
       int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, locale_t)>();
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int strxfrm_l(
     ffi.Pointer<ffi.Char> __dest,
     ffi.Pointer<ffi.Char> __src,
@@ -362,7 +362,7 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
       int Function(
           ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, int, locale_t)>();
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ffi.Char> strdup(
     ffi.Pointer<ffi.Char> __s,
   ) {
@@ -377,7 +377,7 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
   late final _strdup = _strdupPtr
       .asFunction<ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>)>();
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ffi.Char> strndup(
     ffi.Pointer<ffi.Char> __string,
     int __n,
@@ -395,7 +395,7 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
   late final _strndup = _strndupPtr
       .asFunction<ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>, int)>();
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ffi.Char> strchr(
     ffi.Pointer<ffi.Char> __s,
     int __c,
@@ -413,7 +413,7 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
   late final _strchr = _strchrPtr
       .asFunction<ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>, int)>();
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ffi.Char> strrchr(
     ffi.Pointer<ffi.Char> __s,
     int __c,
@@ -431,7 +431,7 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
   late final _strrchr = _strrchrPtr
       .asFunction<ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>, int)>();
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ffi.Char> strchrnul(
     ffi.Pointer<ffi.Char> __s,
     int __c,
@@ -449,7 +449,7 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
   late final _strchrnul = _strchrnulPtr
       .asFunction<ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>, int)>();
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int strcspn(
     ffi.Pointer<ffi.Char> __s,
     ffi.Pointer<ffi.Char> __reject,
@@ -467,7 +467,7 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
   late final _strcspn = _strcspnPtr
       .asFunction<int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>();
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int strspn(
     ffi.Pointer<ffi.Char> __s,
     ffi.Pointer<ffi.Char> __accept,
@@ -485,7 +485,7 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
   late final _strspn = _strspnPtr
       .asFunction<int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>();
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ffi.Char> strpbrk(
     ffi.Pointer<ffi.Char> __s,
     ffi.Pointer<ffi.Char> __accept,
@@ -504,7 +504,7 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ffi.Char> Function(
           ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>();
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ffi.Char> strstr(
     ffi.Pointer<ffi.Char> __haystack,
     ffi.Pointer<ffi.Char> __needle,
@@ -523,7 +523,7 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ffi.Char> Function(
           ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>();
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ffi.Char> strtok(
     ffi.Pointer<ffi.Char> __s,
     ffi.Pointer<ffi.Char> __delim,
@@ -564,7 +564,7 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>,
           ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Pointer<ffi.Char>>)>();
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ffi.Char> strtok_r(
     ffi.Pointer<ffi.Char> __s,
     ffi.Pointer<ffi.Char> __delim,
@@ -587,7 +587,7 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>,
           ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Pointer<ffi.Char>>)>();
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ffi.Char> strcasestr(
     ffi.Pointer<ffi.Char> __haystack,
     ffi.Pointer<ffi.Char> __needle,
@@ -606,7 +606,7 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ffi.Char> Function(
           ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>();
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ffi.Void> memmem(
     ffi.Pointer<ffi.Void> __haystack,
     int __haystacklen,
@@ -649,7 +649,7 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ffi.Void> Function(
           ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>, int)>();
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ffi.Void> mempcpy(
     ffi.Pointer<ffi.Void> __dest,
     ffi.Pointer<ffi.Void> __src,
@@ -670,7 +670,7 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ffi.Void> Function(
           ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>, int)>();
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int strlen(
     ffi.Pointer<ffi.Char> __s,
   ) {
@@ -685,7 +685,7 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
   late final _strlen =
       _strlenPtr.asFunction<int Function(ffi.Pointer<ffi.Char>)>();
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int strnlen(
     ffi.Pointer<ffi.Char> __string,
     int __maxlen,
@@ -702,7 +702,7 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
   late final _strnlen =
       _strnlenPtr.asFunction<int Function(ffi.Pointer<ffi.Char>, int)>();
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ffi.Char> strerror(
     int __errnum,
   ) {
@@ -717,7 +717,7 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
   late final _strerror =
       _strerrorPtr.asFunction<ffi.Pointer<ffi.Char> Function(int)>();
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int strerror_r(
     int __errnum,
     ffi.Pointer<ffi.Char> __buf,
@@ -737,7 +737,7 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
   late final _strerror_r = _strerror_rPtr
       .asFunction<int Function(int, ffi.Pointer<ffi.Char>, int)>();
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ffi.Char> strerror_l(
     int __errnum,
     locale_t __l,
@@ -754,7 +754,7 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
   late final _strerror_l = _strerror_lPtr
       .asFunction<ffi.Pointer<ffi.Char> Function(int, locale_t)>();
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int bcmp(
     ffi.Pointer<ffi.Void> __s1,
     ffi.Pointer<ffi.Void> __s2,
@@ -774,7 +774,7 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
   late final _bcmp = _bcmpPtr.asFunction<
       int Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>, int)>();
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   void bcopy(
     ffi.Pointer<ffi.Void> __src,
     ffi.Pointer<ffi.Void> __dest,
@@ -794,7 +794,7 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
   late final _bcopy = _bcopyPtr.asFunction<
       void Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>, int)>();
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   void bzero(
     ffi.Pointer<ffi.Void> __s,
     int __n,
@@ -811,7 +811,7 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
   late final _bzero =
       _bzeroPtr.asFunction<void Function(ffi.Pointer<ffi.Void>, int)>();
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ffi.Char> index(
     ffi.Pointer<ffi.Char> __s,
     int __c,
@@ -829,7 +829,7 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
   late final _index = _indexPtr
       .asFunction<ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>, int)>();
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ffi.Char> rindex(
     ffi.Pointer<ffi.Char> __s,
     int __c,
@@ -847,7 +847,7 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
   late final _rindex = _rindexPtr
       .asFunction<ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>, int)>();
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int ffs(
     int __i,
   ) {
@@ -860,7 +860,7 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
       _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>('ffs');
   late final _ffs = _ffsPtr.asFunction<int Function(int)>();
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int ffsl(
     int __l,
   ) {
@@ -873,7 +873,7 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
       _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Long)>>('ffsl');
   late final _ffsl = _ffslPtr.asFunction<int Function(int)>();
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int ffsll(
     int __ll,
   ) {
@@ -886,7 +886,7 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
       _lookup<ffi.NativeFunction<ffi.Int Function(ffi.LongLong)>>('ffsll');
   late final _ffsll = _ffsllPtr.asFunction<int Function(int)>();
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int strcasecmp(
     ffi.Pointer<ffi.Char> __s1,
     ffi.Pointer<ffi.Char> __s2,
@@ -904,7 +904,7 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
   late final _strcasecmp = _strcasecmpPtr
       .asFunction<int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>();
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int strncasecmp(
     ffi.Pointer<ffi.Char> __s1,
     ffi.Pointer<ffi.Char> __s2,
@@ -924,7 +924,7 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
   late final _strncasecmp = _strncasecmpPtr.asFunction<
       int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, int)>();
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int strcasecmp_l(
     ffi.Pointer<ffi.Char> __s1,
     ffi.Pointer<ffi.Char> __s2,
@@ -944,7 +944,7 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
   late final _strcasecmp_l = _strcasecmp_lPtr.asFunction<
       int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, locale_t)>();
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int strncasecmp_l(
     ffi.Pointer<ffi.Char> __s1,
     ffi.Pointer<ffi.Char> __s2,
@@ -967,7 +967,7 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
       int Function(
           ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, int, locale_t)>();
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   void explicit_bzero(
     ffi.Pointer<ffi.Void> __s,
     int __n,
@@ -985,7 +985,7 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
   late final _explicit_bzero = _explicit_bzeroPtr
       .asFunction<void Function(ffi.Pointer<ffi.Void>, int)>();
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ffi.Char> strsep(
     ffi.Pointer<ffi.Pointer<ffi.Char>> __stringp,
     ffi.Pointer<ffi.Char> __delim,
@@ -1004,7 +1004,7 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ffi.Char> Function(
           ffi.Pointer<ffi.Pointer<ffi.Char>>, ffi.Pointer<ffi.Char>)>();
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ffi.Char> strsignal(
     int __sig,
   ) {
@@ -1037,7 +1037,7 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ffi.Char> Function(
           ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>();
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ffi.Char> stpcpy(
     ffi.Pointer<ffi.Char> __dest,
     ffi.Pointer<ffi.Char> __src,
@@ -1076,7 +1076,7 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ffi.Char> Function(
           ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, int)>();
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ffi.Char> stpncpy(
     ffi.Pointer<ffi.Char> __dest,
     ffi.Pointer<ffi.Char> __src,
@@ -1097,7 +1097,7 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ffi.Char> Function(
           ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, int)>();
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int strlcpy(
     ffi.Pointer<ffi.Char> __dest,
     ffi.Pointer<ffi.Char> __src,
@@ -1117,7 +1117,7 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
   late final _strlcpy = _strlcpyPtr.asFunction<
       int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, int)>();
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int strlcat(
     ffi.Pointer<ffi.Char> __dest,
     ffi.Pointer<ffi.Char> __src,
@@ -1137,7 +1137,7 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
   late final _strlcat = _strlcatPtr.asFunction<
       int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, int)>();
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ffi.Char> sd_type_name(
     sd_type_t type,
   ) {
@@ -1152,7 +1152,7 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
   late final _sd_type_name =
       _sd_type_namePtr.asFunction<ffi.Pointer<ffi.Char> Function(int)>();
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   void sd_set_log_callback(
     sd_log_cb_t sd_log_cb,
     ffi.Pointer<ffi.Void> data,
@@ -1170,7 +1170,7 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
   late final _sd_set_log_callback = _sd_set_log_callbackPtr
       .asFunction<void Function(sd_log_cb_t, ffi.Pointer<ffi.Void>)>();
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   void sd_set_progress_callback(
     sd_progress_cb_t cb,
     ffi.Pointer<ffi.Void> data,
@@ -1188,7 +1188,7 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
   late final _sd_set_progress_callback = _sd_set_progress_callbackPtr
       .asFunction<void Function(sd_progress_cb_t, ffi.Pointer<ffi.Void>)>();
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int get_num_physical_cores() {
     return _get_num_physical_cores();
   }
@@ -1199,7 +1199,7 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
   late final _get_num_physical_cores =
       _get_num_physical_coresPtr.asFunction<int Function()>();
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ffi.Char> sd_get_system_info() {
     return _sd_get_system_info();
   }
@@ -1210,7 +1210,7 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
   late final _sd_get_system_info =
       _sd_get_system_infoPtr.asFunction<ffi.Pointer<ffi.Char> Function()>();
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   ffi.Pointer<sd_ctx_t> new_sd_ctx(
     ffi.Pointer<ffi.Char> model_path,
     ffi.Pointer<ffi.Char> clip_l_path,
@@ -1311,7 +1311,7 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
           bool,
           bool)>();
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   void free_sd_ctx(
     ffi.Pointer<sd_ctx_t> sd_ctx,
   ) {
@@ -1326,7 +1326,7 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
   late final _free_sd_ctx =
       _free_sd_ctxPtr.asFunction<void Function(ffi.Pointer<sd_ctx_t>)>();
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   ffi.Pointer<sd_image_t> txt2img(
     ffi.Pointer<sd_ctx_t> sd_ctx,
     ffi.Pointer<ffi.Char> prompt,
@@ -1431,7 +1431,7 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
           double,
           double)>();
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   ffi.Pointer<sd_image_t> img2img(
     ffi.Pointer<sd_ctx_t> sd_ctx,
     sd_image_t init_image,
@@ -1548,7 +1548,7 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
           double,
           double)>();
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   ffi.Pointer<sd_image_t> img2vid(
     ffi.Pointer<sd_ctx_t> sd_ctx,
     sd_image_t init_image,
@@ -1604,7 +1604,7 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<sd_image_t> Function(ffi.Pointer<sd_ctx_t>, sd_image_t, int,
           int, int, int, int, double, double, double, int, int, double, int)>();
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   ffi.Pointer<upscaler_ctx_t> new_upscaler_ctx(
     ffi.Pointer<ffi.Char> esrgan_path,
     int n_threads,
@@ -1622,7 +1622,7 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
   late final _new_upscaler_ctx = _new_upscaler_ctxPtr.asFunction<
       ffi.Pointer<upscaler_ctx_t> Function(ffi.Pointer<ffi.Char>, int)>();
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   void free_upscaler_ctx(
     ffi.Pointer<upscaler_ctx_t> upscaler_ctx,
   ) {
@@ -1637,7 +1637,7 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
   late final _free_upscaler_ctx = _free_upscaler_ctxPtr
       .asFunction<void Function(ffi.Pointer<upscaler_ctx_t>)>();
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   sd_image_t upscale(
     ffi.Pointer<upscaler_ctx_t> upscaler_ctx,
     sd_image_t input_image,
@@ -1657,7 +1657,7 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
   late final _upscale = _upscalePtr.asFunction<
       sd_image_t Function(ffi.Pointer<upscaler_ctx_t>, sd_image_t, int)>();
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   bool convert(
     ffi.Pointer<ffi.Char> input_path,
     ffi.Pointer<ffi.Char> vae_path,
@@ -1680,7 +1680,7 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
       bool Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>,
           ffi.Pointer<ffi.Char>, int)>();
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ffi.Uint8> preprocess_canny(
     ffi.Pointer<ffi.Uint8> img,
     int width,
@@ -1721,6 +1721,7 @@ class StableDiffusionLibrarySharedBindingsByGeneralDeveloper {
 
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 typedef ptrdiff_t = ffi.Long;
+
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 typedef Dartptrdiff_t = int;
 
@@ -1728,39 +1729,51 @@ typedef Dartptrdiff_t = int;
 final class max_align_t extends ffi.Opaque {}
 
 typedef __u_char = ffi.UnsignedChar;
+
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 typedef Dart__u_char = int;
 typedef __u_short = ffi.UnsignedShort;
+
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 typedef Dart__u_short = int;
 typedef __u_int = ffi.UnsignedInt;
+
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 typedef Dart__u_int = int;
 typedef __u_long = ffi.UnsignedLong;
+
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 typedef Dart__u_long = int;
 typedef __int8_t = ffi.SignedChar;
+
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 typedef Dart__int8_t = int;
 typedef __uint8_t = ffi.UnsignedChar;
+
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 typedef Dart__uint8_t = int;
 typedef __int16_t = ffi.Short;
+
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 typedef Dart__int16_t = int;
 typedef __uint16_t = ffi.UnsignedShort;
+
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 typedef Dart__uint16_t = int;
 typedef __int32_t = ffi.Int;
+
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 typedef Dart__int32_t = int;
 typedef __uint32_t = ffi.UnsignedInt;
+
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 typedef Dart__uint32_t = int;
 typedef __int64_t = ffi.Long;
+
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 typedef Dart__int64_t = int;
 typedef __uint64_t = ffi.UnsignedLong;
+
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 typedef Dart__uint64_t = int;
 typedef __int_least8_t = __int8_t;
@@ -1772,45 +1785,59 @@ typedef __uint_least32_t = __uint32_t;
 typedef __int_least64_t = __int64_t;
 typedef __uint_least64_t = __uint64_t;
 typedef __quad_t = ffi.Long;
+
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 typedef Dart__quad_t = int;
 typedef __u_quad_t = ffi.UnsignedLong;
+
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 typedef Dart__u_quad_t = int;
 typedef __intmax_t = ffi.Long;
+
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 typedef Dart__intmax_t = int;
 typedef __uintmax_t = ffi.UnsignedLong;
+
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 typedef Dart__uintmax_t = int;
 typedef __dev_t = ffi.UnsignedLong;
+
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 typedef Dart__dev_t = int;
 typedef __uid_t = ffi.UnsignedInt;
+
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 typedef Dart__uid_t = int;
 typedef __gid_t = ffi.UnsignedInt;
+
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 typedef Dart__gid_t = int;
 typedef __ino_t = ffi.UnsignedLong;
+
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 typedef Dart__ino_t = int;
 typedef __ino64_t = ffi.UnsignedLong;
+
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 typedef Dart__ino64_t = int;
 typedef __mode_t = ffi.UnsignedInt;
+
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 typedef Dart__mode_t = int;
 typedef __nlink_t = ffi.UnsignedLong;
+
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 typedef Dart__nlink_t = int;
 typedef __off_t = ffi.Long;
+
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 typedef Dart__off_t = int;
 typedef __off64_t = ffi.Long;
+
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 typedef Dart__off64_t = int;
 typedef __pid_t = ffi.Int;
+
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 typedef Dart__pid_t = int;
 
@@ -1820,133 +1847,184 @@ final class __fsid_t extends ffi.Struct {
 }
 
 typedef __clock_t = ffi.Long;
+
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 typedef Dart__clock_t = int;
 typedef __rlim_t = ffi.UnsignedLong;
+
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 typedef Dart__rlim_t = int;
 typedef __rlim64_t = ffi.UnsignedLong;
+
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 typedef Dart__rlim64_t = int;
 typedef __id_t = ffi.UnsignedInt;
+
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 typedef Dart__id_t = int;
 typedef __time_t = ffi.Long;
+
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 typedef Dart__time_t = int;
 typedef __useconds_t = ffi.UnsignedInt;
+
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 typedef Dart__useconds_t = int;
 typedef __suseconds_t = ffi.Long;
+
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 typedef Dart__suseconds_t = int;
 typedef __suseconds64_t = ffi.Long;
+
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 typedef Dart__suseconds64_t = int;
 typedef __daddr_t = ffi.Int;
+
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 typedef Dart__daddr_t = int;
 typedef __key_t = ffi.Int;
+
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 typedef Dart__key_t = int;
 typedef __clockid_t = ffi.Int;
+
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 typedef Dart__clockid_t = int;
 typedef __timer_t = ffi.Pointer<ffi.Void>;
 typedef __blksize_t = ffi.Long;
+
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 typedef Dart__blksize_t = int;
 typedef __blkcnt_t = ffi.Long;
+
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 typedef Dart__blkcnt_t = int;
 typedef __blkcnt64_t = ffi.Long;
+
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 typedef Dart__blkcnt64_t = int;
 typedef __fsblkcnt_t = ffi.UnsignedLong;
+
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 typedef Dart__fsblkcnt_t = int;
 typedef __fsblkcnt64_t = ffi.UnsignedLong;
+
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 typedef Dart__fsblkcnt64_t = int;
 typedef __fsfilcnt_t = ffi.UnsignedLong;
+
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 typedef Dart__fsfilcnt_t = int;
 typedef __fsfilcnt64_t = ffi.UnsignedLong;
+
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 typedef Dart__fsfilcnt64_t = int;
 typedef __fsword_t = ffi.Long;
+
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 typedef Dart__fsword_t = int;
 typedef __ssize_t = ffi.Long;
+
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 typedef Dart__ssize_t = int;
 typedef __syscall_slong_t = ffi.Long;
+
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 typedef Dart__syscall_slong_t = int;
 typedef __syscall_ulong_t = ffi.UnsignedLong;
+
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 typedef Dart__syscall_ulong_t = int;
 typedef __loff_t = __off64_t;
 typedef __caddr_t = ffi.Pointer<ffi.Char>;
 typedef __intptr_t = ffi.Long;
+
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 typedef Dart__intptr_t = int;
 typedef __socklen_t = ffi.UnsignedInt;
+
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 typedef Dart__socklen_t = int;
 typedef __sig_atomic_t = ffi.Int;
+
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 typedef Dart__sig_atomic_t = int;
+
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 typedef int_least8_t = __int_least8_t;
+
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 typedef int_least16_t = __int_least16_t;
+
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 typedef int_least32_t = __int_least32_t;
+
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 typedef int_least64_t = __int_least64_t;
+
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 typedef uint_least8_t = __uint_least8_t;
+
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 typedef uint_least16_t = __uint_least16_t;
+
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 typedef uint_least32_t = __uint_least32_t;
+
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 typedef uint_least64_t = __uint_least64_t;
+
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 typedef int_fast8_t = ffi.SignedChar;
+
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 typedef Dartint_fast8_t = int;
+
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 typedef int_fast16_t = ffi.Long;
+
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 typedef Dartint_fast16_t = int;
+
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 typedef int_fast32_t = ffi.Long;
+
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 typedef Dartint_fast32_t = int;
+
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 typedef int_fast64_t = ffi.Long;
+
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 typedef Dartint_fast64_t = int;
+
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 typedef uint_fast8_t = ffi.UnsignedChar;
+
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 typedef Dartuint_fast8_t = int;
+
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 typedef uint_fast16_t = ffi.UnsignedLong;
+
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 typedef Dartuint_fast16_t = int;
+
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 typedef uint_fast32_t = ffi.UnsignedLong;
+
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 typedef Dartuint_fast32_t = int;
+
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 typedef uint_fast64_t = ffi.UnsignedLong;
+
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 typedef Dartuint_fast64_t = int;
+
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 typedef intmax_t = __intmax_t;
+
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 typedef uintmax_t = __uintmax_t;
 
@@ -1967,21 +2045,23 @@ final class __locale_struct extends ffi.Struct {
 }
 
 typedef __locale_t = ffi.Pointer<__locale_struct>;
+
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 typedef locale_t = __locale_t;
 
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 enum rng_type_t {
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   STD_DEFAULT_RNG(0),
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   CUDA_RNG(1);
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   final int value;
   const rng_type_t(this.value);
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static rng_type_t fromValue(int value) => switch (value) {
         0 => STD_DEFAULT_RNG,
         1 => CUDA_RNG,
@@ -1991,38 +2071,50 @@ enum rng_type_t {
 
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 enum sample_method_t {
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   EULER_A(0),
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   EULER(1),
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   HEUN(2),
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   DPM2(3),
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   DPMPP2S_A(4),
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   DPMPP2M(5),
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   DPMPP2Mv2(6),
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   IPNDM(7),
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   IPNDM_V(8),
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   LCM(9),
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   DDIM_TRAILING(10),
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   TCD(11),
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   N_SAMPLE_METHODS(12);
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   final int value;
   const sample_method_t(this.value);
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static sample_method_t fromValue(int value) => switch (value) {
         0 => EULER_A,
         1 => EULER,
@@ -2043,26 +2135,32 @@ enum sample_method_t {
 
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 enum schedule_t {
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   DEFAULT(0),
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   DISCRETE(1),
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   KARRAS(2),
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   EXPONENTIAL(3),
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   AYS(4),
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   GITS(5),
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   N_SCHEDULES(6);
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   final int value;
   const schedule_t(this.value);
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static schedule_t fromValue(int value) => switch (value) {
         0 => DEFAULT,
         1 => DISCRETE,
@@ -2077,76 +2175,107 @@ enum schedule_t {
 
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 enum sd_type_t {
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   SD_TYPE_F32(0),
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   SD_TYPE_F16(1),
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   SD_TYPE_Q4_0(2),
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   SD_TYPE_Q4_1(3),
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   SD_TYPE_Q5_0(6),
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   SD_TYPE_Q5_1(7),
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   SD_TYPE_Q8_0(8),
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   SD_TYPE_Q8_1(9),
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   SD_TYPE_Q2_K(10),
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   SD_TYPE_Q3_K(11),
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   SD_TYPE_Q4_K(12),
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   SD_TYPE_Q5_K(13),
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   SD_TYPE_Q6_K(14),
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   SD_TYPE_Q8_K(15),
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   SD_TYPE_IQ2_XXS(16),
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   SD_TYPE_IQ2_XS(17),
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   SD_TYPE_IQ3_XXS(18),
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   SD_TYPE_IQ1_S(19),
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   SD_TYPE_IQ4_NL(20),
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   SD_TYPE_IQ3_S(21),
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   SD_TYPE_IQ2_S(22),
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   SD_TYPE_IQ4_XS(23),
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   SD_TYPE_I8(24),
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   SD_TYPE_I16(25),
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   SD_TYPE_I32(26),
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   SD_TYPE_I64(27),
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   SD_TYPE_F64(28),
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   SD_TYPE_IQ1_M(29),
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   SD_TYPE_BF16(30),
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   SD_TYPE_TQ1_0(34),
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   SD_TYPE_TQ2_0(35),
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   SD_TYPE_COUNT(39);
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   final int value;
   const sd_type_t(this.value);
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static sd_type_t fromValue(int value) => switch (value) {
         0 => SD_TYPE_F32,
         1 => SD_TYPE_F16,
@@ -2186,20 +2315,23 @@ enum sd_type_t {
 
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 enum sd_log_level_t {
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   SD_LOG_DEBUG(0),
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   SD_LOG_INFO(1),
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   SD_LOG_WARN(2),
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   SD_LOG_ERROR(3);
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   final int value;
   const sd_log_level_t(this.value);
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static sd_log_level_t fromValue(int value) => switch (value) {
         0 => SD_LOG_DEBUG,
         1 => SD_LOG_INFO,
@@ -2212,17 +2344,22 @@ enum sd_log_level_t {
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 typedef sd_log_cb_tFunction = ffi.Void Function(ffi.UnsignedInt level,
     ffi.Pointer<ffi.Char> text, ffi.Pointer<ffi.Void> data);
+
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 typedef Dartsd_log_cb_tFunction = void Function(sd_log_level_t level,
     ffi.Pointer<ffi.Char> text, ffi.Pointer<ffi.Void> data);
+
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 typedef sd_log_cb_t = ffi.Pointer<ffi.NativeFunction<sd_log_cb_tFunction>>;
+
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 typedef sd_progress_cb_tFunction = ffi.Void Function(
     ffi.Int step, ffi.Int steps, ffi.Float time, ffi.Pointer<ffi.Void> data);
+
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 typedef Dartsd_progress_cb_tFunction = void Function(
     int step, int steps, double time, ffi.Pointer<ffi.Void> data);
+
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 typedef sd_progress_cb_t
     = ffi.Pointer<ffi.NativeFunction<sd_progress_cb_tFunction>>;
@@ -2230,18 +2367,21 @@ typedef sd_progress_cb_t
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 final class sd_image_t extends ffi.Struct {
   @ffi.Uint32()
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int width;
 
   @ffi.Uint32()
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int height;
 
   @ffi.Uint32()
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int channel;
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ffi.Pointer<ffi.Uint8> data;
 }
 

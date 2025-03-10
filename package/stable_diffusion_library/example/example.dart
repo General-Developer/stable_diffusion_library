@@ -34,6 +34,7 @@ Bukan maksud kami menipu itu karena harga yang sudah di kalkulasi + bantuan tiba
 <!-- END LICENSE --> */
 
 import 'dart:io';
+import 'package:stable_diffusion_library/scheme/scheme/api/api.dart';
 import 'package:stable_diffusion_library/stable_diffusion_library.dart';
 
 void main(List<String> args) async {
@@ -49,14 +50,29 @@ void main(List<String> args) async {
 
   final StableDiffusionLibrary stableDiffusionLibrary = StableDiffusionLibrary(
     sharedLibraryPath: "libstable_diffusion_library.so",
+    defaultInvokeOptions: StableDiffusionLibraryInvokeOptions(
+        invokeTimeOut: Duration(hours: 1),
+        isThrowOnError: false,
+        isVoid: false),
   );
-  await stableDiffusionLibrary.ensureInitialized();
-  await stableDiffusionLibrary.initialized();
 
-  await stableDiffusionLibrary.textToImage(
-    modelPath: modelFile.path,
-    prompt: "cat with cute eye",
-    negativePrompt: "",
+  await stableDiffusionLibrary.ensureInitialized(
+      generalSchemaEnsureInitialized:
+          StableDiffusionLibraryEnsureInitialized());
+  await stableDiffusionLibrary.initialized();
+  await stableDiffusionLibrary.invoke(
+    invokeParameters:
+        LoadStableDiffusionModelFromFileStableDiffusionLibrary.create(
+      model_file_path: modelFile.path,
+    ),
+    invokeOptions: null,
+  );
+  await stableDiffusionLibrary.invoke(
+    invokeParameters:
+        TextToImageStableDiffusionModelFromFileStableDiffusionLibrary.create(
+      prompt: "Cat with cute eye",
+    ),
+    invokeOptions: null,
   );
 
   await stableDiffusionLibrary.dispose();
