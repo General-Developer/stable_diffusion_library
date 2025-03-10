@@ -4,8 +4,7 @@ analyzer:
     - test
     - dev
     - templates
-
-  errors: 
+  errors:
     todo: ignore
 linter:
   rules:
