@@ -1,6 +1,6 @@
 name: 'stable_diffusion_library_flutter'
 description: 'Stable Diffusion Is Library for generated Text To Image on Edge Device Without api key or internet quota'
-version: '0.0.2'
+version: '0.0.3'
 funding:
   - 'https://github.com/sponsors/azkadev'
   - 'https://github.com/sponsors/generalfoss'

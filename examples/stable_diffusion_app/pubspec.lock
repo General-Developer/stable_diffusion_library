@@ -289,14 +289,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.7.11"
-  device_frame:
-    dependency: transitive
-    description:
-      name: device_frame
-      sha256: d031a06f5d6f4750009672db98a5aa1536aa4a231713852469ce394779a23d75
-      url: "https://pub.dev"
-    source: hosted
-    version: "1.2.0"
   encrypt:
     dependency: transitive
     description:
@@ -366,14 +358,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.3.0+1"
-  flutter_hicons:
-    dependency: transitive
-    description:
-      name: flutter_hicons
-      sha256: "1668d0d23f1621196a1849c1fbb1f465e9381d7e5d38716501c3e8bce9b6c458"
-      url: "https://pub.dev"
-    source: hosted
-    version: "1.0.0"
   flutter_highlight:
     dependency: transitive
     description:
@@ -416,14 +400,6 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
-  freezed_annotation:
-    dependency: transitive
-    description:
-      name: freezed_annotation
-      sha256: c2e2d632dd9b8a2b7751117abcfc2b4888ecfe181bd9fca7170d9ef02e595fe2
-      url: "https://pub.dev"
-    source: hosted
-    version: "2.4.4"
   frontend_server_client:
     dependency: transitive
     description:
@@ -452,42 +428,42 @@ packages:
     dependency: "direct main"
     description:
       name: general_framework
-      sha256: e86596038763e6da4d586b08ea7c2d52fa11ff36db24b359a82f26d37ce56c14
+      sha256: b35306a7603fe3ce61e76f29594c738dd3e7f05599c44de821d1bd2dde5ae17d
       url: "https://pub.dev"
     source: hosted
-    version: "0.0.28"
+    version: "0.0.31"
   general_lib:
     dependency: "direct main"
     description:
       name: general_lib
-      sha256: eca0c5127a72b7e331f3fbcd47bf6dd4c6a6a2f6fbeebe677c2258b8fa145f2d
+      sha256: d576cf998e4827a92894ef78c02b7f03ab61342d69e91bab0cfc9fd4836a636c
       url: "https://pub.dev"
     source: hosted
-    version: "0.0.70"
+    version: "0.0.71"
   general_lib_flutter:
     dependency: "direct main"
     description:
       name: general_lib_flutter
-      sha256: "3111e855cb235fce044e6647d2f489f51f53bd8f2afe747df9204f741caaafac"
+      sha256: "44b5032811d0de455cc6e0d00f15fd66e5957b8904c3c30da1094370b06f9817"
       url: "https://pub.dev"
     source: hosted
-    version: "0.0.41"
+    version: "0.0.42"
   general_schema:
     dependency: transitive
     description:
       name: general_schema
-      sha256: a8dc51bb085e497c7bcbe6a09af3e58c83a82e1499c1d05fa3b0c3ec05279cb7
+      sha256: "4a288f45f8616687772e14f81372da5176a052e47228e30a67e91694a58b10e1"
       url: "https://pub.dev"
     source: hosted
-    version: "0.0.1"
+    version: "0.0.2"
   general_system_device:
     dependency: "direct main"
     description:
       name: general_system_device
-      sha256: "3ec112234564de6ef56d5d94f81d19198af3e348e3417f6d6f58793a95bbe51e"
+      sha256: dc4131811c112a9dfec699f862a9f7629441245e90e30d5c7fb588b1a8eedd12
       url: "https://pub.dev"
     source: hosted
-    version: "0.0.55"
+    version: "0.0.56"
   get_it:
     dependency: transitive
     description:
@@ -568,14 +544,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "4.1.2"
-  icons_plus:
-    dependency: transitive
-    description:
-      name: icons_plus
-      sha256: "8e2f601b8605d45dd55b106a0da084a1809125077a49574ca22e8bcd5b6e86f0"
-      url: "https://pub.dev"
-    source: hosted
-    version: "5.0.0"
   image:
     dependency: transitive
     description:
@@ -680,22 +648,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "7.3.0"
-  markdown_flutter:
-    dependency: "direct main"
-    description:
-      name: markdown_flutter
-      sha256: "45e1cd6d966f9a974c227bbcf84a5104134f8ef2aaf26fdaaebfca2ea372f7f4"
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.0.12"
-  markdown_widget:
-    dependency: transitive
-    description:
-      name: markdown_widget
-      sha256: "216dced98962d7699a265344624bc280489d739654585ee881c95563a3252fac"
-      url: "https://pub.dev"
-    source: hosted
-    version: "2.3.2+6"
   matcher:
     dependency: transitive
     description:
@@ -772,10 +724,10 @@ packages:
     dependency: "direct main"
     description:
       name: packagex
-      sha256: a368eb9b5831a1b0dae5ae849cde9486917c5af46b3a6e873c05e412154afc82
+      sha256: "8569e9cbd589937f507d43bcb663d854800962358a3d5f38ee98b9494fd399eb"
       url: "https://pub.dev"
     source: hosted
-    version: "1.0.2"
+    version: "1.0.3"
   path:
     dependency: "direct main"
     description:
@@ -1120,14 +1072,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.0.0"
-  simulate:
-    dependency: "direct main"
-    description:
-      name: simulate
-      sha256: "671d6a599381fc6e04a0f475e1ef6bbed86f8e9b2b95249240e6de74b7ec8334"
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.0.53"
   sky_engine:
     dependency: transitive
     description: flutter
@@ -1517,4 +1461,4 @@ packages:
     version: "0.2.3"
 sdks:
   dart: ">=3.7.0 <4.0.0"
-  flutter: ">=3.27.0"
+  flutter: ">=3.29.0"
