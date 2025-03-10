@@ -4,12 +4,14 @@ import 'default.dart';
 final List<Map<String, dynamic>> stableDiffusionLibraryApiSchemes = () {
   return <Map<String, dynamic>>[
     {
-      "@type": "send${StableDiffusionLibrarySchemeDefaultData.namespace}Message",
+      "@type":
+          "send${StableDiffusionLibrarySchemeDefaultData.namespace}Message",
       "text": "",
       "is_stream": false,
     },
     {
-      "@type": "load${StableDiffusionLibrarySchemeDefaultData.namespaceStableDiffusion}ModelFromFile${StableDiffusionLibrarySchemeDefaultData.namespace}",
+      "@type":
+          "load${StableDiffusionLibrarySchemeDefaultData.namespaceStableDiffusion}ModelFromFile${StableDiffusionLibrarySchemeDefaultData.namespace}",
       "model_file_path": "",
       'lora_path': "",
       'taesd_path': "",
@@ -28,7 +30,8 @@ final List<Map<String, dynamic>> stableDiffusionLibraryApiSchemes = () {
       'control_net_path': "", // Add this
     },
     {
-      "@type": "textToImage${StableDiffusionLibrarySchemeDefaultData.namespaceStableDiffusion}ModelFromFile${StableDiffusionLibrarySchemeDefaultData.namespace}",
+      "@type":
+          "textToImage${StableDiffusionLibrarySchemeDefaultData.namespaceStableDiffusion}ModelFromFile${StableDiffusionLibrarySchemeDefaultData.namespace}",
 
       'prompt': "",
       'negative_prompt': "",

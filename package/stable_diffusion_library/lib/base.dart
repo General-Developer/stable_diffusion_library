@@ -95,7 +95,8 @@ class InvokeParametersStableDiffusionLibraryData<D extends JsonScheme> {
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 
-  final StableDiffusionLibraryInvokeOptions? invokeParametersStableDiffusionLibraryDataOptions;
+  final StableDiffusionLibraryInvokeOptions?
+      invokeParametersStableDiffusionLibraryDataOptions;
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   InvokeParametersStableDiffusionLibraryData({
@@ -113,12 +114,15 @@ class InvokeParametersStableDiffusionLibraryData<D extends JsonScheme> {
     JsonScheme? parameters,
     bool? isVoid,
     String? extra,
-    StableDiffusionLibraryInvokeOptions? invokeParametersStableDiffusionLibraryDataOptions,
+    StableDiffusionLibraryInvokeOptions?
+        invokeParametersStableDiffusionLibraryDataOptions,
   }) {
     return InvokeParametersStableDiffusionLibraryData(
       parameters: parameters ?? this.parameters,
       extra: extra ?? this.extra,
-      invokeParametersStableDiffusionLibraryDataOptions: invokeParametersStableDiffusionLibraryDataOptions ?? this.invokeParametersStableDiffusionLibraryDataOptions,
+      invokeParametersStableDiffusionLibraryDataOptions:
+          invokeParametersStableDiffusionLibraryDataOptions ??
+              this.invokeParametersStableDiffusionLibraryDataOptions,
     );
   }
 
@@ -126,7 +130,8 @@ class InvokeParametersStableDiffusionLibraryData<D extends JsonScheme> {
   static RS send<RS extends JsonScheme>({
     required RS data,
     required final Map<String, dynamic> patchData,
-    required StableDiffusionLibraryInvokeOptions invokeParametersStableDiffusionLibraryDataOptions,
+    required StableDiffusionLibraryInvokeOptions
+        invokeParametersStableDiffusionLibraryDataOptions,
   }) {
     data.rawData.general_lib_extension_updateForce(data: patchData);
     if (data["@type"] == "error") {
@@ -139,7 +144,8 @@ class InvokeParametersStableDiffusionLibraryData<D extends JsonScheme> {
 }
 
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
-class UpdateStableDiffusionLibraryData<C extends StableDiffusionLibraryBase, U extends JsonScheme> {
+class UpdateStableDiffusionLibraryData<C extends StableDiffusionLibraryBase,
+    U extends JsonScheme> {
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   final U update;
 
@@ -154,7 +160,11 @@ class UpdateStableDiffusionLibraryData<C extends StableDiffusionLibraryBase, U e
 }
 
 /// Check Out: https://www.youtube.com/@GENERAL_DEV
-abstract class StableDiffusionLibraryBase extends GeneralSchemaBaseCore<StableDiffusionLibraryEnsureInitialized> with GeneralSchemaInvokeRequestBaseCore<JsonScheme, StableDiffusionLibraryInvokeOptions> {
+abstract class StableDiffusionLibraryBase
+    extends GeneralSchemaBaseCore<StableDiffusionLibraryEnsureInitialized>
+    with
+        GeneralSchemaInvokeRequestBaseCore<JsonScheme,
+            StableDiffusionLibraryInvokeOptions> {
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   final EventEmitter eventEmitter;
 
@@ -175,8 +185,9 @@ abstract class StableDiffusionLibraryBase extends GeneralSchemaBaseCore<StableDi
     String? sharedLibraryPath,
     StableDiffusionLibraryInvokeOptions? defaultInvokeOptions,
   })  : sharedLibraryPath = sharedLibraryPath ?? getLibraryWhisperPathDefault(),
-        eventEmitter = EventEmitter(), 
-        defaultInvokeOptions = defaultInvokeOptions ?? StableDiffusionLibraryInvokeOptions.defaultData();
+        eventEmitter = EventEmitter(),
+        defaultInvokeOptions = defaultInvokeOptions ??
+            StableDiffusionLibraryInvokeOptions.defaultData();
 
   ///
   static String getLibraryWhisperPathDefault() {
@@ -194,10 +205,11 @@ abstract class StableDiffusionLibraryBase extends GeneralSchemaBaseCore<StableDi
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   EventEmitterListener on({
     required String eventType,
-    required FutureOr<dynamic> Function(UpdateStableDiffusionLibraryData updateStableDiffusionLibrary) onUpdate,
+    required FutureOr<dynamic> Function(
+            UpdateStableDiffusionLibraryData updateStableDiffusionLibrary)
+        onUpdate,
   });
-
- }
+}
 
 enum SDType {
   NONE, // No quantization

@@ -1,11 +1,15 @@
 part of 'package:stable_diffusion_library/core/io/core.dart';
 
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
-extension TextToImageStableDiffusionModelFromFileStableDiffusionLibraryExtensionStableDiffusionLibrary on StableDiffusionLibrary {
-  Future<UpdateStableDiffusionGeneratedImageStableDiffusionLibrary> _textToImageStableDiffusionModelFromFileStableDiffusionLibrary({
-    required TextToImageStableDiffusionModelFromFileStableDiffusionLibrary invokeParameters,
+extension TextToImageStableDiffusionModelFromFileStableDiffusionLibraryExtensionStableDiffusionLibrary
+    on StableDiffusionLibrary {
+  Future<UpdateStableDiffusionGeneratedImageStableDiffusionLibrary>
+      _textToImageStableDiffusionModelFromFileStableDiffusionLibrary({
+    required TextToImageStableDiffusionModelFromFileStableDiffusionLibrary
+        invokeParameters,
     required final String extra,
-    required StableDiffusionLibraryInvokeOptions invokeParametersLlamaLibraryDataOptions,
+    required StableDiffusionLibraryInvokeOptions
+        invokeParametersLlamaLibraryDataOptions,
   }) async {
     if (_isInIsolate == false) {
       return UpdateStableDiffusionGeneratedImageStableDiffusionLibrary({
@@ -15,18 +19,29 @@ extension TextToImageStableDiffusionModelFromFileStableDiffusionLibraryExtension
 
     if (StableDiffusionLibrary._sd_ctx != nullptr) {
       try {
-        final promptUtf8 = (invokeParameters.prompt ?? "").toNativeUtf8().cast<Char>();
-        final negPromptUtf8 = (invokeParameters.negative_prompt ?? "").toNativeUtf8().cast<Char>();
-        final inputIdImagesPathUtf8 = (invokeParameters.input_id_images_path ?? "").toNativeUtf8().cast<Char>();
+        final promptUtf8 =
+            (invokeParameters.prompt ?? "").toNativeUtf8().cast<Char>();
+        final negPromptUtf8 = (invokeParameters.negative_prompt ?? "")
+            .toNativeUtf8()
+            .cast<Char>();
+        final inputIdImagesPathUtf8 =
+            (invokeParameters.input_id_images_path ?? "")
+                .toNativeUtf8()
+                .cast<Char>();
         final emptyUtf8 = "".toNativeUtf8().cast<Char>();
 
         Pointer<sd_image_t> controlCondPtr = nullptr;
         if (invokeParameters.control_image_data.isNotEmpty) {
-          final controlImageData = invokeParameters.control_image_data.cast<int>();
-          final controlWidth = (invokeParameters.control_image_width ?? 0).toInt();
-          final controlHeight = (invokeParameters.control_image_height ?? 0).toInt();
+          final controlImageData =
+              invokeParameters.control_image_data.cast<int>();
+          final controlWidth =
+              (invokeParameters.control_image_width ?? 0).toInt();
+          final controlHeight =
+              (invokeParameters.control_image_height ?? 0).toInt();
           final controlDataPtr = malloc<Uint8>(controlImageData.length);
-          controlDataPtr.asTypedList(controlImageData.length).setAll(0, controlImageData);
+          controlDataPtr
+              .asTypedList(controlImageData.length)
+              .setAll(0, controlImageData);
 
           // In the _isolateEntryPoint function, modify the code for Canny processing:
 
@@ -37,7 +52,9 @@ extension TextToImageStableDiffusionModelFromFileStableDiffusionLibraryExtension
           controlCondPtr.ref.data = controlDataPtr;
         }
 
-        final result = StableDiffusionLibrary._stableDiffusionLibrarySharedBindings.txt2img(
+        final result = StableDiffusionLibrary
+            ._stableDiffusionLibrarySharedBindings
+            .txt2img(
           StableDiffusionLibrary._sd_ctx,
           promptUtf8,
           negPromptUtf8,
@@ -47,7 +64,8 @@ extension TextToImageStableDiffusionModelFromFileStableDiffusionLibraryExtension
           0.0, // eta (new parameter)
           (invokeParameters.width ?? 0).toInt(),
           (invokeParameters.height ?? 0).toInt(),
-          sample_method_t.fromValue(((invokeParameters.sample_method ?? 0).toInt())),
+          sample_method_t
+              .fromValue(((invokeParameters.sample_method ?? 0).toInt())),
           (invokeParameters.sample_steps ?? 0).toInt(),
           (invokeParameters.seed ?? 0).toInt(),
           (invokeParameters.batch_count ?? 0).toInt(),
@@ -77,10 +95,19 @@ extension TextToImageStableDiffusionModelFromFileStableDiffusionLibraryExtension
 
         if (result.address != 0) {
           final image = result.cast<sd_image_t>().ref;
-          final bytes = image.data.asTypedList((invokeParameters.width ?? 0).toInt() * (invokeParameters.height ?? 0).toInt() * image.channel);
-          final rgbaBytes = Uint8List((invokeParameters.width ?? 0).toInt() * (invokeParameters.height ?? 0).toInt() * 4);
+          final bytes = image.data.asTypedList(
+              (invokeParameters.width ?? 0).toInt() *
+                  (invokeParameters.height ?? 0).toInt() *
+                  image.channel);
+          final rgbaBytes = Uint8List((invokeParameters.width ?? 0).toInt() *
+              (invokeParameters.height ?? 0).toInt() *
+              4);
 
-          for (var i = 0; i < (invokeParameters.width ?? 0).toInt() * (invokeParameters.height ?? 0).toInt(); i++) {
+          for (var i = 0;
+              i <
+                  (invokeParameters.width ?? 0).toInt() *
+                      (invokeParameters.height ?? 0).toInt();
+              i++) {
             rgbaBytes[i * 4] = bytes[i * 3];
             rgbaBytes[i * 4 + 1] = bytes[i * 3 + 1];
             rgbaBytes[i * 4 + 2] = bytes[i * 3 + 2];
@@ -88,7 +115,8 @@ extension TextToImageStableDiffusionModelFromFileStableDiffusionLibraryExtension
           }
 
           try {
-            return UpdateStableDiffusionGeneratedImageStableDiffusionLibrary.create(
+            return UpdateStableDiffusionGeneratedImageStableDiffusionLibrary
+                .create(
               image_rgba_bytes: rgbaBytes,
               width: invokeParameters.width,
               height: invokeParameters.height,

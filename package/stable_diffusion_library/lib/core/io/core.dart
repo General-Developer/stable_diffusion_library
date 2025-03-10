@@ -66,7 +66,8 @@ class _StableDiffusionLibraryIsolateData {
   // final String modelPath;
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
-  final StableDiffusionLibraryInvokeOptions invokeParametersStableDiffusionLibraryDataOptions;
+  final StableDiffusionLibraryInvokeOptions
+      invokeParametersStableDiffusionLibraryDataOptions;
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   _StableDiffusionLibraryIsolateData({
@@ -113,9 +114,10 @@ class StableDiffusionLibrary extends StableDiffusionLibraryBase {
               _sendPort = event;
             } else if (event == StableDiffusionLibraryActionType.close) {
               dispose();
-            } else if (event is InvokeParametersStableDiffusionLibraryData) { 
+            } else if (event is InvokeParametersStableDiffusionLibraryData) {
               await invokeRaw(
-                invokeOptions: event.invokeParametersStableDiffusionLibraryDataOptions,
+                invokeOptions:
+                    event.invokeParametersStableDiffusionLibraryDataOptions,
                 invokeParameters: event.parameters,
               );
             }
@@ -147,12 +149,14 @@ class StableDiffusionLibrary extends StableDiffusionLibraryBase {
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static late SendPort _sendPort;
 
-  static final Completer<bool> _completerSendPortInitialized = Completer<bool>();
+  static final Completer<bool> _completerSendPortInitialized =
+      Completer<bool>();
 
   static Pointer<sd_ctx_t> _sd_ctx = nullptr;
 
   ///
-  static late final StableDiffusionLibrarySharedBindingsByGeneralDeveloper _stableDiffusionLibrarySharedBindings;
+  static late final StableDiffusionLibrarySharedBindingsByGeneralDeveloper
+      _stableDiffusionLibrarySharedBindings;
 
   static bool _isEnsureInitialized = false;
 
@@ -166,14 +170,16 @@ class StableDiffusionLibrary extends StableDiffusionLibraryBase {
     } catch (e) {}
   }
 
-  static void _staticLogCallback(int level, Pointer<Char> text, Pointer<Void> data) {
+  static void _staticLogCallback(
+      int level, Pointer<Char> text, Pointer<Void> data) {
     final message = text.cast<Utf8>().toDartString();
 
     if (message.contains("generating image")) {
       final seedMatch = RegExp(r'seed (\d+)').firstMatch(message);
       if (seedMatch != null) {
         final extractedSeed = int.parse(seedMatch.group(1)!);
-        StableDiffusionLibrary._send(UpdateStableDiffusionLogMessageStableDiffusionLibrary.create(
+        StableDiffusionLibrary._send(
+            UpdateStableDiffusionLogMessageStableDiffusionLibrary.create(
           level: level,
           message: message,
           seed: extractedSeed,
@@ -182,15 +188,18 @@ class StableDiffusionLibrary extends StableDiffusionLibraryBase {
       }
     }
 
-    StableDiffusionLibrary._send(UpdateStableDiffusionLogMessageStableDiffusionLibrary.create(
+    StableDiffusionLibrary._send(
+        UpdateStableDiffusionLogMessageStableDiffusionLibrary.create(
       level: level,
       message: message,
     ));
   }
 
-  static void _staticProgressCallback(int step, int steps, double time, Pointer<Void> data) {
+  static void _staticProgressCallback(
+      int step, int steps, double time, Pointer<Void> data) {
     // print("SD Progress: $step/$steps - ${time}s");
-    StableDiffusionLibrary._send(UpdateStableDiffusionProgressStableDiffusionLibrary.create(
+    StableDiffusionLibrary._send(
+        UpdateStableDiffusionProgressStableDiffusionLibrary.create(
       step: step,
       steps: steps,
       time: time,
@@ -198,28 +207,40 @@ class StableDiffusionLibrary extends StableDiffusionLibraryBase {
     ));
   }
 
-  GeneralSchemaDeviceStatusSupportType _schemaDeviceStatusSupportType = GeneralSchemaDeviceStatusSupportType.unknown;
-  GeneralSchemaLibraryStatusType _schemaLibraryStatusType = GeneralSchemaLibraryStatusType.unknown;
+  GeneralSchemaDeviceStatusSupportType _schemaDeviceStatusSupportType =
+      GeneralSchemaDeviceStatusSupportType.unknown;
+  GeneralSchemaLibraryStatusType _schemaLibraryStatusType =
+      GeneralSchemaLibraryStatusType.unknown;
   @override
-  Future<void> ensureInitialized({required StableDiffusionLibraryEnsureInitialized generalSchemaEnsureInitialized}) async {
+  Future<void> ensureInitialized(
+      {required StableDiffusionLibraryEnsureInitialized
+          generalSchemaEnsureInitialized}) async {
     if (_isEnsureInitialized) {
       return;
     }
     try {
-      StableDiffusionLibrary._stableDiffusionLibrarySharedBindings = StableDiffusionLibrarySharedBindingsByGeneralDeveloper(
+      StableDiffusionLibrary._stableDiffusionLibrarySharedBindings =
+          StableDiffusionLibrarySharedBindingsByGeneralDeveloper(
         await FFIUniverse.open(
           path: sharedLibraryPath,
         ),
       );
       _isDeviceSupport = true;
       _schemaLibraryStatusType = GeneralSchemaLibraryStatusType.initialized;
-      _schemaDeviceStatusSupportType = GeneralSchemaDeviceStatusSupportType.support;
+      _schemaDeviceStatusSupportType =
+          GeneralSchemaDeviceStatusSupportType.support;
       if (_isInIsolate) {
-        final logCallbackNativeFunction = Pointer.fromFunction<sd_log_cb_tFunction>(StableDiffusionLibrary._staticLogCallback);
-        final proggresCallbackNativeFunction = Pointer.fromFunction<sd_progress_cb_tFunction>(StableDiffusionLibrary._staticProgressCallback);
+        final logCallbackNativeFunction =
+            Pointer.fromFunction<sd_log_cb_tFunction>(
+                StableDiffusionLibrary._staticLogCallback);
+        final proggresCallbackNativeFunction =
+            Pointer.fromFunction<sd_progress_cb_tFunction>(
+                StableDiffusionLibrary._staticProgressCallback);
 
-        StableDiffusionLibrary._stableDiffusionLibrarySharedBindings.sd_set_log_callback(logCallbackNativeFunction, nullptr);
-        StableDiffusionLibrary._stableDiffusionLibrarySharedBindings.sd_set_progress_callback(proggresCallbackNativeFunction, nullptr);
+        StableDiffusionLibrary._stableDiffusionLibrarySharedBindings
+            .sd_set_log_callback(logCallbackNativeFunction, nullptr);
+        StableDiffusionLibrary._stableDiffusionLibrarySharedBindings
+            .sd_set_progress_callback(proggresCallbackNativeFunction, nullptr);
       }
     } catch (e) {
       _isCrash = true;
@@ -245,7 +266,10 @@ class StableDiffusionLibrary extends StableDiffusionLibraryBase {
   @override
   EventEmitterListener on({
     required String eventType,
-    required FutureOr Function(UpdateStableDiffusionLibraryData<StableDiffusionLibrary, JsonScheme> updateStableDiffusionLibrary) onUpdate,
+    required FutureOr Function(
+            UpdateStableDiffusionLibraryData<StableDiffusionLibrary, JsonScheme>
+                updateStableDiffusionLibrary)
+        onUpdate,
   }) {
     return eventEmitter.on(
       eventName: eventType,
@@ -270,28 +294,36 @@ class StableDiffusionLibrary extends StableDiffusionLibraryBase {
     }
     if (StableDiffusionLibrary._isolate == Isolate.current) {
       StableDiffusionLibrary._isolate = await Isolate.spawn(
-        (_StableDiffusionLibraryIsolateData stableDiffusionLibraryIsolateData) async {
-          final StableDiffusionLibrary stableDiffusionLibrary = StableDiffusionLibrary(
-            sharedLibraryPath: stableDiffusionLibraryIsolateData.sharedLibraryPath,
-            defaultInvokeOptions: stableDiffusionLibraryIsolateData.invokeParametersStableDiffusionLibraryDataOptions,
+        (_StableDiffusionLibraryIsolateData
+            stableDiffusionLibraryIsolateData) async {
+          final StableDiffusionLibrary stableDiffusionLibrary =
+              StableDiffusionLibrary(
+            sharedLibraryPath:
+                stableDiffusionLibraryIsolateData.sharedLibraryPath,
+            defaultInvokeOptions: stableDiffusionLibraryIsolateData
+                .invokeParametersStableDiffusionLibraryDataOptions,
           );
           stableDiffusionLibrary._isInIsolate = true;
           await stableDiffusionLibrary.ensureInitialized(
-            generalSchemaEnsureInitialized: StableDiffusionLibraryEnsureInitialized(),
+            generalSchemaEnsureInitialized:
+                StableDiffusionLibraryEnsureInitialized(),
           );
           await stableDiffusionLibrary.initialized();
-          StableDiffusionLibrary._receivePort.sendPort.send(stableDiffusionLibraryIsolateData.sendPort);
-          stableDiffusionLibraryIsolateData.sendPort.send(StableDiffusionLibrary._receivePort.sendPort);
+          StableDiffusionLibrary._receivePort.sendPort
+              .send(stableDiffusionLibraryIsolateData.sendPort);
+          stableDiffusionLibraryIsolateData.sendPort
+              .send(StableDiffusionLibrary._receivePort.sendPort);
         },
         _StableDiffusionLibraryIsolateData(
           sharedLibraryPath: sharedLibraryPath,
-           sendPort: StableDiffusionLibrary._receivePort.sendPort,
-          invokeParametersStableDiffusionLibraryDataOptions: defaultInvokeOptions,
+          sendPort: StableDiffusionLibrary._receivePort.sendPort,
+          invokeParametersStableDiffusionLibraryDataOptions:
+              defaultInvokeOptions,
         ),
       );
     }
     return;
-   }
+  }
 
   /// Disposes of all resources held by this instance
   @override
@@ -310,7 +342,8 @@ class StableDiffusionLibrary extends StableDiffusionLibraryBase {
       return;
     }
     if (StableDiffusionLibrary._sd_ctx != nullptr) {
-      StableDiffusionLibrary._stableDiffusionLibrarySharedBindings.free_sd_ctx(StableDiffusionLibrary._sd_ctx);
+      StableDiffusionLibrary._stableDiffusionLibrarySharedBindings
+          .free_sd_ctx(StableDiffusionLibrary._sd_ctx);
       StableDiffusionLibrary._sd_ctx = nullptr;
     }
     StableDiffusionLibrary._send(StableDiffusionLibraryActionType.close);
@@ -322,7 +355,8 @@ class StableDiffusionLibrary extends StableDiffusionLibraryBase {
     required StableDiffusionLibraryInvokeOptions? invokeOptions,
   }) async {
     await _completerSendPortInitialized.future;
-    final invokeParametersStableDiffusionLibraryDataOptions = invokeOptions ?? defaultInvokeOptions;
+    final invokeParametersStableDiffusionLibraryDataOptions =
+        invokeOptions ?? defaultInvokeOptions;
     if (_isInIsolate == true) {
       invokeParametersStableDiffusionLibraryDataOptions.isThrowOnError = false;
     }
@@ -353,7 +387,8 @@ class StableDiffusionLibrary extends StableDiffusionLibraryBase {
           "message": "method_empty",
         }),
         patchData: patchData,
-        invokeParametersStableDiffusionLibraryDataOptions: invokeParametersStableDiffusionLibraryDataOptions,
+        invokeParametersStableDiffusionLibraryDataOptions:
+            invokeParametersStableDiffusionLibraryDataOptions,
       );
     }
 
@@ -362,7 +397,8 @@ class StableDiffusionLibrary extends StableDiffusionLibraryBase {
         InvokeParametersStableDiffusionLibraryData(
           parameters: invokeParameters,
           extra: extra,
-          invokeParametersStableDiffusionLibraryDataOptions: invokeParametersStableDiffusionLibraryDataOptions,
+          invokeParametersStableDiffusionLibraryDataOptions:
+              invokeParametersStableDiffusionLibraryDataOptions,
         ),
       );
 
@@ -372,7 +408,8 @@ class StableDiffusionLibrary extends StableDiffusionLibraryBase {
             "@type": "ok",
           }),
           patchData: patchData,
-          invokeParametersStableDiffusionLibraryDataOptions: invokeParametersStableDiffusionLibraryDataOptions,
+          invokeParametersStableDiffusionLibraryDataOptions:
+              invokeParametersStableDiffusionLibraryDataOptions,
         );
       }
       final Completer<JsonScheme> completerResult = Completer();
@@ -417,24 +454,29 @@ class StableDiffusionLibrary extends StableDiffusionLibraryBase {
       return InvokeParametersStableDiffusionLibraryData.send(
         data: result,
         patchData: patchData,
-        invokeParametersStableDiffusionLibraryDataOptions: invokeParametersStableDiffusionLibraryDataOptions,
+        invokeParametersStableDiffusionLibraryDataOptions:
+            invokeParametersStableDiffusionLibraryDataOptions,
       );
 
       ///
     } else {
       final result = await Future(() async {
-        if (invokeParameters is LoadStableDiffusionModelFromFileStableDiffusionLibrary) {
+        if (invokeParameters
+            is LoadStableDiffusionModelFromFileStableDiffusionLibrary) {
           return await _loadStableDiffusionModelFromFileStableDiffusionLibrary(
             parameters: invokeParameters,
             extra: extra,
-            invokeParametersLlamaLibraryDataOptions: invokeParametersStableDiffusionLibraryDataOptions,
+            invokeParametersLlamaLibraryDataOptions:
+                invokeParametersStableDiffusionLibraryDataOptions,
           );
         }
-        if (invokeParameters is TextToImageStableDiffusionModelFromFileStableDiffusionLibrary) {
+        if (invokeParameters
+            is TextToImageStableDiffusionModelFromFileStableDiffusionLibrary) {
           return await _textToImageStableDiffusionModelFromFileStableDiffusionLibrary(
             invokeParameters: invokeParameters,
             extra: extra,
-            invokeParametersLlamaLibraryDataOptions: invokeParametersStableDiffusionLibraryDataOptions,
+            invokeParametersLlamaLibraryDataOptions:
+                invokeParametersStableDiffusionLibraryDataOptions,
           );
         }
         return JsonScheme({
@@ -446,7 +488,8 @@ class StableDiffusionLibrary extends StableDiffusionLibraryBase {
       final resultPatch = InvokeParametersStableDiffusionLibraryData.send(
         data: result,
         patchData: patchData,
-        invokeParametersStableDiffusionLibraryDataOptions: invokeParametersStableDiffusionLibraryDataOptions,
+        invokeParametersStableDiffusionLibraryDataOptions:
+            invokeParametersStableDiffusionLibraryDataOptions,
       );
 
       StableDiffusionLibrary._send(resultPatch);
@@ -455,7 +498,8 @@ class StableDiffusionLibrary extends StableDiffusionLibraryBase {
   }
 
   @override
-  FutureOr<GeneralSchemaDeviceStatusSupportType> getDetailStatusDeviceSupportAsync() {
+  FutureOr<GeneralSchemaDeviceStatusSupportType>
+      getDetailStatusDeviceSupportAsync() {
     return getDetailStatusDeviceSupportSync();
   }
 

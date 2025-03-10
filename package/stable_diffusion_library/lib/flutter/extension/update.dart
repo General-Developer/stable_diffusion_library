@@ -3,7 +3,11 @@ import "dart:typed_data";
 import "dart:ui" as ui;
 
 import "package:stable_diffusion_library/scheme/scheme/respond/update_stable_diffusion_generated_image_stable_diffusion_library.dart";
-extension UpdateStableDiffusionGeneratedImageStableDiffusionLibraryExtension on UpdateStableDiffusionGeneratedImageStableDiffusionLibrary {
+
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+extension UpdateStableDiffusionGeneratedImageStableDiffusionLibraryExtension
+    on UpdateStableDiffusionGeneratedImageStableDiffusionLibrary {
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   FutureOr<Uint8List?> toFlutter() async {
     final Completer<ui.Image> completer = Completer<ui.Image>();
     ui.decodeImageFromPixels(
@@ -20,5 +24,5 @@ extension UpdateStableDiffusionGeneratedImageStableDiffusionLibraryExtension on 
       return null;
     }
     return bytes.buffer.asUint8List();
-  } 
+  }
 }

@@ -5,6 +5,7 @@ import 'package:general_lib/json_scheme/json_scheme.dart';
 import 'package:general_schema/base/core.dart';
 import 'package:stable_diffusion_library/base.dart';
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 class StableDiffusionLibrary extends StableDiffusionLibraryBase {
   @override
   FutureOr<void> dispose() {
@@ -18,13 +19,16 @@ class StableDiffusionLibrary extends StableDiffusionLibraryBase {
   }
 
   @override
-  FutureOr<void> ensureInitialized({required StableDiffusionLibraryEnsureInitialized generalSchemaEnsureInitialized}) {
+  FutureOr<void> ensureInitialized(
+      {required StableDiffusionLibraryEnsureInitialized
+          generalSchemaEnsureInitialized}) {
     // TODO: implement ensureInitialized
     throw UnimplementedError();
   }
 
   @override
-  FutureOr<GeneralSchemaDeviceStatusSupportType> getDetailStatusDeviceSupportAsync() {
+  FutureOr<GeneralSchemaDeviceStatusSupportType>
+      getDetailStatusDeviceSupportAsync() {
     // TODO: implement getDetailStatusDeviceSupportAsync
     throw UnimplementedError();
   }
@@ -54,7 +58,9 @@ class StableDiffusionLibrary extends StableDiffusionLibraryBase {
   }
 
   @override
-  FutureOr<JsonScheme> invokeRaw({required JsonScheme invokeParameters, required StableDiffusionLibraryInvokeOptions? invokeOptions}) {
+  FutureOr<JsonScheme> invokeRaw(
+      {required JsonScheme invokeParameters,
+      required StableDiffusionLibraryInvokeOptions? invokeOptions}) {
     // TODO: implement invokeRaw
     throw UnimplementedError();
   }
@@ -72,9 +78,14 @@ class StableDiffusionLibrary extends StableDiffusionLibraryBase {
   }
 
   @override
-  EventEmitterListener on({required String eventType, required FutureOr Function(UpdateStableDiffusionLibraryData<StableDiffusionLibraryBase, JsonScheme> updateStableDiffusionLibrary) onUpdate}) {
+  EventEmitterListener on(
+      {required String eventType,
+      required FutureOr Function(
+              UpdateStableDiffusionLibraryData<StableDiffusionLibraryBase,
+                      JsonScheme>
+                  updateStableDiffusionLibrary)
+          onUpdate}) {
     // TODO: implement on
     throw UnimplementedError();
   }
-
 }
