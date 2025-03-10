@@ -4,11 +4,11 @@
 
 list(APPEND FLUTTER_PLUGIN_LIST
   camera_windows
-  media_kit_video_fork
   permission_handler_windows
   screen_brightness_windows
   screen_retriever_windows
   url_launcher_windows
+  volume_controller
   window_manager
 )
 

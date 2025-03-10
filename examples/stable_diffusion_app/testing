@@ -1,0 +1,5 @@
+#!/bin/sh
+
+flutter pub get --offline
+flutter build linux --release
+build/linux/x64/release/bundle/stable_diffusion_app

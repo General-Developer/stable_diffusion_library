@@ -1,3 +1,5 @@
+// ignore_for_file: non_constant_identifier_names, public_member_api_docs, constant_identifier_names
+
 /* <!-- START LICENSE -->
 
 
@@ -35,138 +37,171 @@ Bukan maksud kami menipu itu karena harga yang sudah di kalkulasi + bantuan tiba
 
 import 'dart:async';
 
-import 'package:general_lib/dynamic_library/core.dart';
+import 'package:general_lib/general_lib.dart';
+import 'package:general_schema/base/core.dart';
 import "dart:ffi" as ffi;
 // import "package:ffi/ffi.dart" as ffi;
-import 'package:stable_diffusion_library/ffi/bindings.dart' show Dartsd_log_cb_tFunction, Dartsd_progress_cb_tFunction, rng_type_t, sample_method_t, schedule_t, sd_ctx_t, sd_image_t, sd_log_cb_t, sd_log_cb_tFunction, sd_progress_cb_t, sd_progress_cb_tFunction, sd_type_t;
+import 'package:stable_diffusion_library/core/ffi/bindings.dart' show StableDiffusionLibrarySharedBindingsByGeneralDeveloper, rng_type_t, sample_method_t, schedule_t, sd_ctx_t, sd_image_t, sd_log_cb_t, sd_progress_cb_t, sd_type_t;
 
-/// Check Out: https://www.youtube.com/@GENERAL_DEV
-abstract class StableDiffusionLibraryBaseCore extends GeneralLibraryDynamicLibraryBase {
+class StableDiffusionLibraryEnsureInitialized {}
+
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+class StableDiffusionLibraryInvokeOptions {
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
-  FutureOr<bool> invokeRaw({
-    required final List<String> arguments,
+  Duration invokeTimeOut;
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  bool isThrowOnError;
+  bool isVoid;
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  StableDiffusionLibraryInvokeOptions({
+    required this.invokeTimeOut,
+    required this.isThrowOnError,
+    required this.isVoid,
   });
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
-  FutureOr<String> imageToImage({
-    required final String modelPath,
-    required final String prompt,
-    required final String negativePrompt,
-  });
+  static StableDiffusionLibraryInvokeOptions defaultData() {
+    return StableDiffusionLibraryInvokeOptions(
+      invokeTimeOut: Duration(
+        hours: 1,
+      ),
+      isVoid: false,
+      isThrowOnError: false,
+    );
+  }
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
-  FutureOr<String> textToImage({
-    required final String modelPath,
-    required final String prompt,
-    required final String negativePrompt,
+  StableDiffusionLibraryInvokeOptions copyWith({
+    Duration? invokeTimeOut,
+    bool? isThrowOnError,
+    bool? isVoid,
+  }) {
+    return StableDiffusionLibraryInvokeOptions(
+      invokeTimeOut: invokeTimeOut ?? this.invokeTimeOut,
+      isThrowOnError: isThrowOnError ?? this.isThrowOnError,
+      isVoid: isVoid ?? this.isVoid,
+    );
+  }
+}
+
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+class InvokeParametersStableDiffusionLibraryData<D extends JsonScheme> {
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  final D parameters;
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  final String? extra;
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  final StableDiffusionLibraryInvokeOptions? invokeParametersStableDiffusionLibraryDataOptions;
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  InvokeParametersStableDiffusionLibraryData({
+    required this.parameters,
+    required this.extra,
+    required this.invokeParametersStableDiffusionLibraryDataOptions,
+  }) {
+    if (extra != null) {
+      parameters["@extra"] = extra;
+    }
+  }
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  InvokeParametersStableDiffusionLibraryData copyWith({
+    JsonScheme? parameters,
+    bool? isVoid,
+    String? extra,
+    StableDiffusionLibraryInvokeOptions? invokeParametersStableDiffusionLibraryDataOptions,
+  }) {
+    return InvokeParametersStableDiffusionLibraryData(
+      parameters: parameters ?? this.parameters,
+      extra: extra ?? this.extra,
+      invokeParametersStableDiffusionLibraryDataOptions: invokeParametersStableDiffusionLibraryDataOptions ?? this.invokeParametersStableDiffusionLibraryDataOptions,
+    );
+  }
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  static RS send<RS extends JsonScheme>({
+    required RS data,
+    required final Map<String, dynamic> patchData,
+    required StableDiffusionLibraryInvokeOptions invokeParametersStableDiffusionLibraryDataOptions,
+  }) {
+    data.rawData.general_lib_extension_updateForce(data: patchData);
+    if (data["@type"] == "error") {
+      if (invokeParametersStableDiffusionLibraryDataOptions.isThrowOnError) {
+        throw data;
+      }
+    }
+    return data;
+  }
+}
+
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+class UpdateStableDiffusionLibraryData<C extends StableDiffusionLibraryBase, U extends JsonScheme> {
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  final U update;
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  final C stableDiffusionLibrary;
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  UpdateStableDiffusionLibraryData({
+    required this.update,
+    required this.stableDiffusionLibrary,
   });
 }
 
 /// Check Out: https://www.youtube.com/@GENERAL_DEV
-abstract class StableDiffusionLibraryBase implements StableDiffusionLibraryBaseCore {
-  ///
+abstract class StableDiffusionLibraryBase extends GeneralSchemaBaseCore<StableDiffusionLibraryEnsureInitialized> with GeneralSchemaInvokeRequestBaseCore<JsonScheme, StableDiffusionLibraryInvokeOptions> {
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  final EventEmitter eventEmitter;
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  final String eventUpdate;
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  final String eventInvoke;
+
   final String sharedLibraryPath;
+  final StableDiffusionLibraryInvokeOptions defaultInvokeOptions;
 
   ///
   StableDiffusionLibraryBase({
+    EventEmitter? eventEmitter,
+    this.eventUpdate = "update",
+    this.eventInvoke = "invoke",
     String? sharedLibraryPath,
-  }) : sharedLibraryPath = sharedLibraryPath ?? getLibraryWhisperPathDefault();
+    StableDiffusionLibraryInvokeOptions? defaultInvokeOptions,
+  })  : sharedLibraryPath = sharedLibraryPath ?? getLibraryWhisperPathDefault(),
+        eventEmitter = EventEmitter(), 
+        defaultInvokeOptions = defaultInvokeOptions ?? StableDiffusionLibraryInvokeOptions.defaultData();
 
   ///
   static String getLibraryWhisperPathDefault() {
-    return "libstable_diffusion_library.so";
+    return "libstable-diffusion.so";
   }
 
-  int getCores();
+  // void send(dynamic data);
 
-  ffi.Pointer<ffi.Uint8> preprocessCanny(
-    ffi.Pointer<ffi.Uint8> img,
-    int width,
-    int height,
-    double high_threshold,
-    double low_threshold,
-    double weak,
-    double strong,
-    bool inverse,
-  );
-  void setLogCallback(
-    sd_log_cb_t sd_log_cb,
-    ffi.Pointer<ffi.Void> data,
-  );
-  void setProgressCallback(
-    sd_progress_cb_t cb,
-    ffi.Pointer<ffi.Void> data,
-  );
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  void emit({
+    required String eventType,
+    required dynamic data,
+  });
 
-  ffi.Pointer<sd_image_t> txt2img(
-    ffi.Pointer<sd_ctx_t> sd_ctx,
-    ffi.Pointer<ffi.Char> prompt,
-    ffi.Pointer<ffi.Char> negative_prompt,
-    int clip_skip,
-    double cfg_scale,
-    double guidance,
-    double eta,
-    int width,
-    int height,
-    sample_method_t sample_method,
-    int sample_steps,
-    int seed,
-    int batch_count,
-    ffi.Pointer<sd_image_t> control_cond,
-    double control_strength,
-    double style_strength,
-    bool normalize_input,
-    ffi.Pointer<ffi.Char> input_id_images_path,
-    ffi.Pointer<ffi.Int> skip_layers,
-    int skip_layers_count,
-    double slg_scale,
-    double skip_layer_start,
-    double skip_layer_end,
-  );
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  EventEmitterListener on({
+    required String eventType,
+    required FutureOr<dynamic> Function(UpdateStableDiffusionLibraryData updateStableDiffusionLibrary) onUpdate,
+  });
 
-  ffi.Pointer<sd_ctx_t> newSdCtx(
-    ffi.Pointer<ffi.Char> model_path,
-    ffi.Pointer<ffi.Char> clip_l_path,
-    ffi.Pointer<ffi.Char> clip_g_path,
-    ffi.Pointer<ffi.Char> t5xxl_path,
-    ffi.Pointer<ffi.Char> diffusion_model_path,
-    ffi.Pointer<ffi.Char> vae_path,
-    ffi.Pointer<ffi.Char> taesd_path,
-    ffi.Pointer<ffi.Char> control_net_path_c_str,
-    ffi.Pointer<ffi.Char> lora_model_dir,
-    ffi.Pointer<ffi.Char> embed_dir_c_str,
-    ffi.Pointer<ffi.Char> stacked_id_embed_dir_c_str,
-    bool vae_decode_only,
-    bool vae_tiling,
-    bool free_params_immediately,
-    int n_threads,
-    sd_type_t wtype,
-    rng_type_t rng_type,
-    schedule_t s,
-    bool keep_clip_on_cpu,
-    bool keep_control_net_cpu,
-    bool keep_vae_on_cpu,
-    bool diffusion_flash_attn,
-  );
-  void freeSdCtx(
-    ffi.Pointer<sd_ctx_t> sd_ctx,
-  );
+  StableDiffusionLibrarySharedBindingsByGeneralDeveloper get bindings; 
 }
-
-// base class SDImage extends ffi.Struct {
-//   @ffi.Uint32()
-//   external int width;
-
-//   @ffi.Uint32()
-//   external int height;
-
-//   @ffi.Uint32()
-//   external int channel;
-
-//   external ffi.Pointer<ffi.Uint8> data;
-
-//   external ffi.Pointer<ffi.Void> userdata;
-// }
 
 enum SDType {
   NONE, // No quantization
@@ -199,7 +234,14 @@ enum SampleMethod {
   TCD // New sampler
 }
 
-enum Schedule { DEFAULT, DISCRETE, KARRAS, EXPONENTIAL, AYS, GITS }
+enum Schedule {
+  DEFAULT,
+  DISCRETE,
+  KARRAS,
+  EXPONENTIAL,
+  AYS,
+  GITS,
+}
 
 extension SDTypeExtension on SDType {
   String get displayName {

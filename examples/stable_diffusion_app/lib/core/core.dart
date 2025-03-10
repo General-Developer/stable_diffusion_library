@@ -61,8 +61,11 @@ class StableDiffusionAppClientFlutter {
   static late final DatabaseMiniGeneralLibrary coreDatabaseMiniLibrary;
   static Future<void> ensureInitialized() async {
     WidgetsFlutterBinding.ensureInitialized();
-    await stableDiffusionLibrary.ensureInitialized();
+    await stableDiffusionLibrary.ensureInitialized(
+      generalSchemaEnsureInitialized: StableDiffusionLibraryEnsureInitialized(),
+    );
     await stableDiffusionLibrary.initialized();
+    return;
   }
 
   static final Crypto _crypto = Crypto(
@@ -125,6 +128,10 @@ class StableDiffusionAppClientFlutter {
       type: type ?? FileType.custom,
       allowedExtensions: allowedExtensions ??
           [
+            "ckpt",
+            "safetensors",
+            "pt",
+            "pth",
             "bin",
           ],
     );
