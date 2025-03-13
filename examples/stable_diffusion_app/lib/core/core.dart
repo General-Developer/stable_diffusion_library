@@ -155,8 +155,8 @@ class StableDiffusionAppClientFlutter {
       if (fileCopy.existsSync()) {
         fileCopy.deleteSync(recursive: true);
       }
-      await file.copy(fileCopy.path);
-      await file.delete(recursive: true);
+      file.copySync(fileCopy.path);
+      file.deleteSync(recursive: true);
       return fileCopy;
     }
     return file;

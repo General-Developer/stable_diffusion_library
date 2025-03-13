@@ -281,6 +281,9 @@ code android/app/src/main/AndroidManifest.xml
             android:name="flutterEmbedding"
             android:value="2" />
             
+        <meta-data
+            android:name="io.flutter.embedding.android.EnableImpeller"
+            android:value="false" />
         <!-- Adapt to the foreground service type(s) desired, these are just examples -->
         <service
             android:name="de.julianassmann.flutter_background.IsolateHolderService"

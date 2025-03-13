@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=Stable Diffusion App
+GenericName=Stable Diffusion App
+Version=1.0.0+1
+Exec=/opt/stable-diffusion-app/stable_diffusion_app
+Icon=/opt/stable-diffusion-app/data/flutter_assets/assets/icon.png
+Terminal=false
+Type=Application
+Categories=Music;Media;
+Keywords=Hello;World;Test;Application;
+StartupNotify=true

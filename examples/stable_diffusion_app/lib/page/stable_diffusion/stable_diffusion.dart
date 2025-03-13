@@ -38,6 +38,8 @@ Bukan maksud kami menipu itu karena harga yang sudah di kalkulasi + bantuan tiba
 import 'dart:io';
 
 import 'package:general_framework/flutter/fork/skeletonizer/lib/src/widgets/skeletonizer.dart';
+import 'package:general_framework/flutter/loading/loading.dart';
+import 'package:general_framework/flutter/loading/loading_core.dart';
 import 'package:stable_diffusion_app/core/core.dart';
 import 'package:stable_diffusion_app/scheme/scheme/application_stable_diffusion_library_database.dart';
 
@@ -195,8 +197,9 @@ class _SpeechToTextPageState extends State<StableDiffusionPage> with GeneralLibF
   void updateModel({
     required File stableDiffusionModel,
   }) {
+    final fileStat = stableDiffusionModel.statSync();
     setState(() {
-      modelSize = stableDiffusionModel.statSync().size;
+      modelSize = fileStat.size;
       modelName = path.basename(stableDiffusionModel.path);
       loadStableDiffusionModelFromFileStableDiffusionLibrary.model_file_path = stableDiffusionModel.path;
       isLoadedModel = false;
@@ -277,27 +280,44 @@ class _SpeechToTextPageState extends State<StableDiffusionPage> with GeneralLibF
                           onPressed: () {
                             handleFunction(
                               onFunction: (context, statefulWidget) async {
-                                final file = await StableDiffusionAppClientFlutter.pickFile(
-                                  dialogTitle: "Stable Diffusion Model",
-                                );
-                                if (file == null) {
+                                final LoadingGeneralFrameworkController loadingGeneralFrameworkController = LoadingGeneralFrameworkController(loadingText: "Load Model Files");
+                                LoadingGeneralFramework.show(context: context, loadingGeneralFrameworkController: loadingGeneralFrameworkController);
+                                try {
+                                  final file = await StableDiffusionAppClientFlutter.pickFile(
+                                    dialogTitle: "Stable Diffusion Model",
+                                  );
+                                  if (file == null) {
+                                    context.showAlertGeneralFramework(
+                                      alertGeneralFrameworkOptions: AlertGeneralFrameworkOptions(
+                                        title: "Failed Load Model Stable Diffusion",
+                                        builder: (context, alertGeneralFrameworkOptions) {
+                                          return "Coba lagi";
+                                        },
+                                      ),
+                                    );
+                                    return;
+                                  }
+
+                                  /// save to application settings
+                                  {
+                                    final ApplicationStableDiffusionLibraryDatabase applicationStableDiffusionLibraryDatabase = getApplicationStableDiffusionLibraryDatabase();
+                                    applicationStableDiffusionLibraryDatabase.stable_diffusion_model_path = file.path;
+                                    saveApplicationStableDiffusionLibraryDatabase();
+                                    updateModel(
+                                      stableDiffusionModel: File(applicationStableDiffusionLibraryDatabase.stable_diffusion_model_path ?? ""),
+                                    );
+                                  }
+                                  context.navigator().pop();
+                                } catch (e, stack) {
+                                  context.navigator().pop();
                                   context.showAlertGeneralFramework(
                                     alertGeneralFrameworkOptions: AlertGeneralFrameworkOptions(
                                       title: "Failed Load Model Stable Diffusion",
                                       builder: (context, alertGeneralFrameworkOptions) {
-                                        return "Coba lagi";
+                                        return "Error: ${e} - ${stack}";
                                       },
                                     ),
                                   );
-                                  return;
-                                }
-
-                                /// save to application settings
-                                {
-                                  final ApplicationStableDiffusionLibraryDatabase applicationStableDiffusionLibraryDatabase = getApplicationStableDiffusionLibraryDatabase();
-                                  applicationStableDiffusionLibraryDatabase.stable_diffusion_model_path = file.path;
-                                  saveApplicationStableDiffusionLibraryDatabase();
-                                  updateModel(stableDiffusionModel: File(applicationStableDiffusionLibraryDatabase.stable_diffusion_model_path ?? ""));
                                 }
                               },
                             );
