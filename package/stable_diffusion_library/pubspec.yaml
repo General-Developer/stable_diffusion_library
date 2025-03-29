@@ -4,21 +4,19 @@ version: '0.0.3'
 environment:
   sdk: '>=3.6.0 <4.0.0'
 dependencies:
+  ffi: '^2.1.4'
   flutter:
     sdk: 'flutter'
-  general_lib: '^0.0.71'
-  ffi: '^2.1.4'
-  path: '^1.9.0'
-  ffi_universe: '^0.0.8'
+  general_universe: '^0.0.0'
   image: '^4.5.3'
-  general_schema: '^0.0.2'
+  path: '^1.9.0'
 dev_dependencies:
+  ffigen: '^17.0.0'
   lints: '^5.0.0'
   test: 'any'
-  ffigen: '^17.0.0'
 dependency_overrides:
-  pointycastle: '4.0.0'
   mime: '^2.0.0'
+  pointycastle: '^4.0.0'
 flutter:
   uses-material-design: true
 funding:
@@ -45,3 +43,10 @@ platforms:
   windows: null
 project:
   type: ''
+  is_use_direct_package: false
+  is_private: false
+  developers:
+    - username: ''
+      note: ''
+      social_medias:
+        - 'https://github.com'
